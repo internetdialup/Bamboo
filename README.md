@@ -1,4 +1,4 @@
-# RepositoryMD
+# Repository.md
 A collection of .md files for your AI agents and projects to house
 
 ### This is a repository that houses .md files for your projects 
