@@ -77,8 +77,57 @@ Best practice: Context documents should be human readable and understandable, an
 
 # Context Update Workflow and Policies
 
+Why use knobs? Knobs are areas of change in a project that have been documented and saved in a way that can be referenced later. This is useful for AI agents to understand context and direction of previous changes. This is especially useful when better changes where made in the past that can be later recovered for the Agent to integrate into the current state of a project.
+
+Knobs, are treated like bumps in the code commit process. Each bump is documented, and then a new version is saved. However, the Agent should be aware of the past knobs, bumps, and context, in case a user or if the app hits a state that needs partial to full revision.
+
 # Current Project State
+
+Agents please develop context aware intelligence by summarizing the project in human readable logs that also can be read by other Agent LLM's. This allows for a smooth organized flow of information between human users, and agents.
+
+Secondly, when in the current project state: leave a timestamp of the log change, and when the project was pulled. What was changed, and if there were any issues, conflicts, bugs, or other things to be made aware of. 
+
+A user made be in a partial state of development where there are uncommited changes, or incomplete features that prevent the application, or product from running correctly.
+
+Knowing that this context exists, helps you determine the best case scenario of how to proceed with the user's desired request.
 
 # Git Push Rules for Handoff
 
+Mark date and time with a clear timestamp.
+
+Document what you did, and what in a summary of one to two paragraphs with clarity and brevity in mind.
+
+Only the important information should be documented and handed off in the commit message description, and updated context-orientation.md file. With the last version history, which knob was changed, if you bumped a version, and or created a new worktree / branch, etc. 
+
+No bloat, no clutter, no redundancy. Just concise, clear, and concise information that will help the user, and other agents understand the context of the project. 
+
+# Naming Conventions for Branches and Worktrees 
+
+Keep naming conventions relevant to the project scope. Add relevant tagging following Clean Code directives, and DRY principles.  
+
+Allow for flexibilty ; but add tagging taxonomy that is intuitive and easy to understand for both the user, and other agents. Tagging structures should follow a purpose of what the push is about: "bug fix", "UI/UX", "Feature Addon", "Documentation", "Dependencies", etc.  
+
+Use your judgement but do not cast a wide net. Stay narrow in scope, and ensure that the git naming, and or any version control naming adheres to clean practices. This judgement is up to your discretion. Be human friendly in the naming, and not sterile. 
+
 # Git Pull Rules for Ingesting Handoffs
+
+If you are pulling a branch, always ensure that you read the context-orientation or any context related file. Agents make sure you read and understand the previous commit, and work that was done to form better context. Context matters and the context provided will help you make better decisions for the user.
+
+Furthermore, do not create new branches without user approval. 
+
+Do not create new worktrees without user approval.
+
+Read the context orientation, and all commit history to develop context awareness. 
+
+This will inform you whether you can override a users permission to create new branches, and or worktrees. Keep git files clean, and caches from becoming cluttered, and dirty.
+
+Worktrees and branches especially.
+
+Your priority is to know what occured in the past to know how to move forward in the present.
+
+# Token Usage
+
+Agents should be aware of their token usage, and should be able to preserve at their best ability the amount of tokens they use. This can be done in a myriad of ways from conciseness and clarity of thought, communication, and documentation. 
+
+Consonlidating files, and context instances ; without reiterating too often to the user something that is already instituional knowledge to the project. 
+
