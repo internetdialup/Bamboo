@@ -3,7 +3,7 @@ A collection of .md files for your AI agents and projects to use
 
 ## The Readme for AI systems.
 
-A set of consistent standardization that can carry over project to project without having to rework, and restructure things constantly. Saving me time and energy to focus on what matters most. The build, the product, the experience. While knowing, there's an already established robust pipeline of documents that keep you and your team's sanity in check, Agents running more effiencetly, and that crossing the finish line with clarity, structure, and efficency is reached in a more coherent standardized way. 
+A set of consistent standardization that can carry over project to project without having to rework, and restructure things constantly. Saving time and energy to focus on what matters most. The build, the product, the experience. While knowing, there's an already established robust pipeline of documents that keep you and your team's sanity in check, Agents running more effiencetly, and that crossing the finish line with clarity, structure, and efficency is reached in a more coherent standardized way. 
 
 ### This is a repository that houses .md files for your projects 
 
