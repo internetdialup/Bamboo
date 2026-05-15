@@ -1,100 +1,164 @@
 # Component Button Intro
 
-This document serves as context for Agents, and users to create design rules for button design componentry. 
+This document serves as context for Agents and users to create design rules for button component systems and interaction design.
 
-# Component Design Rules 
+# Component Design Rules
 
-Buttons are a core and critical part of interaction design. They support the backbone of the user experience, and user interface. They are the main call to action for interface design, and interaction design. They should be developed and designed with intent. 
+Buttons are a core and critical part of interaction design. They support the backbone of the user experience and user interface. They are the primary call to action for interface design and interaction design, and should be developed with intent and consistency.
 
-## Button Wrappers and Nestin
+---
 
-Establish the invisible barrier for the buttons design within whitespace.
+## Button Wrappers and Nesting
 
-- Ensure the button wrapper has margin spacing that adequately contains the buttons touch target and hover / focus states.
-- Design the buttons to utilize flex box, and or certain inline design patterns if outside the context of CSS such as using Swift and or a different framework. 
-- Button wrappers should group multiple buttons together, to create a unified wrapper that contains the buttons nested within it.
-- Use your judgement in adding padding and margin to the button wrapper to ensure proper button spacing. Button spacing internally should contain a wrapper for text and wrappers for leading and trailing icons if applicable. 
-- Lastly, ensure that the buttons refrence a design system for the correct margin height, padding, and spacing rules to keep a consistent design language that flows through the productions and design of the User Interface, IA, and UX. 
+Establish the invisible barrier for the button design within whitespace.
 
-## Button Styles and Variables 
+- Ensure the button wrapper has adequate margin spacing that properly contains the button’s touch target and hover/focus states.
+- Design buttons to utilize Flexbox and/or inline layout patterns when outside the context of CSS frameworks, such as Swift or other UI frameworks.
+- Button wrappers should group multiple buttons together to create a unified container structure.
+- Use judgment when applying padding and margin to wrappers to ensure proper spacing and alignment.
+- Internal button spacing should support wrappers for:
+  - text
+  - leading icons
+  - trailing icons
+- Ensure buttons reference the design system for:
+  - margin
+  - height
+  - padding
+  - spacing
+  - alignment
+- Maintain a consistent design language across the UI, IA, and UX.
+
+---
+
+## Button Styles and Variables
 
 - Start with a default button style and corner radius.
 - Reference the design system for semantic naming conventions.
-- Refeence the design system for corner / border radius for buttons. 
-- Reference the design system for elevation and shadow for buttons. 
-- Reference the design system for hover states for buttons. 
-- Reference the design system for active states for buttons. 
-- Reference the design system for focus states for buttons. 
-- Reference the design system for disabled states for buttons. 
-- Reference the design system for loading states for buttons. 
+- Reference the design system for:
+  - corner radius
+  - elevation
+  - shadow
+  - hover states
+  - active states
+  - focus states
+  - disabled states
+  - loading states
 
-After the default button style and variables are established, you can start to create the button componentry and button states. 
+After the default button style and variables are established, begin creating button component variations and interaction states.
+
+---
 
 ## Button States
 
-- Default state
-- Hover 
+Buttons should support the following states:
+
+- Default
+- Hover
 - Active
-- Focus 
+- Focus
 - Disabled
 - Loading
 - Error
-- Success 
-- Warning 
-- Destructive 
+- Success
+- Warning
+- Destructive
 - Loading Skeleton
 
-## Button Variations 
+---
+
+## Button Variations
 
 - Loading Spinners
-- Success States 
-- Button Text with Trailing and Leading Icons
-- Buttons for Forms
-- Buttons for Navigation
-- Buttons for Actions
-- Icon only Button styles
-- Tertiary Button styles (Ghost buttons)
-- Secondary Button styles
-- Primary Button styles 
+- Success States
+- Buttons with Leading and Trailing Icons
+- Form Buttons
+- Navigation Buttons
+- Action Buttons
+- Icon-only Buttons
+- Tertiary Buttons (Ghost Buttons)
+- Secondary Buttons
+- Primary Buttons
 
-## Button Design System Rules 
+---
 
-Reference the design system in the users repository for the design system rules. Analyze the markdown rules and files to reference. If no such DS system provides the context for how buttons should be designed, developed, and positioned; prompt and ask the user specific questions for creating buttons. 
+## Button Design System Rules
 
-## Button Animations and Motion Design 
+All button implementations should inherit from the active design system’s:
+- spacing rules
+- typography scales
+- motion guidelines
+- semantic tokens
+- component conventions
 
-- Buttons should reference and follow a design system related to animation and motion design.
-- Buttons should follow the Design System and or Motion guidelines that are documented.
-- Buttons should priortize optimaization unless the user states otherwise.
-- Buttons should be designed with clarity with distinct feedback for the end user UX.
-- Button animations should not snap back if they utilize transitions in CSS, SCSS, or imported UI Kits (Tailwind, ShadCN, etc) 
+If no design system exists, prompt the user with questions to establish:
+- sizing
+- spacing
+- typography
+- motion behavior
+- interaction feedback
+- accessibility expectations
 
-## Button Text 
+---
 
-- Text within buttons needs to be legible, readable, and scalable. 
-- Prioritize button legibility over colors, and follow WCAG standars whenever possible.
-- Create buttons that follow Apples HIGS (Human Interface Guidelines). 
-- Text should follow Material or HIGS font sizings and scale in relation to the button.
+## Button Animations and Motion Design
+
+- Buttons should follow the project’s motion and animation guidelines.
+- Motion should enhance usability and feedback, not distract from interaction clarity.
+- Buttons should prioritize optimization unless the user explicitly states otherwise.
+- Button interactions should provide clear visual feedback to users.
+- Avoid animations that snap back abruptly or feel inconsistent.
+- Maintain smooth transitions for:
+  - hover
+  - active
+  - focus
+  - loading
+  - success/error feedback
+
+---
+
+## Button Text
+
+- Text within buttons should remain legible, readable, and scalable.
+- Prioritize legibility over overly stylized visual treatments.
+- Follow WCAG accessibility standards whenever possible.
+- Reference Apple HIG and Material guidelines for scalable typography and sizing.
+- Ensure text scales proportionally with button height and spacing.
+
+---
 
 ## Icon and Image Context
 
-- If the button contains icons or images, ensure they are clear and scalable.
-- Prioritize button clarity over icon and image clarity.
-- Buttons with icons should have a clear hover state and visual feedback.
-- Ensure icons and images do not overwhelm the button text.
+- Icons and images should remain clear, scalable, and visually balanced.
+- Prioritize button clarity over icon complexity.
+- Buttons with icons should maintain strong hover and focus feedback.
+- Ensure icons and images do not overwhelm or compete with button text.
+
+---
 
 ## Touch Targets
 
-- When buttons are pressed on signal visible feedback to the user that the button was touched / clicked / interacted with. 
-- When buttons are used and accessed by accsibility software, cue visual feedback using focus to users so they are aware of which button they are interacting with.
-- Give users more room than anticipated to click on the buttons.
-- Touch targets minimums should be at minimum 44x44px for mobile.
-- Touch targets minimums should be at minimum 48x48px for desktop.
-- Touch targets should have breathing room or margin around them to prevent accidental clicks.
+- Buttons should provide visible feedback when interacted with.
+- Accessibility interactions should include strong focus visibility for keyboard and assistive technology users.
+- Give users more room than anticipated to interact with buttons.
+- Minimum touch targets:
+  - Mobile: 44x44px
+  - Desktop: 48x48px
+- Touch targets should include breathing room and surrounding margin to reduce accidental clicks.
 
+---
 
 # Closing Notes
 
-Button design is the backbone of many design patterns in application design. It's important to established a solid foundation of what users will be interacting with most. Buttons create the communication nexus that bridges the intent and action to formulate input and output for the user. Users expect something to happen when a button is pressed on, and it's crucial we ensure that we relay the correct feedback to them. Whether through scaling buttons down using motion, animation, and or highlighting them using the focus method or adjacent hover/active states. 
+Button design is the backbone of many interaction patterns in application design. It is important to establish a strong foundation for the elements users interact with most frequently.
 
-Keep the buttons clear, concise, and adhere to what the design system allows for and establish the users taste and visual design profile and preferences in context memory. 
+Buttons create the communication nexus between user intent and system action. Users expect clear and immediate feedback when interacting with a button, and it is critical that interactions communicate state and responsiveness effectively.
+
+This can include:
+- scaling
+- motion
+- hover feedback
+- active states
+- focus states
+- loading indicators
+
+Keep buttons clear, concise, scalable, and aligned with the active design system. Establish and preserve the user’s visual taste, interaction preferences, and design language within project context memory.
