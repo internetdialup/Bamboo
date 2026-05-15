@@ -1,8 +1,10 @@
 # Context Entropy
 
-As a project grows and matures, so does the AI agent. The memory banks of an AI agent also grow with the standardization of creating context-orientation and context-summaryv-0.0.1 documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
+As a project grows and matures, so does our AI & ML agents. The memory banks of an AI agent also grow with the standardization of creating context-orientation and context-summaryv-0.0.1 documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
 
-This is known as Context Entropy. Entropy like energy has to go somewhere. It is not infinite, but it is also not static. It can be managed, and redirected. But over time it can slow down. It degrades. That is called Context Decay. An AI agent's ability to recall something starts to degrade with age, and contextual density. Context window sizes are collasped to shore up free memory spaces for new information, and new directives. But that can cause problems if an artifact is discarded and is no longer in the AI agent's working memory.  
+This is known as Context Entropy. Entropy like energy has to go somewhere. It is not infinite, but it is also not static. It can be managed, and redirected. But over time it can slow down. It degrades. This is called Context Decay. Where information parsed starts to become degraded. The retrival slows down, and artifacts get lost in noise. AI and ML agents start to have a harder time with retrieving the right vector, and can accidentally deliver the wrong end point. 
+
+An AI agent's ability to recall something starts to degrade with age, and contextual density. Context window sizes are collasped to shore up free memory spaces for new information, and new directives. But that can cause problems if an artifact is discarded and is no longer in the AI agent's working memory.  
 
 To combat this we need to ensure that we are proactively managing our context in each project we spin up and we can do this by leveraging principles that are laid out in this document, and pulling from other behavior documents that talk about context. 
 
@@ -79,6 +81,14 @@ STIP is about the short term but is should anticipate that it carries its contex
 STIP to LTIP information is the underlying process the AI agent should scan before each handoff to other AI agents, or back to the user, especially parallel processing of information, and agents working adjacently to ensure that there is no contextual loss, and or slow down in the information hierarchy of retrival. 
 
 STIP can utilize NLog, Bubblesorting, and other data sorting techniques to optimize its AI agent path finding to information if it needs to. This should be done by creating a document in docs/ that establishes a standard set of rules in the DevOps pipeline for ensuring STIP to LTIP compliance, coherence, and avoiding degradation and loss.
+
+- RAG techniques
+- AI Agentic Workflow Optimization
+- ML Reinforcement Learning can help with Memory Contextulization over time
+- AI Noise suppression when parsing documents for context.
+- AI and ML Obfuscation techniques for data that is sensitive and or not relevant to the project.
+- Avoiding AIL and ML memory loss and decay over X amount of time.
+- Sorting algo's to process large batches of data concurrently and quickly.
 
 ---
 
