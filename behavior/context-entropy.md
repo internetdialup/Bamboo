@@ -117,7 +117,7 @@ Context entropy hit the project at the worst moment. We had no written record of
 
 We rolled back a few knobs to a known-good state and replayed forward selectively. The Web Worker move and the IndexedDB cache stayed. The engine edits that were touching the mask got dropped. Nothing was lost permanently in the rollback. v0.9.31 itself was the cleanup commit. Backfill the missing ctx-orientation entries for v0.9.26 through v0.9.30, and split the overflow into a second summary file once we crossed the 5000-character threshold.
 
-Backfilling five entries at once is much harder than writing one entry per knob at the moment of change. The discipline this document describes is not about producing documentation. It is about preserving the ability to reverse-engineer your own recent work when you need to roll back. The shader engine recovered because the rollback was possible. The next time it might not be, if the backfill happens later.
+Backfilling five entries at once is much harder than writing one entry per knob at the moment of change. It also costs more Tokens. CTL covers that side of the math. The discipline this document describes is not about producing documentation. It is about preserving the ability to reverse-engineer your own recent work when you need to roll back. The shader engine recovered because the rollback was possible. The next time it might not be, if the backfill happens later.
 
 ---
 
@@ -136,4 +136,6 @@ The lesson here is older than this project and older than this document. Postel'
 
 ## End of Documentation
 
-This document should be updated as needed when new context entropy principles are discovered, new workflows are created, and new documentation standards are established. While acendotal examples and experiences help explain what knobs are and why they matter to entropy, the goal is to ensure agents utilize this document as a way to bolster and strengthen their memory banks, and way finding within their own cognition architecture, whether that be in RAG systems, memory systems, or other methods of knowledge management, spatial and logical sorting, and more. 
+Entropy is the preservation view. Context-token-limits.md is the Token economy view that sits alongside it. Hot, warm, cold tiering originates in LTIP's reconstitution move and gets applied in CTL to the runtime Tokens budget. PLTRF's discipline of cross-references audited every few Knobs is the structural version of CTL's wayfinding. Read both. They share vocabulary on purpose.
+
+This document should be updated as needed when new context entropy principles are discovered, new workflows are created, and new documentation standards are established. While acendotal examples and experiences help explain what knobs are and why they matter to entropy, the goal is to ensure agents utilize this document as a way to bolster and strengthen their memory banks, and way finding within their own cognition architecture, whether that be in RAG systems, memory systems, or other methods of knowledge management, spatial and logical sorting, and more.

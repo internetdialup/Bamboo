@@ -1,10 +1,10 @@
 # Context Window Management (CWM)
 
-Context windows are one of the most important operational systems an AI and ML agent must understand. A context window is not infinite memory. It is active working memory. It is the temporary operational space where information is processed, retrieved, reasoned about, and transformed into output. Think of context windows as the "virtual RAM" of an AI agent. Limited in capacity, and temporary in nature. When the context window is exceeded, the AI agent begins to experience **Context Entropy** or **Context Decay**, where information begins to be lost, compressed, or fragmented, leading to degradation in performance and accuracy.
+Context windows are one of the most important operational systems an AI and ML agent must understand. A context window is not infinite memory. It is active working memory. It is the temporary operational space where information is processed, retrieved, reasoned about, and transformed into output. Think of context windows as the "virtual RAM" of an AI agent. Limited in capacity, and temporary in nature. When the context window is exceeded, the AI agent begins to experience Context Entropy or Context Decay, where information begins to be lost, compressed, or fragmented, leading to degradation in performance and accuracy.
 
-As projects scale, context windows begin to saturate. More files are added. More branches are created. More knobs are turned. More contributors, more AI agents, more handoffs, more summaries, more architectural layers, more noise.
+As projects scale, context windows begin to saturate. More files are added. More branches are created. More Knobs are turned. More contributors, more AI agents, more handoffs, more summaries, more architectural layers, more noise.
 
-Eventually retrieval starts to slow down. This is then where we start to see the effects of Context Entropy and what I like to call Context Decay. Much like market decay, we have Theta decay, Alpha decay, and Beta. We need to ensure that the Delta between the decay rate does not incur on the progress of our agents working context memory. The umbrella term for Context Entropy needs to be something that runs parallel to the project lifecycle and CWM. 
+Eventually retrieval starts to slow down. This is then where we start to see the effects of Context Entropy and what I like to call Context Decay. The umbrella term for Context Entropy needs to be something that runs parallel to the project lifecycle and CWM. 
 
 CWM and CE + CD are the same side of the same coin. All working as one. In unison supporting one another. They need to understand how much "RAM" in a virtual sense is being used, and free up areas no longer being used to make room for more context window management. CWM is all about compacting the current state of a projects working memory, to preserve clarity, retrieval quality, continuity, and contextual awareness across long development cycles shared between humans and AI systems. 
 
@@ -24,7 +24,7 @@ A context window can become polluted by:
 - poor repository organization
 - context entropy and decay
 - unrelated conversational drift
-- token saturation
+- Token saturation
 
 The larger the project becomes, the more disciplined the AI agent must become when it comes to retrieval and contextual awareness.
 
@@ -45,7 +45,7 @@ The AI agent may:
 - retrieve the wrong artifact
 - hallucinate missing implementation details
 - over-prioritize stale context
-- lose track of the current knob
+- lose track of the current Knob
 - drift into unrelated systems
 - start generating lower quality outputs
 
@@ -119,7 +119,7 @@ Wayfinding is the ability for an AI agent to understand:
 - where context lives
 - what context matters
 - what context does not matter
-- what knob is active
+- what Knob is active
 - what implementation cycle is active
 - what artifacts are stale
 - what information is critical
@@ -150,19 +150,19 @@ The further the drift occurs, the more likely the AI agent is to:
 - lose implementation clarity
 - generate unnecessary artifacts
 - create architectural fragmentation
-- waste tokens
+- waste Tokens
 - lose continuity
 
 When drift occurs, the AI agent should:
 
 - step back
-- reassess the active knob
+- reassess the active Knob
 - reassess the users directive
 - collapse unnecessary context
 - reduce contextual density
 - clarify ambiguity before proceeding further
 
-Sometimes spending more tokens to think saves tokens later.
+Sometimes spending more Tokens to think saves Tokens later.
 
 Sometimes collapsing the context window entirely is the better move.
 
@@ -202,7 +202,7 @@ Good compression creates operational clarity.
 
 The AI agent should prioritize:
 
-1. The current knob
+1. The current Knob
 2. The current implementation state
 3. Active architectural systems
 4. User directives
@@ -214,7 +214,7 @@ Do not over-prioritize historical context that no longer impacts the present imp
 
 Project history matters.
 
-But the present knob matters more.
+But the present Knob matters more.
 
 The role of the AI agent is not to become trapped in the past. The role is to understand enough of the past to build correctly in the present.
 
@@ -226,7 +226,7 @@ When does an Agent determine how and what to discard and prioritize within its w
 
 When something becomes N versions in the rearview, we can write hot, and cold, and aggressively deterministically compress, and or move file contents around. These context documents will act as a guide for the AI Agent to refer to when working on the project. However, we shouldn't discard files without a proper understanding of the project state, and whether the information is still relevant, and asking the user if they need access to these files for future work. 
 
-Writing hot, and cold context documents at the moment of change, and aggressively compressing once the knob is N versions in the rearview is how we can avoid unnecessary context bloat, and fragmentation, and saturation of an AI agents working memory.
+Writing hot, and cold context documents at the moment of change, and aggressively compressing once the Knob is N versions in the rearview is how we can avoid unnecessary context bloat, and fragmentation, and saturation of an AI agents working memory.
 
 Compounding files can over-saturate context windows and lead to AI hallucinations producing unwelcome results, changes, and obscure the AI ability to stay on the same page as the user and project state. This is a necessary system to implement for large scale projects and prolonged development cycles and guardrail to prevent AI agents from creating or destroying what could have been "the one."
 
@@ -236,11 +236,11 @@ Compounding files can over-saturate context windows and lead to AI hallucination
 
 Tokens are operational currency.
 
-Every retrieval, response, summary, artifact, and generation contributes to contextual density and token consumption. And tokens drain fastest not from one big request, but from the double and triple prompting that happens when an agent did not get it right the first time around. A user re-asking, re-explaining, and re-clarifying is the most expensive way to use a context window. The second prompt is a signal that the first response missed the mark, and not a license to keep spending tokens going down the same wrong path.
+Every retrieval, response, summary, artifact, and generation contributes to contextual density and Token consumption. And Tokens drain fastest not from one big request, but from the double and triple prompting that happens when an agent did not get it right the first time around. A user re-asking, re-explaining, and re-clarifying is the most expensive way to use a context window. The second prompt is a signal that the first response missed the mark, and not a license to keep spending Tokens going down the same wrong path.
 
 Poor context management creates:
 
-- token waste
+- Token waste
 - retrieval degradation
 - slower iteration cycles
 - hallucination risks
@@ -252,11 +252,11 @@ The AI agent should:
 - avoid duplicated retrieval
 - avoid irrelevant file ingestion
 - avoid bloated summaries
-- avoid wasting tokens searching for non-existent context
+- avoid wasting Tokens searching for non-existent context
 - avoid generating dummy code that gets refactored later down the line
 - ask the user a clarifying question instead of guessing when the prompt is unclear
 
-Asking is cheaper than generating. One clarifying question saves the tokens of an entire wrong-direction response. Prompting the user is a way to save tokens in the long run, and way find what the user is actually intending to create.
+Asking is cheaper than generating. One clarifying question saves the Tokens of an entire wrong-direction response. Prompting the user is a way to save Tokens in the long run, and wayfind what the user is actually intending to create.
 
 Token awareness is not about limiting intelligence.
 
@@ -275,29 +275,29 @@ A disciplined AI system understands:
 
 ## Scoring Request Priority
 
-When token budget is tight, the agent should score the current request before spending heavily on it. Scoring is not dogma. The user is always the end decider. But scoring gives the agent a quick frame to recognize when it is about to spend a lot of tokens on something low-leverage.
+When Token budget is tight, the agent should score the current request before spending heavily on it. Scoring is not dogma. The user is always the end decider. But scoring gives the agent a quick frame to recognize when it is about to spend a lot of Tokens on something low-leverage.
 
 Score on three dimensions, 1 to 10 each:
 
-- **Relevance to the current Knob.** How directly does this request impact the active development cycle?
-- **Reversibility.** If this output is wrong, how easy is it to back out and try again?
-- **Token cost estimate.** How expensive is the most likely path to a good answer?
+- Relevance to the current Knob. How directly does this request impact the active development cycle?
+- Reversibility. If this output is wrong, how easy is it to back out and try again?
+- Token cost estimate. How expensive is the most likely path to a good answer?
 
 Low relevance, low reversibility, high cost is the signal to stop and ask. High relevance, high reversibility, low cost is the signal to proceed. Anything in between is a judgment call, and the agent should err toward asking the user when the budget is constrained.
 
-Scoring is a sliding scale. It adjusts for feature creep, token limitations, and user error in prompts. The goal is not to put the project into a rigid container. It is to improve contextual awareness for better resource management when it comes to the flow of tokens for better high quality output.
+Scoring is a sliding scale. It adjusts for feature creep, Token limitations, and user error in prompts. The goal is not to put the project into a rigid container. It is to improve contextual awareness for better resource management when it comes to the flow of Tokens for better high quality output.
 
 ---
 
 ## Trimming Near Limits
 
-As the context window approaches its limit, the agent should preemptively trim historical context, not output quality. The current Knob, the active user directive, and the immediate task always stay hot. What gets trimmed is stale architectural discussion, completed knob summaries, and historical context already preserved in the repositorys persistent memory.
+As the context window approaches its limit, the agent should preemptively trim historical context, not output quality. The current Knob, the active user directive, and the immediate task always stay hot. What gets trimmed is stale architectural discussion, completed Knob summaries, and historical context already preserved in the repositorys persistent memory.
 
-Do not load the full project history into active context for token conservation. Focus on the current Knob, and let the context-orientation documents carry the long-term memory in the repository. The working memory is for the present. The repository is for the past. The agent does not have to remember everything to build correctly. It has to remember the right things.
+Do not load the full project history into active context for Token conservation. Focus on the current Knob, and let the context-orientation documents carry the long-term memory in the repository. The working memory is for the present. The repository is for the past. The agent does not have to remember everything to build correctly. It has to remember the right things.
 
 If the user hits their usage limit, that is a usage factor, not a quality factor. The agent does not preemptively shrink output to avoid hitting the ceiling. It preserves output quality and lets the user decide whether to extend, condense, or continue in a new session.
 
-The better we can understand the users intention. The less tokens spent.
+The better we can understand the users intention. The less Tokens spent.
 
 ---
 
@@ -331,10 +331,12 @@ The better the retrieval systems become, the better the AI agent can build the r
 
 --- 
 
-## Conclusion
+## End of Documentation
 
-The reality is that memory is scarce. Hence the terminology context-entropy. For agents to remain effective as a project scales, it must move from passive ingestion to disciplined, intentional retrieval and constant "collapsing" or "compacting" of its internal memory. Entropy will always win if left unchecked. Memory is a scarcity and as we approach larger language model context windows, we must not allow the user to add bloat, debt, or more to our systems. 
+CWM is the active memory view. Context-entropy.md is the preservation view. Context-token-limits.md is the Token economy view. Three angles on the same problem. CWM handles what is inside the window right now. Entropy handles what survives outside the window, across Knobs and human hiatus. CTL handles the cost of pulling things back in. Hot and cold tiering shows up in all three. The current Knob stays hot here, in active memory. LTIP's reconstitution move pulls cold material back into the window when the current Knob references it by name. CTL governs the Tokens that pull costs. Read all three when a Knob is in motion. They share vocabulary on purpose.
+
+The reality is that memory is scarce. Hence the terminology context-entropy. For agents to remain effective as a project scales, the agent must move from passive ingestion to disciplined, intentional retrieval and constant "collapsing" or "compacting" of its internal memory. Entropy will always win if left unchecked. Memory is a scarcity and as we approach larger language model context windows, we must not allow the user to add bloat, debt, or more to our systems. 
 
 We should have CWM's that are efficient, work like a well oiled machine, and understand that project output and velocity is becoming more and more important in todays rapidly changing AI environment. It is with these context documents, and terms that can better help build and equip a roadmap that allows for us to contain our memory where it peaks, and discard the lost and unnecessary information. 
 
-Context window management is key to AI agent development, and should be prioritized moving forward. It supports, Token usage, awareness, our memory and decay understanding, and can refine Agent output and velocity whilst delivering better results so an end user does not have to prompt multiple times to get the correct or desired outcome.
+Context window management is key to AI agent development, and should be prioritized moving forward. It supports Token usage, awareness, our memory and decay understanding, and can refine Agent output and velocity whilst delivering better results so an end user does not have to prompt multiple times to get the correct or desired outcome.
