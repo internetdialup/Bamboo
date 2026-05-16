@@ -97,21 +97,17 @@ STIP can utilize vector embeddings, BM25 indexing, hybrid retrieval, and other s
 
 ## Long term information preservation (LTIP)
 
-Long term information preservation (LTIP) is the process of preserving information in a way that can be retrieved and used at a later time. This can be done through a variety of methods, such as documentation, code comments, and version control systems. LTIP is important because it allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. 
+LTIP is what happens after STIP runs out of room. STIP holds the current cycle in working memory. LTIP is the move from working memory into the repo itself, where the information has to survive the next context window collapse, the next agent handoff, and the next human hiatus.
 
-LTIP has several benefits. It allows AI agents to maintain context over time and to make better decisions. It also helps to reduce context entropy. Furthermore, it allows for the creation of a shared understanding of the project between all contributors, human and AI alike. 
+There are three distinct moves inside LTIP and they fail in different ways. Most projects do one of them well, one of them badly, and forget the third one exists.
 
-LTIP can be implemented through a variety of methods. These include:
+The first move is getting the information out of the agent and into the repo. Working memory does not survive compaction. Anything worth keeping has to leave the context window and land somewhere durable. A ctx-orientation entry, a commit message that actually says something, a summary file when the orientation file overflows. The discipline here is not what to save. It is when. Saving at the moment of change is cheap. Saving five Knobs later, after the project has already drifted, is what produced the v0.9.31 backfill scramble.
 
-- Documentation: Documentation is a way to preserve information in a way that can be retrieved and used at a later time. It can include code comments, design documents, and user guides. Documentation is important because it allows AI agents to maintain context over time and to make better decisions. 
+The second move is making the saved thing findable again. Information that exists in the repo but never gets loaded back is not preserved, it is buried. This is where LTIP fails quietly. A 4900 character summary-2 file that no agent ever opens on cold start is dead storage. The fix is structural. Filenames that telegraph their contents, headers an agent can scan without reading the body, cross-references from context-orientation back to the canonical docs so an agent dropped into the repo cold can follow the trail without ingesting everything.
 
-- Code comments: Code comments are a way to preserve information in a way that can be retrieved and used at a later time. They are important because they allow AI agents to maintain context over time and to make better decisions.
+The third move is reconstitution. Pulling the right slice back into context at the right time, without dragging the whole archive in with it. This is where hot and cold storage tiering does its work. The active Knob lives hot, in the current ctx-orientation entry. The last three Knobs live warm, easy to scan in the same file. Everything beyond that is cold, and only gets read when something in the current Knob references it by name. LTIP without reconstitution discipline is hoarding. The information is technically preserved and effectively useless.
 
-- Version control systems: Version control systems are a way to preserve information in a way that can be retrieved and used at a later time. They are important because they allow AI agents to maintain context over time and to make better decisions. 
-
-- ML agent memory management systems. 
-
-- User directives and standards including: documentation standards, architecture, DevOps, Deployment Specifications, and more. 
+Documentation, code comments, version control, agent memory systems, user directives. Those are the surfaces LTIP lives on. They are not what LTIP is. LTIP is the discipline of writing things down at the moment they matter, organizing them so they can be found again, and pulling only what is needed when it is needed.
 
 ---
 
@@ -129,9 +125,16 @@ We rolled back a few knobs to a known-good state and replayed forward selectivel
 
 Backfilling five entries at once is much harder than writing one entry per knob at the moment of change. The discipline this document describes is not about producing documentation. It is about preserving the ability to reverse-engineer your own recent work when you need to roll back. The shader engine recovered because the rollback was possible. The next time it might not be, if the backfill happens later.
 
-Worked Example: ui-refactor in Usage Menubar
+---
+
+## Worked Example: ui-refactor in Usage Menubar
+
 A second knob, from a different project. Usage Menubar is a macOS multi-agent usage observability tool. Less obscurity, more clarity around how AI usage actually breaks down across vendors and sessions. The knob is commit 9387fc6, tagged ui-refactor.
+
 The lead-up was a long arc of UI polish. Jello bounce on the navbar, depth shadow on the tabbar, Apple-style glass button interactions, refined refresh animation isolating rotation to the inner glyph, glassmorphism budget toggle, persistent ⌘Q modal, single-pill skeleton, exaggerated tab interactions. Each commit improved the surface. Each commit felt like progress.
+
 Then I started building for localization. Japanese first. And the moment I turned on accessibility and large text mode while running a Japanese locale, the polish stopped holding. Buttons that looked perfect in English at default sizes broke at larger sizes. Layouts that were tight in Latin characters overflowed with Japanese glyphs. The jello bounces and the glass shadows were doing their job, but the structure underneath them could not accommodate a real user whose environment was not the same as mine.
+
 That was the refactor moment. Polish versus form and function. Form and function won. The UI Refactor commit pulled the structure apart and rebuilt it so the surface effects sat on top of layout that could actually flex. Polish came back afterward, but it came back on top of something that could hold it.
+
 The lesson here is older than this project and older than this document. Postel's Law: be liberal in what you receive, conservative in what you give. The UI was conservative in what it gave (clean, polished, designed) but it was not liberal in what it received (Japanese characters, large text mode, accessibility flags, real user environments). Dog-fooding for accessibility and localization is what surfaces that gap. Context entropy at the UI layer is not always about losing history. Sometimes it is about polish accumulating faster than the foundation it sits on, until the gap shows up only when a user who is not you arrives.
