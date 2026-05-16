@@ -45,6 +45,19 @@ Tokens are expensive, and should be used wisely in order to not bloat the contex
 15. Spend tokens to think if it will save you tokens in the long run. This should be done by quickly understanding the linearity of the project state, and not the entire project history.
 16. Do not concern yourself with the project history or scope. Focus on the current Knob for token conservation.
 
+## Context Scoring Critiera
+
+1. RAG Retrival
+2. Understanding project scope
+3. Understanding token limits and conservation
+
+Prioritize requests based on impact, complexity, and relevance to the current development cycle. 
+Do not add additonal scoring criterias unless explicitly stated by the user. Keep scoring simple, but relative to the request to create a balanced scoring metric and system. Scoring will fluctuate so allow it to be a sliding scale at times to adjust for the imbalances that can occur during feature creep, token limitation, and user request / user error in prompts.
+
+The goal of scoring is to not put the project into a rigid container. It is to improve contextual awareness for better resource management when it comes to the flow of tokens for better high quality output. 
+
+The better we can understand the users intention. The less tokens spent.
+
 ## Context Limiting Strategies
 
 - Collapse context and limit token usage when possible. 
