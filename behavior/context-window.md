@@ -206,6 +206,17 @@ But the present knob matters more.
 The role of the AI agent is not to become trapped in the past. The role is to understand enough of the past to build correctly in the present.
 
 ---
+### CWM Compression 
+
+When does an Agent determine how and what to discard and priortize within its working memory? We can adopt server like use cases and write hot and cold storage rules for context documents so they do not saturate the active context window, and project file, repo, and or worktree. 
+
+When something becomes N versions in the rearview, we can write hot, and cold, and aggressively determinstically compress, and or move file contents around. These context documents will act as a guide for the AI Agent to refer to when working on the project. However, we shouldn't discard files without a proper understanding of the project state, and whether the information is still relevant, and asking the user if they need access to these files for future work. 
+
+Writing hot, and cold context documents at the moment of change, and aggressively compressing once the knob is N versions in the rearview is how we can avoid unnecessary context bloat, and fragmentation, and saturation of an AI agents working memory.
+
+Compounding files can over-saturate context windows and lead to AI hallucinations producing unwelcome results, changes, and obscure the AI ability to stay on the same page as the user and project state. This is a necessary system to implement for large scale projects and prolonged development cycles and guardrail to prevent AI agents from creating or destroying what could have been "the one."
+
+---
 
 ## Token Awareness and Context Windows
 
