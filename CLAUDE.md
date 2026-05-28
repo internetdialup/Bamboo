@@ -12,9 +12,10 @@ If `AGENT.md` and this file disagree, `AGENT.md` wins. This file is an overlay, 
 
 `Documentation.md` is not a product. It is a documentation library — a fork-and-go starter kit of `.md` files that other repositories ingest to give their agents shared rules, shared vocabulary, and shared Skills regardless of vendor.
 
-The repo is laid out across four working folders plus `docs/`:
+The repo is laid out across five working folders plus `docs/`:
 
 - `behavior/` — the rules an agent obeys. Context, memory, handoffs, Token economy. Cold-start required.
+- `architecture/` — framework-level memory + workflow protocols. Memory Watchdog 🐕, Memory Drift, Memory Rot, CPP. Cold-start required when the task touches handoff discipline, multi-agent orchestration, or long-running memory.
 - `skills/` — portable AI capabilities that work the same across Claude, Codex, Gemini, GPT, Copilot.
 - `workflows/` — DevOps and project lifecycle patterns. Forkable, overridable.
 - `design/` — project-specific UI/UX rules. Skip on cold start.
@@ -34,10 +35,12 @@ See `docs/repo-organization.md` for the full layout and what each file covers. R
 6. `behavior/context-window.md` (CWM) — the active memory view. Saturation, drift, compression.
 7. `behavior/context-token-limits.md` (CTL) — the Token economy view. Scoring, wayfinding, conservation practices.
 8. `behavior/context-utility.md` — the index for `behavior/`. Use it as a map, not a substitute for the docs.
-9. `docs/context-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
-10. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
-11. `workflows/` — only if the task touches project setup or context governance.
-12. `design/` — only if the task is design or UI work.
+9. `behavior/user-model.md` — the user view. How to read the person on the other side of the prompt, when to ask vs guess, what user psychology to expect.
+10. `architecture/` — framework-level protocols. `memory-watchdog.md` (🐕 gatekeeper for memory + context), `memory-drift.md` (Memory Drift + Memory Rot, the lifecycle decay terms), `workflow-tools.md` (CPP — Context Preservation Protocol, Canonical AI Agent Profile), `memory.md` (the foundational memory rules layer).
+11. `docs/context-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
+12. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
+13. `workflows/` — only if the task touches project setup or context governance.
+14. `design/` — only if the task is design or UI work.
 
 You do not need to load all of these into active context at once. Use the wayfinding discipline in `context-token-limits.md`: pull what the current task references, leave the rest cold. We are using hot, and cold to write to context memory.
 

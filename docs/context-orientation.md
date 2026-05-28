@@ -8,6 +8,16 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: user-model split + LTRP retirement + architecture/ cold-start integration — Thursday, May 28, 2026
+
+Net-new user-modeling content (Analyze User Behavior, Talk to the User, User Psychology) extracted from `architecture/memory.md` into a new `behavior/user-model.md` alongside the four context-* docs. The original `memory.md` stays in place — `architecture/` is a real working folder with siblings (memory-drift, memory-watchdog, workflow-tools added the same week). The earlier draft of this Knob proposed deleting `architecture/`; that was wrong and got reverted before merge.
+
+Vocabulary canonicalized: `LTRP` retired via a clarifier in `context-rules.md`, plus a small canonical-terms glossary block added with one-line entries for **Watchdog**, **Memory Drift**, **Memory Rot**, and **CPP** — each pointing at its canonical home in `architecture/`. `Canonical AI Agent Profile` intentionally not canonicalized yet; awaiting more usage.
+
+Same Knob wires `architecture/` into the cold-start path. `README.md`, `AGENT.md`, `CLAUDE.md`, `docs/repo-organization.md`, and `behavior/context-utility.md` updated so cold-start agents see the folder as part of the standard set ("five working folders" replaces "four"). PLTRF discipline applied to the change itself — every cross-reference lands atomically in this single commit.
+
+---
+
 ## Knob: docs scaffolding + CLAUDE overlay — Friday, May 22, 2026
 
 Created `docs/repo-organization.md` as the structural map of the four-folder layout (`behavior/`, `skills/`, `workflows/`, `design/`) plus `docs/` for this repo's own operational memory. The file describes what each folder is for, what lives inside it, and the cold-start consultation order. It is meant to be the structural source of truth for the repo while `AGENT.md` remains the behavioral source of truth and this file (`context-orientation.md`) remains the temporal source of truth. The three do not duplicate each other.

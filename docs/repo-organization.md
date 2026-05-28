@@ -18,12 +18,13 @@ Repository-md/
 │   ├── repo-organization.md     # ← this file. The map.
 │   └── context-orientation.md   # Per-Knob change log. The Knob-by-Knob history.
 ├── behavior/                    # The rules an agent obeys. Cold-start required.
+├── architecture/                # Framework-level memory + workflow protocols. Cold-start required.
 ├── skills/                      # Portable AI capabilities. Cross-vendor.
 ├── workflows/                   # DevOps and project lifecycle patterns.
 └── design/                      # Project-specific UI/UX rules. Skip on cold start.
 ```
 
-Four working folders plus `docs/`. The four folders are deliberate. They map to four different jobs an agent has to do, and they do not bleed into each other.
+Five working folders plus `docs/`. The five folders are deliberate. They map to five different jobs an agent has to do, and they do not bleed into each other.
 
 ---
 
@@ -47,8 +48,22 @@ The foundational rules. Everything an agent has to internalize before it touches
 - `context-window.md` (CWM) — the active memory view. Treats the context window as virtual RAM. Saturation, drift, compression, prioritization, trimming near limits, Token awareness.
 - `context-token-limits.md` (CTL) — the Token economy view. Scoring requests on a 1–10 scale (Impact, Complexity, Relevance to current Knob), wayfinding, context optimization at runtime, conservation practices.
 - `context-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `context-NAME.md` doc spawns.
+- `user-model.md` — the user view. How the agent reads, models, and adapts to the person on the other side of the prompt. Analyze User Behavior, Talk to the User, User Psychology. Sits alongside the four context-* docs as the human-facing layer.
 
-These four docs share vocabulary on purpose. Rules sets the foundation, entropy preserves across time, window manages the live session, and token-limits prices the cost of pulling things back in. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
+Rules sets the foundation, entropy preserves across time, window manages the live session, token-limits prices the cost of pulling things back in, and user-model reads the person on the other side. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
+
+---
+
+## architecture/
+
+Framework-level memory + workflow protocols. Rides alongside `behavior/` rules — `behavior/` governs how the agent thinks inside a single session, `architecture/` governs how memory survives across multi-agent handoffs, branch merges, and long project hiatuses. Cold-start required when the task touches handoff discipline, multi-agent orchestration, or long-running memory.
+
+- `memory.md` — the foundational memory rules layer. Hot/cold storage, memory layer examples table, memory failure states list, management best practices.
+- `memory-drift.md` — Memory Drift (gradual loss of memory coherence over a project's lifecycle, distinct from mid-session Context Drift) + Memory Rot (stale files compounding into encroachment on active context). How to notice drift ahead of time, how to avoid Memory Rot.
+- `memory-watchdog.md` — the Memory Watchdog 🐕. Gatekeeper for memory + context, auditor of standards, runner of sanitization. Adjustable aggression level. The shepherd that guards the gates.
+- `workflow-tools.md` — Workflow Tools governance + CPP (Context Preservation Protocol) + Canonical AI Agent Profile + Frictionless Behavior Standards. How agents adapt across vendor IDEs without fragmenting.
+
+The four docs cross-reference each other heavily. `workflow-tools.md` repeatedly invokes the Watchdog as the canonical decision-maker for memory archiving. `memory-drift.md` describes the failure mode the Watchdog defends against. Treat the folder as a tight cluster, not a list.
 
 ---
 
@@ -100,11 +115,12 @@ For an agent landing in this repo for the first time:
 1. `README.md` — what this repo is.
 2. `AGENT.md` — how to enter it.
 3. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
-4. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md`.
-5. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
+4. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md` → `user-model.md`.
+5. `architecture/memory.md` → `memory-drift.md` → `memory-watchdog.md` → `workflow-tools.md`.
 6. `docs/context-orientation.md` — what changed recently and why.
-7. `workflows/` — only if the task touches setup or context governance.
-8. `design/` — only if the task is design work.
+7. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
+8. `workflows/` — only if the task touches setup or context governance.
+9. `design/` — only if the task is design work.
 
 This file lives in `docs/` and is itself part of the cold-start map. When you add a folder or rename one, update this file in the same commit that does the rename. That is the PLTRF discipline applied to the map itself.
 

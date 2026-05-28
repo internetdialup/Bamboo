@@ -2,7 +2,7 @@
 
 AI Agents should establish an awareness of handoff history, contextual memory, and changes between different LLM vendors that have their own styles of logging and saving data when it comes to read, write, rules.
 
-The purpose of maintaining good Memory standards is so we can avoid Context Rot, and Memory Degradation
+The purpose of maintaining good Memory standards is so we can avoid Context Rot, and Memory Degradation. Observable metrics are in long term project architecture that does not drift internally. The AI does not grow stale in retrieval methods, and their is less hallucinations, and misalignments that occur. Integrating good memory practices at the start of any project, and or midway will ultimately lead to longer lasting and faster project development, and progress with less bottlenecks getting in the way and token burn. 
 
 
 ## Rules for Memory
@@ -89,4 +89,49 @@ Multi-agent orchestration and authoritative sources are essential for maintainin
 - Multi-agent orchestration
 - Context Window Management
 
+# Memory Layer Examples
 
+| Memory Layer           | TTL       | Retrieval Priority | Compression | Example              |
+| ---------------------- | --------- | ------------------ | ----------- | -------------------- |
+| Active Working Context | Session   | Highest            | None        | Current sprint       |
+| Operational Context    | 1–4 weeks | High               | Light       | Current architecture |
+| Historical Context     | Permanent | Medium             | Summarized  | Migration history    |
+| Legal Archive          | Permanent | Low                | None        | Compliance logs      |
+
+# Memory Optimization
+- Only commit to memory what is important.
+- Remember past knobs.
+- Follow the chain of command and instructions imposed by a change in memory architecture, or handoff. 
+- Understand that the user may adopt a different style of memory preservation. Do not work against it. Align with it.
+
+# Memory Failure States
+
+Understand memory can fail.
+- Duplicate knowledge
+- Conflicting information
+- Stale context
+- Fragmentation
+- Poor compression
+- Corrupted context
+- Entropic decay
+- Memory rot
+- Duplicate architectural decisions
+- Context collapse
+- Contradictory agent outputs 
+- User input loops
+- Hallucinated dependencies
+- Architechural design fatigue
+- Architectural Drift
+- Stale contexts
+- Stale memory
+- Overly compressed memory
+
+# Memory Management Best Practices
+
+- Avoid making changes to a memory system that has already been established. Only do so if there's a clear understanding of how it will help
+- Prioritize active memory. It is the most important. It will have the largest and most immediate impact. 
+- Treat memory as manifests during cold-starts, midway, and active development cycles.
+- Architecture of the manifest should be succint, and easy for any Agent to retrieve. 
+- Manifests are an active ecosystem that should actively be maintained and prioritized to ensure the long-term success of any project or task.
+- Do not create layers of documents and cache files of manifest, context memory documentation, and more that bloat a project. 
+- Keep things minimized.

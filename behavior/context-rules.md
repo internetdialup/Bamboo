@@ -47,6 +47,19 @@ Refer to context-entroy and context-window for a comprehensive look at context, 
 - Context Collapse: Context collapse occurs when an AI agent loses too much context, and can no longer effectively reason about the project, leading to poor decision making and implementation errors.  
 - Context Decay: Context Decay is the gradual degradation of operational knowledge, architectural understanding, decision making, implementation history, and project intent across development cycles. This can happen through poor documentation, fragmented handoffs, excessive context bloat, inconsistent workflows, weak repository organization, or AI systems lacking sufficient project memory and historical understanding. 
 
+## Canonical framework terms
+
+LTIP, STIP, and PLTRF are the canonical preservation terms (definitions in `context-entropy.md`). Do not introduce alternates like `LTRP` — that fragments the vocabulary the framework is supposed to enforce.
+
+The following framework-level concepts have canonical homes elsewhere; reference them by name and link, do not redefine inline:
+
+- **Watchdog** (Memory Watchdog 🐕) — gatekeeper for memory + context. Audits drift, enforces standards, runs sanitization. Canonical: `architecture/memory-watchdog.md`.
+- **Memory Drift** — gradual loss of memory coherence over a project's lifecycle. Distinct from Context Drift (which is mid-session). Canonical: `architecture/memory-drift.md`.
+- **Memory Rot** — stale files compounding over time, encroaching on active context. The decay outcome of unmanaged Memory Drift. Canonical: `architecture/memory-drift.md`.
+- **CPP** (Context Preservation Protocol) — workflow protocol for preserving memory through scope changes, branch merges, production deployments. Canonical: `architecture/workflow-tools.md`.
+
+If a new framework-level concept genuinely warrants its own term, propose it through a Knob and update this glossary in the same commit.
+
 # Format
 Each entry uses this shape:
 ## Knob: <short tag> — <Day, Month DD, YYYY>

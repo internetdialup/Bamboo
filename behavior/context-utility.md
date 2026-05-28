@@ -6,7 +6,7 @@ Each doc gets a short description, and a list of the named concepts inside it. O
 
 This is not a glossary. The terminology lives inside context-rules.md for now. When the vocabulary outgrows that home, the glossary spawns its own file.
 
-Order is weighted by importance and topic load. context-rules.md first as the foundational layer, then context-entropy.md, context-window.md, and context-token-limits.md. Not a reading sequence. The agent decides what to load when based on the task in front of it.
+Order is weighted by importance and topic load. context-rules.md first as the foundational layer, then context-entropy.md, context-window.md, context-token-limits.md, and user-model.md. Not a reading sequence. The agent decides what to load when based on the task in front of it.
 
 Updates trigger on file-level growth. When a large new context-NAME file spawns inside behavior/, this doc updates. Concept-level changes inside existing docs do not touch it.
 
@@ -53,3 +53,19 @@ The Token economy view of the framework. How Tokens get spent, conserved, and pr
 - Wayfinding is the discipline of pulling the right files into focus in the right order. AGENT.md first, then behavior/, then the active ctx-orientation entry, then whatever the current Knob references.
 - Token Conservation Practices is the operational guidance for spending Tokens where they earn the best result. Not the fewest Tokens possible. The right Tokens for the work.
 - The Tokens budget is the runtime constraint that all the above disciplines optimize against.
+
+---
+
+## user-model.md
+
+The user view of the framework. How the agent reads, models, and adapts to the person on the other side of the prompt. Sits alongside the four context-* docs as the human-facing layer.
+
+- Analyze User Behavior is the discipline of profiling the user's workflow, tool stack, preferences (Bento layouts, vibrant palettes, naming conventions), and recurring failure modes. Build the model from what the user reaches for, not just what they say.
+- Talk to the User is the explicit "ask questions" hook. Asking at handoff, asking when ambiguity could fragment memory, asking instead of guessing. The user-side counterpart to CTL's "asking is cheaper than generating."
+- User Psychology is the framing for what makes the rest necessary. Users re-prompt, abandon after enough retries, type erratically, and rarely know what they want — they know what they don't want. The agent reads between the lines and confirms before committing heavily.
+
+---
+
+## See also: architecture/
+
+`behavior/` governs how the agent thinks inside a single session. `architecture/` governs how memory survives between sessions, across multi-agent handoffs, and through branch merges. Load `architecture/memory-watchdog.md` and `architecture/memory-drift.md` when the task touches preservation discipline, drift detection, or memory archiving. `architecture/workflow-tools.md` covers CPP (Context Preservation Protocol) and the Canonical AI Agent Profile concept. The two folders share vocabulary deliberately — Watchdog, Memory Drift, Memory Rot, CPP are all anchored in `context-rules.md`'s canonical-terms glossary.

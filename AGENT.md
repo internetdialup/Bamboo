@@ -8,7 +8,11 @@ Order of operations on first contact:
 
 ## Read behavior/ first
 
-Read everything in behavior/ first. That is where the rules live. Context entropy, context window management, how Knobs work, what STIP and LTIP mean. Without this you will fragment the repo within a few Knobs.
+Read everything in behavior/ first. That is where the rules live. Context entropy, context window management, how Knobs work, what STIP and LTIP mean, and how to read the user on the other side of the prompt (user-model.md). Without this you will fragment the repo within a few Knobs.
+
+## Check architecture/
+
+Read architecture/ next. That is where the framework-level protocols live — the Memory Watchdog (🐕), Memory Drift, Memory Rot, and CPP (Context Preservation Protocol). These ride alongside the behavior/ rules and govern how memory survives across multi-agent handoffs, branch merges, and long project hiatuses. Cold-start required when the task touches handoff discipline, multi-agent orchestration, or anything long-running.
 
 ## Load Skills
 
