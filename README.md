@@ -44,5 +44,6 @@ Feel free to fork this GitHub to your liking. Just a bunch of .md files that AI 
 
 ### Updates
 
+- 5.28.26 - Added Watchdog and Drift to Architecture 🐕
 - 5.11.26 - Initial Release. Files will be populated over the coming weeks. 
 - 5.16.26 - Added and rewrote Context documents, Updated Skills folder, and created AGENT.md
