@@ -1,5 +1,7 @@
 # Active Dreaming Memories (ADM)
 
+AI does not dream. It can create episodic references of past architecture, design decisions, user input, and anything between the input and output interaction. It can recall these from a cold state when the project is inactive. Keeping this context alive through an active dreaming protocol can help mitigate memory loss between project handoffs, and usage sessions.
+
 ADM Protocols should align with CRUD and RAG practices inside the repo. Active Dreaming is the offline phase: when a project is cooling down, not actively being worked on by the user, and not being pushed forward by an external or internal force updating the codebase or architecture.
 
 ADM helps reduce retrieval interference compared to standard RAG approaches. But ADM should not replace RAG. Combining RAG and ADM creates a sturdier context retrieval system and memory operating system. Memory context decay is real, and designing RAG and ADM methods that speak to the Memory Watchdog gives the repo a stronger memory toolchain.

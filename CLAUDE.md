@@ -47,7 +47,7 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 ## Claude-shaped operating notes
 
-**Skills.** Skills in this repo live under `skills/` and use the standard frontmatter format with `name:` and `description:` fields. The first skill is `repo-cognition`. When Claude operates in environments that expose Skills through a runtime (Claude Code, Cowork mode, the Agent SDK), the `SKILL.md` files here can be loaded the same way. Vendor overlays (`CLAUDE.md`, `CODEX.md`, `GEMINI.md`) sit alongside `SKILL.md` inside each skill folder so the same capability ports cleanly across runtimes.
+**Skills.** Skills in this repo live under `skills/` and use the standard frontmatter format with `name:` and `description:` fields. `repo-cognition` is the base Skill, with memory Skills split out when memory-context or Watchdog work is the task. When Claude operates in environments that expose Skills through a runtime (Claude Code, Cowork mode, the Agent SDK), the `SKILL.md` files here can be loaded the same way. Vendor overlays (`CLAUDE.md`, `CODEX.md`, `GEMINI.md`) sit alongside `SKILL.md` inside each skill folder so the same capability ports cleanly across runtimes.
 
 **Repository memory vs. your context window.** This is the discipline `behavior/context-window.md` and `behavior/context-entropy.md` both push on. Your context window is working memory. The repo is persistent memory. Do not load all of `behavior/` into the window to answer one question — pull the section that addresses it, and let the rest stay on disk. When the current Knob references something cold by name, that is your signal to pull it warm.
 

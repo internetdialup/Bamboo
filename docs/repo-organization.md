@@ -16,7 +16,8 @@ Repository-md/
 ├── LICENSE
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
-│   └── context-orientation.md   # Per-Knob change log. The Knob-by-Knob history.
+│   ├── context-orientation.md   # Hot per-Knob change log.
+│   └── context-ori-summary-2.md # Cold storage for older Knobs.
 ├── behavior/                    # The rules an agent obeys. Cold-start required.
 ├── architecture/                # Memory architecture, ADM/RAG, Watchdog, workflow tools.
 │   ├── workflow-tools.md        # Tool/workflow memory friction.
@@ -28,6 +29,10 @@ Repository-md/
 │       ├── memory-drift.md
 │       └── memory-watchdog.md
 ├── skills/                      # Portable AI capabilities. Cross-vendor.
+│   ├── skill-map.md
+│   ├── repo-cognition/
+│   ├── memory-context/
+│   └── memory-watchdog/
 ├── workflows/                   # DevOps and project lifecycle patterns.
 └── design/                      # Project-specific UI/UX rules. Skip on cold start.
 ```
@@ -41,7 +46,8 @@ Five working folders plus `docs/`. The five folders are deliberate. They map to 
 Operational memory for *this* repository. Distinct from the `behavior/` rules, which describe how agents should think about context in *any* project they fork this into. `docs/` is the in-house version: the map of this repo, and the running log of Knobs as they get committed.
 
 - `repo-organization.md` — this file. The folder map. Updates when a new top-level folder or canonical file spawns.
-- `context-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `context-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. Cold storage for past Knobs. The current Knob and the last three stay hot in `context-orientation.md`.
+- `context-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `context-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
+- `context-ori-summary-2.md` — cold storage for older Knobs rolled out of `context-orientation.md`.
 
 The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (README, AGENT, CLAUDE) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it.
 
@@ -82,11 +88,13 @@ This folder is selective cold-start material. If the task is normal repo navigat
 
 Portable AI capabilities. Designed to be vendor-agnostic — the same Skill applies whether the agent is running on Claude, Codex, Gemini, GPT, or anything else.
 
-- `skill-map.md` — the index for the folder. Currently a stub; gets fleshed out as skills accumulate.
-- `repo-cognition/` — the first skill. Establishes operational rules and retrieval systems for AI-assisted repositories.
+- `skill-map.md` — the index for the folder. Quick map, not a giant catalog.
+- `repo-cognition/` — the base repo cognition Skill. Establishes operational rules and retrieval systems for AI-assisted repositories.
   - `SKILL.md` — the canonical Skill definition (with the YAML frontmatter Skills require).
   - `CLAUDE.md`, `CODEX.md`, `GEMINI.md` — thin vendor overlays. They point at `SKILL.md` instead of copying the full rule body.
   - `references/` — the underlying reference docs the Skill points at: `context-entropy.md`, `context-rules.md`, `context-token-limits.md`, `context-window.md`. Mirrors of (or pointers to) the canonical docs in `behavior/`.
+- `memory-context/` — the memory retrieval and handoff Skill. Use it for ADM/RAG alignment, Knob-aware loading, hot/warm/cold memory, and project state reconstruction.
+- `memory-watchdog/` — the memory hygiene Skill. Use it for stale maps, broken references, missing Knob logs, duplicated concepts, old paths, and drift audits.
 
 Pattern for adding a new skill: spawn a folder under `skills/`, drop in a `SKILL.md` with frontmatter, add vendor overlays as needed, point at references rather than re-defining the canonical concepts. Then update `skill-map.md`.
 
@@ -144,3 +152,13 @@ This file lives in `docs/` and is itself part of the cold-start map. When you ad
 - Rename → propagate to every reference in the same commit. No orphan references.
 - This file gets re-audited every few Knobs. If a section describes something that no longer exists, fix it or remove it. Stale maps are worse than no map.
 - Treat this as the structural source of truth for the repo layout. `AGENT.md` is the behavioral source of truth. `context-orientation.md` is the temporal source of truth. They do not duplicate each other.
+
+## Map Hygiene
+
+This is the ruthless part. If the repo is going to be useful as OSS governance, the maps have to stay boringly accurate.
+
+- New folder or moved file gets map updates in the same change.
+- New Skill gets `skills/skill-map.md` and `docs/repo-organization.md` updates.
+- New architecture memory doc gets this map and the relevant Skill pointer updated.
+- Every Bump that changes repo structure gets a `docs/context-orientation.md` entry.
+- Run stale-reference scans before finishing. Broken references are memory rot.

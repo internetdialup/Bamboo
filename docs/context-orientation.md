@@ -8,6 +8,14 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: memory Skills + map hygiene — Thursday, May 28, 2026, 07:52 PM CDT
+
+Added two separate Skills instead of bloating `repo-cognition`: `memory-context` for Knob-aware retrieval, ADM/RAG alignment, hot/warm/cold memory, and handoffs; `memory-watchdog` for stale maps, broken references, missing Knob entries, duplicate concepts, and memory rot. Updated `skills/skill-map.md` so Skills are now mapped instead of living behind a stub.
+
+Added Map Hygiene rules to `docs/repo-organization.md`. New folders, moved files, new Skills, and new architecture memory docs now have explicit map-update expectations. This is the OSS governance edge of the repo: if the map lies, the memory system rots.
+
+---
+
 ## Knob: ADM/RAG memory folder — Thursday, May 28, 2026
 
 Moved the memory architecture docs into `architecture/memory/` so Memory, Drift, Watchdog, ADM, RAG, and CRUD live in one place instead of scattering across the top of `architecture/`. `workflow-tools.md` stays directly under `architecture/` because it is about tool friction and workflow surfaces, not the memory store itself.
@@ -24,36 +32,4 @@ Cleaned up early PLTRF drift before it became normal. Fixed the broken `referenc
 
 ---
 
-## Knob: docs scaffolding + CLAUDE overlay — Friday, May 22, 2026
-
-Created `docs/repo-organization.md` as the structural map of the four-folder layout (`behavior/`, `skills/`, `workflows/`, `design/`) plus `docs/` for this repo's own operational memory. The file describes what each folder is for, what lives inside it, and the cold-start consultation order. It is meant to be the structural source of truth for the repo while `AGENT.md` remains the behavioral source of truth and this file (`context-orientation.md`) remains the temporal source of truth. The three do not duplicate each other.
-
-Replaced the empty root `CLAUDE.md` with a Claude-specific cold-start overlay that sits on top of `AGENT.md`. It walks through the cold-start order Claude should follow, calls out the Skills format used in `skills/`, and codifies the user's standing preferences: every Bump gets a one-to-two paragraph summary in this file, and overflow past 5000 characters spawns `context-ori-summary-2.md` onward. Also initialized this `context-orientation.md` file as part of the same Knob, since the directive required it to exist for future Bumps to log against.
-
----
-
-## Prior history
-
-Entries before this Knob live in commit history and in `README.md`'s "Updates" section. Notable prior Bumps:
-
-- **5.16.26** — Added and rewrote Context documents, Updated Skills folder, created `AGENT.md`. The behavior/ docs and the cold-start file were established at this point.
-- **5.11.26** — Initial release of `Documentation.md`. Repo scaffolding and intent set.
-
-These are recorded here for traceability but were not logged Knob-by-Knob at the time. Future Bumps follow the format above.
-
----
-
-## Format
-
-Each entry uses this shape:
-
-```
-## Knob: <short tag> — <Day, Month DD, YYYY>
-
-<One paragraph describing what changed and why.>
-
-<Optional second paragraph for cross-references, follow-up Knobs, or context that
-will matter to the next agent picking this up.>
-```
-
-Keep entries narrow. The point is the *next* agent (or you, after a hiatus) should be able to scan this file and rebuild the working state without reading every commit diff. If an entry needs more than two paragraphs, it probably belongs in its own doc with a pointer from here.
+Older entries moved to `docs/context-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Memory Context"
+  short_description: "Knob-aware memory retrieval and handoff"
+  default_prompt: "Use $memory-context to rebuild the active project memory and decide what should stay hot."

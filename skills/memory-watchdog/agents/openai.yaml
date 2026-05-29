@@ -1,0 +1,4 @@
+interface:
+  display_name: "Memory Watchdog"
+  short_description: "Audit repo memory drift and stale maps"
+  default_prompt: "Use $memory-watchdog to audit memory rot, stale references, and missing map updates."
