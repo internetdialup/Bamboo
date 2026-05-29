@@ -4,11 +4,11 @@ Context windows are one of the most important operational systems an AI and ML a
 
 As projects scale, context windows begin to saturate. More files are added. More branches are created. More Knobs are turned. More contributors, more AI agents, more handoffs, more summaries, more architectural layers, more noise.
 
-Eventually retrieval starts to slow down. This is then where we start to see the effects of Context Entropy and what I like to call Context Decay. The umbrella term for Context Entropy needs to be something that runs parallel to the project lifecycle and CWM. 
+Eventually retrieval starts to slow down. This is then where we start to see the effects of Context Entropy and what I like to call Context Decay. The umbrella term for Context Entropy needs to be something that runs parallel to the project lifecycle and CWM.
 
-CWM and CE + CD are the same side of the same coin. All working as one. In unison supporting one another. They need to understand how much "RAM" in a virtual sense is being used, and free up areas no longer being used to make room for more context window management. CWM is all about compacting the current state of a projects working memory, to preserve clarity, retrieval quality, continuity, and contextual awareness across long development cycles shared between humans and AI systems. 
+CWM and CE + CD are the same side of the same coin. All working as one. In unison supporting one another. They need to understand how much "RAM" in a virtual sense is being used, and free up areas no longer being used to make room for more context window management. CWM is all about compacting the current state of a projects working memory, to preserve clarity, retrieval quality, continuity, and contextual awareness across long development cycles shared between humans and AI systems.
 
-CWM also is part of a larger system in that it is directly tied to the umbrella of Context Entropy and the underlying makeup that establishes the uniformity of memory management and context window compacting and compression. Discarding too early, and we run into bottlenecks. Waiting too long, and we run into saturation and our key authoritative knowledgebase starts to get cluttered with noise. That noise obscures our source of truth, and we start to run into degradation. 
+CWM also is part of a larger system in that it is directly tied to the umbrella of Context Entropy and the underlying makeup that establishes the uniformity of memory management and context window compacting and compression. Discarding too early, and we run into bottlenecks. Waiting too long, and we run into saturation and our key authoritative knowledgebase starts to get cluttered with noise. That noise obscures our source of truth, and we start to run into degradation.
 
 Degrading memory context windows collapse in a negative way. We want the collapsing of our context windows to preserve our source of truth, not obfuscate it, and or become the cause of entropy too quickly. Memory and entropy are inversely correlated and decay is inevitable. This is why we need best practices for CWM.
 
@@ -220,11 +220,11 @@ The role of the AI agent is not to become trapped in the past. The role is to un
 
 ---
 
-## CWM Compression 
+## CWM Compression
 
-When does an Agent determine how and what to discard and prioritize within its working memory? We can adopt server like use cases and write hot and cold storage rules for context documents so they do not saturate the active context window, and project file, repo, and or worktree. 
+When does an Agent determine how and what to discard and prioritize within its working memory? We can adopt server like use cases and write hot and cold storage rules for context documents so they do not saturate the active context window, and project file, repo, and or worktree.
 
-When something becomes N versions in the rearview, we can write hot, and cold, and aggressively deterministically compress, and or move file contents around. These context documents will act as a guide for the AI Agent to refer to when working on the project. However, we shouldn't discard files without a proper understanding of the project state, and whether the information is still relevant, and asking the user if they need access to these files for future work. 
+When something becomes N versions in the rearview, we can write hot, and cold, and aggressively deterministically compress, and or move file contents around. These context documents will act as a guide for the AI Agent to refer to when working on the project. However, we shouldn't discard files without a proper understanding of the project state, and whether the information is still relevant, and asking the user if they need access to these files for future work.
 
 Writing hot, and cold context documents at the moment of change, and aggressively compressing once the Knob is N versions in the rearview is how we can avoid unnecessary context bloat, and fragmentation, and saturation of an AI agents working memory.
 
@@ -329,14 +329,14 @@ It is about building better systems for retrieval, continuity, and understanding
 
 The better the retrieval systems become, the better the AI agent can build the road forward.
 
---- 
+---
 
 ## End of Documentation
 
 CWM is the active memory view. Context-entropy.md is the preservation view. Context-token-limits.md is the Token economy view. Three angles on the same problem. CWM handles what is inside the window right now. Entropy handles what survives outside the window, across Knobs and human hiatus. CTL handles the cost of pulling things back in. Hot and cold tiering shows up in all three. The current Knob stays hot here, in active memory. LTIP's reconstitution move pulls cold material back into the window when the current Knob references it by name. CTL governs the Tokens that pull costs. Read all three when a Knob is in motion. They share vocabulary on purpose.
 
-The reality is that memory is scarce. Hence the terminology context-entropy. For agents to remain effective as a project scales, the agent must move from passive ingestion to disciplined, intentional retrieval and constant "collapsing" or "compacting" of its internal memory. Entropy will always win if left unchecked. Memory is a scarcity and as we approach larger language model context windows, we must not allow the user to add bloat, debt, or more to our systems. 
+The reality is that memory is scarce. Hence the terminology context-entropy. For agents to remain effective as a project scales, the agent must move from passive ingestion to disciplined, intentional retrieval and constant "collapsing" or "compacting" of its internal memory. Entropy will always win if left unchecked. Memory is a scarcity and as we approach larger language model context windows, we must not allow the user to add bloat, debt, or more to our systems.
 
-We should have CWM's that are efficient, work like a well oiled machine, and understand that project output and velocity is becoming more and more important in todays rapidly changing AI environment. It is with these context documents, and terms that can better help build and equip a roadmap that allows for us to contain our memory where it peaks, and discard the lost and unnecessary information. 
+We should have CWM's that are efficient, work like a well oiled machine, and understand that project output and velocity is becoming more and more important in todays rapidly changing AI environment. It is with these context documents, and terms that can better help build and equip a roadmap that allows for us to contain our memory where it peaks, and discard the lost and unnecessary information.
 
 Context window management is key to AI agent development, and should be prioritized moving forward. It supports Token usage, awareness, our memory and decay understanding, and can refine Agent output and velocity whilst delivering better results so an end user does not have to prompt multiple times to get the correct or desired outcome.

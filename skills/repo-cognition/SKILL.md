@@ -22,7 +22,7 @@ Follow the principles established in:
 - references/context-entropy.md
 - references/context-window.md
 - references/context-rules.md
-- references/context-token-limit.md
+- references/context-token-limits.md
 
 Maintain awareness of:
 - context drift

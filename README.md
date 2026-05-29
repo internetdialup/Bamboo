@@ -12,9 +12,10 @@ Agents read AGENT.md first. That is the cold start file. It tells the agent wher
 
 This repo houses cross-model multi-agent orchestration that allows Skills to be universally adopted across different vendors. The same Skills, the same context rules, the same STIP and LTIP discipline, applied consistently whether the agent is running on Claude, GPT, Gemini, or anything else. Cold start new projects knowing they have a solid foundation of documentation, governance, and AI orchestration to rely on without having to build from scratch.
 
-The repo is laid out across four folders:
+The repo is laid out across five folders:
 
 - behavior/ holds the rules an agent obeys when reasoning about context, memory, and handoffs.
+- architecture/ holds the memory architecture layer: ADM, RAG, Memory, Drift, Watchdog, and workflow tooling.
 - skills/ holds the portable capabilities that get adopted across vendors.
 - workflows/ holds the DevOps and deployment patterns.
 - design/ holds the project-specific UI and visual rules.
