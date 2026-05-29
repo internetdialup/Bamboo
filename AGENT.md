@@ -10,6 +10,10 @@ Order of operations on first contact:
 
 Read everything in behavior/ first. That is where the rules live. Context entropy, context window management, how Knobs work, what STIP and LTIP mean. Without this you will fragment the repo within a few Knobs.
 
+## Check architecture/ when memory itself is the work
+
+Read architecture/ when the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance. Do not load it just because it exists. Pull it when memory itself is the work.
+
 ## Load Skills
 
 Load the Skills under skills/. These are portable across vendors. Whatever model you are running on, the Skills apply the same way.

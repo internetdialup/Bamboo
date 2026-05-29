@@ -18,12 +18,21 @@ Repository-md/
 │   ├── repo-organization.md     # ← this file. The map.
 │   └── context-orientation.md   # Per-Knob change log. The Knob-by-Knob history.
 ├── behavior/                    # The rules an agent obeys. Cold-start required.
+├── architecture/                # Memory architecture, ADM/RAG, Watchdog, workflow tools.
+│   ├── workflow-tools.md        # Tool/workflow memory friction.
+│   └── memory/                  # Memory operating layer.
+│       ├── memory.md
+│       ├── memory-adm.md
+│       ├── memory-rag.md
+│       ├── memory-crud.md
+│       ├── memory-drift.md
+│       └── memory-watchdog.md
 ├── skills/                      # Portable AI capabilities. Cross-vendor.
 ├── workflows/                   # DevOps and project lifecycle patterns.
 └── design/                      # Project-specific UI/UX rules. Skip on cold start.
 ```
 
-Four working folders plus `docs/`. The four folders are deliberate. They map to four different jobs an agent has to do, and they do not bleed into each other.
+Five working folders plus `docs/`. The five folders are deliberate. They map to different jobs an agent has to do, and they do not bleed into each other.
 
 ---
 
@@ -52,6 +61,23 @@ These four docs share vocabulary on purpose. Rules sets the foundation, entropy 
 
 ---
 
+## architecture/
+
+The memory architecture layer. This is where the repo talks about Memory, ADM, RAG, CRUD, Drift, Watchdog, and Workflow Tools as systems instead of one-off rules. Do not ingest this whole folder on ordinary cold start. Pull it when the work is memory governance, context audits, drift prevention, ADM/RAG retrieval, Watchdog behavior, or workflow-tool alignment.
+
+- `workflow-tools.md` — how IDEs, CLIs, desktop apps, browsers, APIs, and sandboxes affect memory debt and project drift.
+- `memory/` — the memory operating layer. This is the home for the memory docs, not the top level of `architecture/`.
+  - `memory.md` — the broad memory standard. Hot/cold memory, STIP and LTIP, handoffs, failure states, and the memory layer table.
+  - `memory-adm.md` — Active Dreaming Memory. Episodic memory chapters, offline refresh, and how ADM works with RAG and the Watchdog.
+  - `memory-rag.md` — RAG as semantic and procedural memory. Retrieval that supports ADM and the Watchdog without pretending it is the whole memory system.
+  - `memory-crud.md` — the Create, Read, Update, Delete/Destroy rule for keeping memory files alive and not stale.
+  - `memory-drift.md` — how memory drifts, rots, repeats itself, and starts to make the repo harder to navigate.
+  - `memory-watchdog.md` — the Watchdog concept. A file-level auditor for memory standards, secret awareness, context decay, and repository hygiene.
+
+This folder is selective cold-start material. If the task is normal repo navigation, `behavior/` is enough. If the task is about the memory system itself, this folder comes warm.
+
+---
+
 ## skills/
 
 Portable AI capabilities. Designed to be vendor-agnostic — the same Skill applies whether the agent is running on Claude, Codex, Gemini, GPT, or anything else.
@@ -59,7 +85,7 @@ Portable AI capabilities. Designed to be vendor-agnostic — the same Skill appl
 - `skill-map.md` — the index for the folder. Currently a stub; gets fleshed out as skills accumulate.
 - `repo-cognition/` — the first skill. Establishes operational rules and retrieval systems for AI-assisted repositories.
   - `SKILL.md` — the canonical Skill definition (with the YAML frontmatter Skills require).
-  - `CLAUDE.md`, `CODEX.md`, `GEMINI.md` — vendor-specific overlays of the same Skill. Same content, different framing per vendor's conventions.
+  - `CLAUDE.md`, `CODEX.md`, `GEMINI.md` — thin vendor overlays. They point at `SKILL.md` instead of copying the full rule body.
   - `references/` — the underlying reference docs the Skill points at: `context-entropy.md`, `context-rules.md`, `context-token-limits.md`, `context-window.md`. Mirrors of (or pointers to) the canonical docs in `behavior/`.
 
 Pattern for adding a new skill: spawn a folder under `skills/`, drop in a `SKILL.md` with frontmatter, add vendor overlays as needed, point at references rather than re-defining the canonical concepts. Then update `skill-map.md`.
@@ -101,10 +127,11 @@ For an agent landing in this repo for the first time:
 2. `AGENT.md` — how to enter it.
 3. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
 4. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md`.
-5. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
-6. `docs/context-orientation.md` — what changed recently and why.
-7. `workflows/` — only if the task touches setup or context governance.
-8. `design/` — only if the task is design work.
+5. `architecture/` — only if the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
+6. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
+7. `docs/context-orientation.md` — what changed recently and why.
+8. `workflows/` — only if the task touches setup or context governance.
+9. `design/` — only if the task is design work.
 
 This file lives in `docs/` and is itself part of the cold-start map. When you add a folder or rename one, update this file in the same commit that does the rename. That is the PLTRF discipline applied to the map itself.
 

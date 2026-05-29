@@ -2,50 +2,50 @@
 
 As a project grows and matures, so does our AI & ML agents. The memory banks of an AI agent also grow with the standardization of creating context-orientation and context-summaryv-0.0.1 documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
 
-This is known as Context Entropy. Entropy like energy has to go somewhere. It is not infinite, but it is also not static. It can be managed, and redirected. But over time it can slow down. It degrades. This is called Context Decay. Where information parsed starts to become degraded. The retrieval slows down, and artifacts get lost in noise. AI and ML agents start to have a harder time with retrieving the right vector, and can accidentally deliver the wrong end point. 
+This is known as Context Entropy. Entropy like energy has to go somewhere. It is not infinite, but it is also not static. It can be managed, and redirected. But over time it can slow down. It degrades. This is called Context Decay. Where information parsed starts to become degraded. The retrieval slows down, and artifacts get lost in noise. AI and ML agents start to have a harder time with retrieving the right vector, and can accidentally deliver the wrong end point.
 
-An AI agent's ability to recall something starts to degrade with age, and contextual density. Context window sizes are collapsed to shore up free memory spaces for new information, and new directives. But that can cause problems if an artifact is discarded and is no longer in the AI agent's working memory.  
+An AI agent's ability to recall something starts to degrade with age, and contextual density. Context window sizes are collapsed to shore up free memory spaces for new information, and new directives. But that can cause problems if an artifact is discarded and is no longer in the AI agent's working memory.
 
-To combat this we need to ensure that we are proactively managing our context in each project we spin up and we can do this by leveraging principles that are laid out in this document, and pulling from other behavior documents that talk about context. 
+To combat this we need to ensure that we are proactively managing our context in each project we spin up and we can do this by leveraging principles that are laid out in this document, and pulling from other behavior documents that talk about context.
 
 ## Why Context Entropy Matters
 
 Context entropy is the backbone that an AI Agent must understand and apply, when given a handoff, and or if a project Knob has shifted from one state to another. A Knob can be referenced as a commit change in git, or any other form of source control, or version tracking system. When a Knob is changed a user may need the ability to reference that identity layer again, and having the context entropy rules properly maintained can help the agent find and cherry pick what worked and what didn't work with previous versions of the code, and or project files.
 
-A Knob can be referenced as a commit bump in the same fashion. A user has bumped for example: ui-goldv.0.0.1, to 0.0.2. It is imperative that the AI agent ingest the information via context awareness so when handed off, or picked up after a hiatus, the memory banks are fresh and ready to assist. 
+A Knob can be referenced as a commit bump in the same fashion. A user has bumped for example: ui-goldv.0.0.1, to 0.0.2. It is imperative that the AI agent ingest the information via context awareness so when handed off, or picked up after a hiatus, the memory banks are fresh and ready to assist.
 
 Modern repos are starting to resemble living systems shared between humans and AI agents. A user may also be a multi-agent user. Meaning they are handing off their tasks in parallel to other AI agents at the same time and need to have some shared artifact the LLM's can absorb and understand at a granular level. As projects grow across longer development cycles, multiple contributors, parallel branches, and different AI vendors, context begins to fragment, drift, decay, and lose clarity over time.
 
 Carving out institutional knowledge and operational memory is key to maintaining a clear trajectory in projects. Without that, the entropy decays. Much like the contextual window size, entropy has a limit to it, and the AI agent needs to be aware of its limits to manage their memory storage to mitigate against context entropy.
 
-This is not about documenting everything. This is about creating a smart system within a project to manage context handoff, and delivery when each Knob is turned. When each bump is committed, or change made in place. 
+This is not about documenting everything. This is about creating a smart system within a project to manage context handoff, and delivery when each Knob is turned. When each bump is committed, or change made in place.
 
 The repository should act as a form of operational memory shared between users, developers, designers, managers, and AI systems. Context should remain recoverable, understandable, and navigable regardless of which agent, contributor, or workflow is interacting with the project.
 
-Without proper entropy management agents start to make poor decisions. Preventative AI hallucination is a major risk factor when decay starts to occur within projects. This can happen at the granular level, or across large project systems with non-linear development lifecycles and branching strategies. Large to small codebases can suffer the consequences of decay and AI-agent-hallucination which poses a risk to rendering feedback that is not quite what the user wants. 
+Without proper entropy management agents start to make poor decisions. Preventative AI hallucination is a major risk factor when decay starts to occur within projects. This can happen at the granular level, or across large project systems with non-linear development lifecycles and branching strategies. Large to small codebases can suffer the consequences of decay and AI-agent-hallucination which poses a risk to rendering feedback that is not quite what the user wants.
 
 ---
 
-## Context Prioritization 
+## Context Prioritization
 
-AI Agents should adhere to a directive of context rules and prioritization in order to maintain the best ability to retrieve past artifacts to develop better context for future iterations, and service the present in a stronger fashion. 
+AI Agents should adhere to a directive of context rules and prioritization in order to maintain the best ability to retrieve past artifacts to develop better context for future iterations, and service the present in a stronger fashion.
 
 Furthermore, as context prioritization is the subject of this document; we need to identify the critical differences that separate from what context is, and what context is not. A user may blur these lines with non-linear handoffs, branches, changes, and workflows, and it is up to the Agent to enforce a strict form of contextual awareness to understand how the user is operating.
 
 This means prioritizing the following:
 
-- Changes made in the cycle 
+- Changes made in the cycle
 - Which Knob we are currently working on
 - What external factors are a risk to the project
 - Internal factors that are a risk to the project
 - Managing the amount of context-orientation, and or context related documents that are being generated for historical context and memory.
 - When to purge memory and reorganize for performance, and or relevance.
 - What is the users directive when it comes to risk management, compliance, and security.
-- What is the users directive for managing memory internally and their documentation standards. 
+- What is the users directive for managing memory internally and their documentation standards.
 
 ---
 
-## Preventative Long Term Repo Fragmentation (PLTRF) 
+## Preventative Long Term Repo Fragmentation (PLTRF)
 
 PLTRF is the preventative layer. STIP holds the current cycle. LTIP moves it to durable storage. PLTRF is what stops the repo itself from becoming the thing the agent has to fight against.
 
@@ -75,7 +75,7 @@ STIP should also allow for quick debugging of other AI and ML agents to come in 
 
 STIP is about the short term but it should anticipate that it carries its context forward to LTIP standards and caches the most important context handoff in informational architecture that the user does not need to think of.
 
-STIP to LTIP information is the underlying process the AI agent should scan before each handoff to other AI agents, or back to the user, especially parallel processing of information, and agents working adjacently to ensure that there is no contextual loss, and or slow down in the information hierarchy of retrieval. 
+STIP to LTIP information is the underlying process the AI agent should scan before each handoff to other AI agents, or back to the user, especially parallel processing of information, and agents working adjacently to ensure that there is no contextual loss, and or slow down in the information hierarchy of retrieval.
 
 STIP can utilize vector embeddings, BM25 indexing, hybrid retrieval, and other search techniques to optimize its AI agent path finding to information if it needs to. This should be done by creating a document in docs/ that establishes a standard set of rules in the DevOps pipeline for ensuring STIP to LTIP compliance, coherence, and avoiding degradation and loss.
 
