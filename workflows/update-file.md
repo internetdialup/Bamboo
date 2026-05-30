@@ -30,3 +30,10 @@ Create a PR so the Code Reviewer can review changes, and update the skills map, 
 # Agent Rules
 
 - Read this update file and cleanly update any knowledge base, and or documentation, maps, and or context. This ensures all AI, and human contributors are on the same page, and aligned, and that there is less fragmentation, and misalignment moving forward. 
+
+# Test files before branch is merged
+- Run a cursory check on file integrity before merging
+- Have any CLI agents that are in memory QA and test each component that was implemented after all files are placed and staged for commit. 
+- Test against any benchmark, unit testing, and more before leaving a comment automatically.
+- LGTM criteria should be met before commiting the branch
+- No automatic squashes, merges, and or branch maining. 
