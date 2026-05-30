@@ -37,3 +37,13 @@ Create a PR so the Code Reviewer can review changes, and update the skills map, 
 - Test against any benchmark, unit testing, and more before leaving a comment automatically.
 - LGTM criteria should be met before commiting the branch
 - No automatic squashes, merges, and or branch maining. 
+
+# Github Actions
+
+@copilot review changes to the PR for syntax errors, and missing files, and update suggestions with new map directives.
+
+@copilot make sure that the skills map, and context map is updated, clean, concise, properly formatted, and follows all standards and best practices.
+
+@copilot if everyting looks good give LGTM me comment and react with the 🔥 emoji.
+
+@copilot if there is an error react with the ❌ emoji and a comment on what needs to be fixed.
