@@ -53,8 +53,7 @@ Feel free to fork this GitHub to your liking. Just a bunch of .md files that AI 
 ### Backlog
 
 - Reinforcement Learning and CNN's
-- TAL + CNN | Gaussaun Noise
-- Signal to Noise ratio SNR algo
+- TAL + RL 
 - Audit commands
 - Temporal Memory
 - Telemtry
