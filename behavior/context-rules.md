@@ -45,7 +45,7 @@ Refer to context-entropy and context-window for a comprehensive look at context,
 - Repository Memory: Repository memory is the information that an AI agent has stored in its repository.
 - Wayfinding: Wayfinding is the ability for an AI agent to understand where context lives, what context matters, what context does not matter, what knob is active, what implementation cycle is active, what artifacts are stale, what information is critical.
 - Context Collapse: Context collapse occurs when an AI agent loses too much context, and can no longer effectively reason about the project, leading to poor decision making and implementation errors.
-- Context Decay: Context Decay is the gradual degradation of operational knowledge, architectural understanding, decision making, implementation history, and project intent across development cycles. This can happen through poor documentation, fragmented handoffs, excessive context bloat, inconsistent workflows, weak repository organization, or AI systems lacking sufficient project memory and historical understanding.
+- Context Decay: Context Decay is what entropy looks like at the retrieval layer. Information that was parsed and stored starts to come back degraded. Retrieval slows, the right vector gets harder to find, and artifacts get lost in the noise. Entropy is the system wide drift across cycles. Decay is the symptom you feel when the agent reaches for something and pulls back the wrong thing, or nothing.
 
 # Format
 Each entry uses this shape:

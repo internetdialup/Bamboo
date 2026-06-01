@@ -35,7 +35,11 @@ A `memory.md` should exist and allow for you to follow guardrails that allow ADM
 - Memory Overview - memory.md
 - Memory RAG - memory-rag.md
 - Memory CRUD - memory-crud.md
+- Memory Drift - memory-drift.md
 - Memory Watchdog - memory-watchdog.md
+
+Planned, not yet written. Do not try to load these. They are named here so the intent is on record, not so an agent goes looking for a file that is not there.
+
 - Memory Context Preservation - memory-context-preservation.md
 - Memory Manifest - memory-manifest.md
 
