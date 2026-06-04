@@ -16,7 +16,7 @@ Replaced the empty root `CLAUDE.md` with a Claude-specific cold-start overlay th
 
 ## Prior history
 
-Entries before this Knob live in commit history and in `README.md`'s "Updates" section. Notable prior Bumps:
+Entries before this Knob live in commit history. Notable prior Bumps:
 
 - **5.16.26** — Added and rewrote Context documents, Updated Skills folder, created `AGENT.md`. The behavior/ docs and the cold-start file were established at this point.
 - **5.11.26** — Initial release of `Documentation.md`. Repo scaffolding and intent set.

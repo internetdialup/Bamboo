@@ -2,7 +2,7 @@
 
 A map of this repository. It describes what each folder is for, what lives inside it, and the order an agent (or a human) should consult things when picking the repo up cold. Pair this with `AGENT.md` at the root, which is the operational cold-start file. `AGENT.md` tells an agent *how* to enter the repo. This file tells it *where things are*.
 
-This is `Documentation.md`. Not a project repo. It is the canonical library of `.md` files that get forked into projects to give AI agents a consistent set of standards across vendors (Claude, Codex, Gemini, GPT, Copilot, and so on). Treat the tree below as a stable contract. Renames propagate everywhere they are referenced in the same commit. New folders get an entry in this file and an entry in `AGENT.md` if they belong on the cold-start path.
+This is `Documentation.md`. Not a project repo. It is the canonical library of `.md` files that get forked into projects to give AI agents a consistent set of standards across vendors (Claude, Codex, Gemini, GPT, Copilot, and so on). `Documentation.md` at the repo root is the policy source. `README.md` is the human overview. `AGENT.md` is the cold-start router. Treat the tree below as a stable contract. Renames propagate everywhere they are referenced in the same commit. New folders get an entry in this file and an entry in `AGENT.md` if they belong on the cold-start path.
 
 ---
 
@@ -10,8 +10,9 @@ This is `Documentation.md`. Not a project repo. It is the canonical library of `
 
 ```
 Repository-md/
+├── Documentation.md            # Canonical operating spec for repos using this system
 ├── README.md                    # What this repo is, who it's for, what it does
-├── AGENT.md                     # Cold-start file for any agent landing in the repo
+├── AGENT.md                     # Cold-start router for any agent landing in the repo
 ├── CLAUDE.md                    # Claude-specific cold-start overlay (sits on top of AGENT.md)
 ├── LICENSE
 ├── docs/                        # Operational memory for this repo itself
@@ -37,7 +38,7 @@ Repository-md/
 └── design/                      # Project-specific UI/UX rules. Skip on cold start.
 ```
 
-Five working folders plus `docs/`. The five folders are deliberate. They map to different jobs an agent has to do, and they do not bleed into each other.
+Five working folders plus `docs/`. The five folders are deliberate. They map to different jobs an agent has to do, and they do not bleed into each other. Downstream repos should copy only the folders they actually need.
 
 ---
 
@@ -49,7 +50,7 @@ Operational memory for *this* repository. Distinct from the `behavior/` rules, w
 - `context-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `context-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
 - `context-ori-summary-2.md` — cold storage for older Knobs rolled out of `context-orientation.md`.
 
-The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (README, AGENT, CLAUDE) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it.
+The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Documentation.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it.
 
 ---
 
@@ -104,7 +105,7 @@ Pattern for adding a new skill: spawn a folder under `skills/`, drop in a `SKILL
 
 DevOps and project lifecycle patterns. Forkable, overridable per project. If a forked project disagrees with a workflow doc, defer to the fork.
 
-- `project-setup.md` — the project initialization playbook. Project structure choices (React, Swift, Next.js, etc.), dependencies, backend services, branch naming, version tagging, license selection, README scaffolding, secret-handling rules. Includes the foundational rule that `.env` files never get committed without explicit user direction.
+- `project-setup.md` — the project initialization procedure. It explains how to apply the `Documentation.md` contract in a new repo without redefining the policy.
 - `project-context.md` — context entropy and memory rules for project-level work. How agents should create and maintain `context-orientation.md` (or `project-context.md` — interchangeable) inside a forked project's `docs/` folder, how to handle Knobs, how to handle the 5000-character threshold, git push/pull rules for handoff, branch and worktree naming conventions, Token usage discipline at the project level.
 
 Both docs are written for the project-fork case, not for `Documentation.md` itself. The `Documentation.md` repo follows the same rules but applies them to its own evolution as a documentation library.
@@ -131,15 +132,16 @@ When a forked project does design work, these become the starting point. Overrid
 
 For an agent landing in this repo for the first time:
 
-1. `README.md` — what this repo is.
+1. `README.md` — what this repo is and how to adopt it.
 2. `AGENT.md` — how to enter it.
-3. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
-4. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md`.
-5. `architecture/` — only if the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
-6. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
-7. `docs/context-orientation.md` — what changed recently and why.
-8. `workflows/` — only if the task touches setup or context governance.
-9. `design/` — only if the task is design work.
+3. `Documentation.md` — the policy source.
+4. `docs/context-orientation.md` — what changed recently and why.
+5. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
+6. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md`.
+7. `architecture/` — only if the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
+8. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
+9. `workflows/` — only if the task touches setup or context governance.
+10. `design/` — only if the task is design work.
 
 This file lives in `docs/` and is itself part of the cold-start map. When you add a folder or rename one, update this file in the same commit that does the rename. That is the PLTRF discipline applied to the map itself.
 

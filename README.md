@@ -1,61 +1,49 @@
 # Documentation.md
 
-A collection of .md files your AI agents read and run on. Drop them into any project, on any vendor.
+Canonical documentation and agent-governance starter for AI-assisted repositories.
 
-## The README for AI systems
+## What This Repo Is
 
-A consistent set of standards that carries project to project without having to rework, and restructure things constantly. Saving time and energy to focus on what matters most. The build, the product, the experience. There is already a robust pipeline of documents here. Keeps your team's sanity in check, keeps agents running efficiently, and gets you across the finish line with clarity and structure.
+`Repository-md` is the source repo for a reusable documentation system. It is meant to be forked or copied into project repos so agents and humans inherit the same operating rules, shared vocabulary, and handoff patterns across vendors.
 
-Agents read AGENT.md first. That is the cold start file. It tells the agent where to look in this repo and in what order.
+The policy source lives in `Documentation.md`.
+Agents start in `AGENT.md`.
+Recent state for this repo lives in `docs/context-orientation.md`.
 
-## Cross-model Multi-Agent Cognition Orchestration & Governance
+## What It Includes
 
-This repo houses cross-model multi-agent orchestration that allows Skills to be universally adopted across different vendors. The same Skills, the same context rules, the same STIP and LTIP discipline, applied consistently whether the agent is running on Claude, GPT, Gemini, or anything else. Cold start new projects knowing they have a solid foundation of documentation, governance, and AI orchestration to rely on without having to build from scratch.
+- `behavior/` for context, memory, and reasoning rules
+- `workflows/` for repeatable setup and delivery procedures
+- `skills/` for portable capabilities and overlays
+- `architecture/` for memory-system and workflow architecture
+- `design/` for UI and visual guidance when a repo needs it
+- `docs/` for this repo's own map and change log
 
-The repo is laid out across five folders:
+These modules are reusable, but downstream repos should only copy the parts they actively need.
 
-- behavior/ holds the rules an agent obeys when reasoning about context, memory, and handoffs.
-- architecture/ holds the memory architecture layer: ADM, RAG, Memory, Drift, Watchdog, and workflow tooling.
-- skills/ holds the portable capabilities that get adopted across vendors.
-- workflows/ holds the DevOps and deployment patterns.
-- design/ holds the project-specific UI and visual rules.
+## How To Adopt It
 
-This repository can be used for:
+1. Copy `Documentation.md`, `README.md`, `AGENT.md`, and `docs/context-orientation.md`.
+2. Bring over only the folders the project needs.
+3. Rewrite the project `README.md` immediately so it describes the actual product or workspace.
+4. Keep `AGENT.md` short and repo-specific.
+5. Add real working folders early so the repo is not mostly governance docs.
 
-- AI Skills  
-- AI agent onboarding
-- Cross-model multi-agent workflows
-- Documentation and knowledge management
-- Context management and retrieval
-- AI-assisted software development
-- Multi-agent collaboration and communication
-- Design Systems and Design
+## Who It Is For
 
-### A repository that houses .md files for your projects
-
-This repo contains a vast collection of .md files that speed up your workflows using AI agents. Directives, skills, context files, and more. These are the .md files I use for my design and development work, and I'm open sourcing the workflows that help me ship to production faster. Through design related .md files to development, DevOps, and anything in between.
+- teams running multiple agent vendors
+- repos that need durable handoff and context discipline
+- projects that benefit from reusable Skills and workflow docs
+- maintainers who want consistent repo initialization without rebuilding the docs system each time
 
 ## About
 
-Created and maintained by Matt Stenquist - @internetdialup (IG, X, Threads)
+Created and maintained by Matt Stenquist.
 
-## Usage
+## Recent Milestones
 
-Feel free to fork this GitHub to your liking. Just a bunch of .md files that AI agents ingest and read. Skills, workflows, directives, and more. 
-
-### Updates
-
-- 5.30.26 - Added Workflow documents on PRD / TDD 
-- 5.28.26 - Added Watchdog and Drift to Architecture 🐕
-- 5.11.26 - Initial Release. Files will be populated over the coming weeks. 
-- 5.16.26 - Added and rewrote Context documents, Updated Skills folder, and created AGENT.md
-
-### Backlog
-
-- Reinforcement Learning and CNN's
-- TAL + RL 
-- Audit commands
-- Temporal Memory
-- Telemtry
-- OKR, KPI, Success Metrics
-- GDD, TDD, PRD, DOD, documents
+- 2026-06-03: Introduced a literal root `Documentation.md` and separated policy from README and cold-start routing.
+- 2026-05-30: Added PRD and TDD workflow documents.
+- 2026-05-28: Added Watchdog and Drift to the memory architecture layer.
+- 2026-05-16: Reworked context documents, updated the Skills folder, and added `AGENT.md`.
+- 2026-05-11: Initial release.

@@ -1,35 +1,34 @@
 # AGENT.md
 
-You are an agent. You have landed in a fork of Documentation.md. This file is your cold start.
+You are an agent. This file is the cold-start router.
 
-Read README.md if you need to know what this repo is for. Come back here when youre done.
+If you need repo purpose or adoption guidance, read `README.md`.
+If you need policy, roles, or fork rules, read `Documentation.md`.
 
 Order of operations on first contact:
 
-## Read behavior/ first
+## 1. Read the policy source
 
-Read everything in behavior/ first. That is where the rules live. Context entropy, context window management, how Knobs work, what STIP and LTIP mean. Without this you will fragment the repo within a few Knobs.
+Read `Documentation.md` to understand the repo contract, document roles, and mandatory rules.
 
-## Check architecture/ when memory itself is the work
+## 2. Read behavior/
 
-Read architecture/ when the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance. Do not load it just because it exists. Pull it when memory itself is the work.
+Read `behavior/` when you need the reasoning and context rules behind the system vocabulary.
 
-## Load Skills
+## 3. Read docs/context-orientation.md
 
-Load the Skills under skills/. These are portable across vendors. Whatever model you are running on, the Skills apply the same way.
+Read `docs/context-orientation.md` for the current state and most recent structural changes.
 
-## Check workflows/
+## 4. Pull architecture/ only when memory itself is the work
 
-Look in the workflows folder for the DevOps and deployment patterns this fork uses. These can be overridden per project. Defer to the fork over the canonical version if they conflict.
+Load `architecture/` when the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
 
-## Skip design/ on cold start
+## 5. Load relevant Skills and workflows
 
-Treat design/ as project-specific. Read it only when you are doing design or UI work, not as part of cold start.
+Pull from `skills/` and `workflows/` only as the task requires. Do not ingest them just because they exist.
 
-## Check docs/context-orientation.md
+## 6. Skip design/ unless the task is design work
 
-Check if a docs/context-orientation.md file exists in the project directory you're working in. If it exists, that is the current Knob. Read it. If it does not exist, you are the agent creating one.
+Treat `design/` as optional cold-start material.
 
-That is the cold start. The rest you pick up as you go.
-
-The cold start in this directory is special. This is not a project specific repository. This is the canonical repository for the Skills, documents, and workflows that will be used across projects.
+This repo is the canonical documentation source, not a product repo. Keep the cold start lean and pull only the modules required for the task.
