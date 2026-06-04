@@ -7,7 +7,7 @@ description: repository memory watchdog skill for auditing stale maps, broken re
 
 This Skill is the repo hygiene auditor.
 
-The Watchdog exists because memory rots quietly. A file moves. A map does not. A Skill points at an old reference. A Knob gets logged in README but not in `context-orientation.md`. Then six weeks later the repo becomes the thing the agent fights.
+The Watchdog exists because memory rots quietly. A file moves. A map does not. A Skill points at an old reference. A Knob gets logged in README but not in `context-orientation.md`. Then six weeks later the repo becomes the thing the agent fights. In this canonical repo, the active Knob log lives in `docs/memory-context/context-orientation.md`. In downstream repos, the default remains `docs/context-orientation.md`.
 
 Use this Skill when:
 - adding, moving, or renaming docs
@@ -37,8 +37,9 @@ The Watchdog should be strict about structure and light about voice. Do not over
 - New folder or moved file gets map updates in the same change.
 - New Skill gets `skills/skill-map.md` and `docs/repo-organization.md` updates.
 - New architecture memory doc gets `docs/repo-organization.md` and the relevant Skill pointer updated.
-- Every Bump that changes repo structure gets a `docs/context-orientation.md` entry.
-- If `docs/context-orientation.md` crosses 5000 characters, roll older entries into the next summary file.
+- Every Bump that changes repo structure gets a Knob entry in the repo's active context log.
+- In this repo that means `docs/memory-context/context-orientation.md`; in downstream repos that usually means `docs/context-orientation.md`.
+- If the active context log crosses 5000 characters, roll older entries into the next summary file in the same folder.
 - Broken references are memory rot. Fix them before they become normal.
 
 ## Search Patterns
@@ -58,7 +59,7 @@ Adjust the names to the current Knob. The point is not the exact command. The po
 
 Read only what the audit needs:
 - `docs/repo-organization.md`
-- `docs/context-orientation.md`
+- `docs/memory-context/context-orientation.md`
 - `skills/skill-map.md`
 - `AGENT.md`
 - `CLAUDE.md`

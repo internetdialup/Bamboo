@@ -8,7 +8,7 @@ Canonical documentation and agent-governance starter for AI-assisted repositorie
 
 The policy source lives in `Documentation.md`.
 Agents start in `AGENT.md`.
-Recent state for this repo lives in `docs/context-orientation.md`.
+Recent state for this repo lives in `docs/memory-context/context-orientation.md`.
 
 ## What It Includes
 
@@ -16,6 +16,7 @@ Recent state for this repo lives in `docs/context-orientation.md`.
 - `workflows/` for repeatable setup and delivery procedures
 - `skills/` for portable capabilities and overlays
 - `architecture/` for memory-system and workflow architecture
+- `agent-architecture/` for multi-agent roles, topology, and coordination patterns
 - `design/` for UI and visual guidance when a repo needs it
 - `docs/` for this repo's own map and change log
 
@@ -28,6 +29,8 @@ These modules are reusable, but downstream repos should only copy the parts they
 3. Rewrite the project `README.md` immediately so it describes the actual product or workspace.
 4. Keep `AGENT.md` short and repo-specific.
 5. Add real working folders early so the repo is not mostly governance docs.
+
+This repo keeps its own operational log under `docs/memory-context/`, but the default downstream template contract stays `docs/context-orientation.md` unless a project explicitly chooses a different layout.
 
 ## Who It Is For
 

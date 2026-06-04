@@ -19,7 +19,7 @@ Use this Skill when:
 
 ## Operating Rules
 
-- Read the active Knob first. Usually that means `docs/context-orientation.md`.
+- Read the active Knob first. In this repo that usually means `docs/memory-context/context-orientation.md`. In downstream repos it usually means `docs/context-orientation.md`.
 - Load `behavior/` when the question is about rules, context windows, entropy, or Token budget.
 - Load `architecture/memory/` when the question is about ADM, RAG, Watchdog, drift, CRUD, or memory structure.
 - Do not pull the whole repo into context just because it is available.
@@ -34,14 +34,14 @@ Memory is not one bucket.
 - ADM is episodic memory. Knobs, chapters, sessions, handoffs, cool-down periods.
 - RAG is semantic and procedural memory. Terms, stable rules, retrieval paths, architecture patterns.
 - Watchdog is the auditor. It checks drift, rot, missing updates, and bad memory hygiene.
-- `context-orientation.md` is the temporal source of truth. It tells the next agent what changed and why.
+- `context-orientation.md` is the temporal source of truth. In this repo it lives under `docs/memory-context/`. In downstream repos it normally lives directly under `docs/`. It tells the next agent what changed and why.
 
 If these disagree, do not smooth it over. Name the conflict and repair the map.
 
 ## Canonical References
 
 Read only what the current task needs:
-- `docs/context-orientation.md`
+- `docs/memory-context/context-orientation.md`
 - `docs/repo-organization.md`
 - `behavior/context-rules.md`
 - `behavior/context-entropy.md`

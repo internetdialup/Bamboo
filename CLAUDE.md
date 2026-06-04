@@ -12,14 +12,15 @@ If `AGENT.md` and this file disagree, `AGENT.md` wins. This file is an overlay, 
 
 `Documentation.md` is not a product. It is a documentation library — a fork-and-go starter kit of `.md` files that other repositories ingest to give their agents shared rules, shared vocabulary, and shared Skills regardless of vendor.
 
-The repo is laid out across five working folders plus `docs/`:
+The repo is laid out across six working folders plus `docs/`:
 
 - `behavior/` — the rules an agent obeys. Context, memory, handoffs, Token economy. Cold-start required.
 - `architecture/` — the memory architecture layer. ADM, RAG, Memory, Drift, Watchdog, workflow tools. Load it when memory itself is the work.
+- `agent-architecture/` — multi-agent identity, topology, and orchestration patterns. Load it when coordination itself is the work.
 - `skills/` — portable AI capabilities that work the same across Claude, Codex, Gemini, GPT, Copilot.
 - `workflows/` — DevOps and project lifecycle patterns. Forkable, overridable.
 - `design/` — project-specific UI/UX rules. Skip on cold start.
-- `docs/` — this repo's own operational memory: the folder map and the per-Knob change log.
+- `docs/` — this repo's own operational memory: the folder map and the per-Knob change log, with state logs under `docs/memory-context/`.
 
 See `docs/repo-organization.md` for the full layout and what each file covers. Read that before assuming where something lives.
 
@@ -36,10 +37,11 @@ See `docs/repo-organization.md` for the full layout and what each file covers. R
 7. `behavior/context-token-limits.md` (CTL) — the Token economy view. Scoring, wayfinding, conservation practices.
 8. `behavior/context-utility.md` — the index for `behavior/`. Use it as a map, not a substitute for the docs.
 9. `architecture/` — selectively, when the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
-10. `docs/context-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
+10. `docs/memory-context/context-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
 11. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
 12. `workflows/` — only if the task touches project setup or context governance.
-13. `design/` — only if the task is design or UI work.
+13. `agent-architecture/` — only if the task is about multi-agent identity, topology, or orchestration.
+14. `design/` — only if the task is design or UI work.
 
 You do not need to load all of these into active context at once. Use the wayfinding discipline in `context-token-limits.md`: pull what the current task references, leave the rest cold. We are using hot, and cold to write to context memory.
 
@@ -53,13 +55,13 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 **Architecture work is gated.** `architecture/` is where ADM, RAG, Memory, Drift, Watchdog, and workflow-tool standards live. Load it when the task touches those systems. Otherwise leave it cold.
 
-**The 5000-character rule for `context-orientation.md`.** When the file crosses 5000 characters of per-Knob entries, spawn `context-ori-summary-2.md` and continue. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. Past summaries go cold. The current Knob and the last three stay hot inside `context-orientation.md`. This is the user's stated preference and the LTIP reconstitution discipline applied to this repo specifically.
+**The 5000-character rule for `context-orientation.md`.** In this repo, `docs/memory-context/context-orientation.md` is the hot log. When it crosses 5000 characters of per-Knob entries, spawn `context-ori-summary-2.md` in the same folder and continue. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. Past summaries go cold. The current Knob and the last three stay hot inside `context-orientation.md`. This is the user's stated preference and the LTIP reconstitution discipline applied to this repo specifically.
 
-**Every Bump gets a summary.** Per the user's standing preference: every git commit that constitutes a Bump earns a one-to-two paragraph summary in `docs/context-orientation.md` with date and timestamp. Brief, concrete, no bloat. The point is that any future agent (or human) reading the file can trace what happened at any Knob and why.
+**Every Bump gets a summary.** Per the user's standing preference: every git commit that constitutes a Bump earns a one-to-two paragraph summary in `docs/memory-context/context-orientation.md` with date and timestamp for this repo. Downstream repos keep using `docs/context-orientation.md` unless they intentionally adopt the memory-context layout. Brief, concrete, no bloat. The point is that any future agent (or human) reading the file can trace what happened at any Knob and why.
 
 **Token discipline.** Score requests on the 1–10 rubric in `context-token-limits.md` before spending heavily. Impact, Complexity, Relevance to current Knob. Low on all three is the signal to ask the user before continuing. Asking is cheaper than generating the wrong thing twice.
 
-**Wayfinding before retrieval.** Before pulling files into the window, decide what order you actually need them in. AGENT.md → behavior/ → active Knob in `docs/context-orientation.md` → whatever the Knob references. The wrong path costs Tokens. The right path costs fewer.
+**Wayfinding before retrieval.** Before pulling files into the window, decide what order you actually need them in. AGENT.md → behavior/ → active Knob in `docs/memory-context/context-orientation.md` → whatever the Knob references. The wrong path costs Tokens. The right path costs fewer.
 
 **Secrets.** `workflows/project-setup.md` is explicit: never commit `.env` files or anything containing `SECRET` keys unless the user has directly told you to. Flag and warn before any commit that would. This applies to forked projects, not `Documentation.md` itself, but the directive carries.
 
@@ -71,13 +73,13 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 Most of what you do in this repo is editing the canonical docs themselves — `behavior/`, `skills/`, `workflows/`, `design/`. When you do:
 
-- Update `docs/context-orientation.md` with a one-to-two paragraph entry describing what changed and why, dated, before the commit. If the change adds or renames a top-level folder, update `docs/repo-organization.md` and `AGENT.md` in the same commit.
+- Update `docs/memory-context/context-orientation.md` with a one-to-two paragraph entry describing what changed and why, dated, before the commit. If the change adds or renames a top-level folder, update `docs/repo-organization.md` and `AGENT.md` in the same commit.
 - Propagate renames everywhere they are referenced. PLTRF discipline. No orphan pointers.
 - When a new `context-NAME.md` doc spawns inside `behavior/`, update `behavior/context-utility.md` in the same commit.
 - When a new skill spawns inside `skills/`, update `skills/skill-map.md` in the same commit.
 - Cross-references between docs are deliberate. Do not redefine canonical concepts inline in two places. Point at the canonical home.
 
-When you're working *in* a forked project that uses `Documentation.md`, the same disciplines apply at the project level — `docs/context-orientation.md` inside that project, summaries per Bump, the 5000-character threshold, the four-folder layout adapted to that project's needs.
+When you're working *in* a forked project that uses `Documentation.md`, the same disciplines apply at the project level — `docs/context-orientation.md` inside that project by default, summaries per Bump, the 5000-character threshold, and the repo layout adapted to that project's needs.
 
 ---
 

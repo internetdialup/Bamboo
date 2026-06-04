@@ -38,3 +38,4 @@ Create a repo that is easy for humans and agents to enter, has the minimum gover
 
 - Branch naming, versioning, licensing, CI, and release discipline should follow the project's own needs.
 - If a forked project needs different procedures, define them locally in that project's `workflows/`.
+- This canonical source repo stores its own state log under `docs/memory-context/`, but the default project setup contract for downstream repos stays `docs/context-orientation.md`.

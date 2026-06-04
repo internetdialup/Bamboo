@@ -8,6 +8,14 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: memory-context normalization + agent topology — Thursday, June 4, 2026, 04:44 AM CDT
+
+Normalized this repo's internal memory path to `docs/memory-context/` and propagated the rename through the cold-start docs, canonical maps, and memory Skills. `README.md`, `AGENT.md`, `Documentation.md`, `CLAUDE.md`, `docs/repo-organization.md`, and the relevant workflow and Skill docs now distinguish between this repo's internal memory layout and the default downstream template contract, which still points project forks at `docs/context-orientation.md` unless they intentionally adopt the same folder structure.
+
+Added `agent-architecture/agent-topology.md` as the source of truth for multi-agent squad structure. The new doc defines a practical startup tech-squad topology with core lanes, optional lanes, ownership boundaries, handoff expectations, escalation rules, and anti-conflict rules for parallel work. Also added a light cross-reference in `agent-identity.md` so identity stays about persona while topology owns coordination.
+
+---
+
 ## Knob: canonical Documentation root + thinner fork contract — Wednesday, June 3, 2026, 09:18 PM CDT
 
 Added a literal root `Documentation.md` and made it the canonical operating spec for this repository pattern. `README.md` now stays human-facing, `AGENT.md` is reduced to cold-start routing, and generic policy was pulled out of `workflows/project-setup.md` so setup procedure no longer competes with the source of truth.
@@ -40,4 +48,4 @@ Cleaned up early PLTRF drift before it became normal. Fixed the broken `referenc
 
 ---
 
-Older entries moved to `docs/context-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.
+Older entries moved to `docs/memory-context/context-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.

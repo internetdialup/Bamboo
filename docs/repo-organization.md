@@ -15,10 +15,15 @@ Repository-md/
 ├── AGENT.md                     # Cold-start router for any agent landing in the repo
 ├── CLAUDE.md                    # Claude-specific cold-start overlay (sits on top of AGENT.md)
 ├── LICENSE
+├── agent-architecture/          # Multi-agent role design and orchestration patterns.
+│   ├── agent-identity.md
+│   ├── agent-topology.md
+│   └── agent-mms.md
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
-│   ├── context-orientation.md   # Hot per-Knob change log.
-│   └── context-ori-summary-2.md # Cold storage for older Knobs.
+│   └── memory-context/
+│       ├── context-orientation.md   # Hot per-Knob change log.
+│       └── context-ori-summary-2.md # Cold storage for older Knobs.
 ├── behavior/                    # The rules an agent obeys. Cold-start required.
 ├── architecture/                # Memory architecture, ADM/RAG, Watchdog, workflow tools.
 │   ├── workflow-tools.md        # Tool/workflow memory friction.
@@ -38,7 +43,7 @@ Repository-md/
 └── design/                      # Project-specific UI/UX rules. Skip on cold start.
 ```
 
-Five working folders plus `docs/`. The five folders are deliberate. They map to different jobs an agent has to do, and they do not bleed into each other. Downstream repos should copy only the folders they actually need.
+Six working folders plus `docs/`. The folders are deliberate. They map to different jobs an agent has to do, and they do not bleed into each other. Downstream repos should copy only the folders they actually need.
 
 ---
 
@@ -47,10 +52,21 @@ Five working folders plus `docs/`. The five folders are deliberate. They map to 
 Operational memory for *this* repository. Distinct from the `behavior/` rules, which describe how agents should think about context in *any* project they fork this into. `docs/` is the in-house version: the map of this repo, and the running log of Knobs as they get committed.
 
 - `repo-organization.md` — this file. The folder map. Updates when a new top-level folder or canonical file spawns.
-- `context-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `context-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
-- `context-ori-summary-2.md` — cold storage for older Knobs rolled out of `context-orientation.md`.
+- `memory-context/` — this repo's internal memory log folder.
+  - `context-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `context-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
+  - `context-ori-summary-2.md` — cold storage for older Knobs rolled out of `context-orientation.md`.
 
-The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Documentation.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it.
+The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Documentation.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it. This repo uses `docs/memory-context/` internally because the repository itself is documenting memory systems; downstream repos still default to `docs/context-orientation.md` unless they intentionally adopt the same layout.
+
+---
+
+## agent-architecture/
+
+Multi-agent operating model docs. This folder is selective cold-start material. Pull it when the task is about agent roles, identity, orchestration, handoffs, or parallel work boundaries.
+
+- `agent-identity.md` — how an agent adopts a role-shaped working identity.
+- `agent-topology.md` — the coordination model for a practical startup tech squad: role lanes, ownership, handoffs, escalation, and anti-conflict rules.
+- `agent-mms.md` — reserved for future agent memory-management system work.
 
 ---
 
@@ -135,13 +151,14 @@ For an agent landing in this repo for the first time:
 1. `README.md` — what this repo is and how to adopt it.
 2. `AGENT.md` — how to enter it.
 3. `Documentation.md` — the policy source.
-4. `docs/context-orientation.md` — what changed recently and why.
+4. `docs/memory-context/context-orientation.md` — what changed recently and why in this repo.
 5. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
 6. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md`.
 7. `architecture/` — only if the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
-8. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
-9. `workflows/` — only if the task touches setup or context governance.
-10. `design/` — only if the task is design work.
+8. `agent-architecture/` — only if the task touches identity, topology, orchestration, or parallel-agent governance.
+9. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
+10. `workflows/` — only if the task touches setup or context governance.
+11. `design/` — only if the task is design work.
 
 This file lives in `docs/` and is itself part of the cold-start map. When you add a folder or rename one, update this file in the same commit that does the rename. That is the PLTRF discipline applied to the map itself.
 
@@ -153,7 +170,7 @@ This file lives in `docs/` and is itself part of the cold-start map. When you ad
 - New canonical doc inside an existing folder → add a bullet under that folder's section.
 - Rename → propagate to every reference in the same commit. No orphan references.
 - This file gets re-audited every few Knobs. If a section describes something that no longer exists, fix it or remove it. Stale maps are worse than no map.
-- Treat this as the structural source of truth for the repo layout. `AGENT.md` is the behavioral source of truth. `context-orientation.md` is the temporal source of truth. They do not duplicate each other.
+- Treat this as the structural source of truth for the repo layout. `AGENT.md` is the behavioral source of truth. `docs/memory-context/context-orientation.md` is the temporal source of truth for this repo. They do not duplicate each other.
 
 ## Map Hygiene
 
@@ -162,5 +179,5 @@ This is the ruthless part. If the repo is going to be useful as OSS governance, 
 - New folder or moved file gets map updates in the same change.
 - New Skill gets `skills/skill-map.md` and `docs/repo-organization.md` updates.
 - New architecture memory doc gets this map and the relevant Skill pointer updated.
-- Every Bump that changes repo structure gets a `docs/context-orientation.md` entry.
+- Every Bump that changes repo structure gets a `docs/memory-context/context-orientation.md` entry in this repo, or a `docs/context-orientation.md` entry in downstream repos unless they intentionally use a memory-context folder.
 - Run stale-reference scans before finishing. Broken references are memory rot.

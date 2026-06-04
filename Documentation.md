@@ -2,7 +2,7 @@
 
 The canonical operating spec for AI-assisted repositories.
 
-Use this file as the cross-project policy layer. It defines the minimum repo contract, document roles, mandatory rules, optional modules, anti-bloat guardrails, and the forking model. `README.md` explains a repo to humans. `AGENT.md` is the cold-start router for agents. `docs/context-orientation.md` is the running state log.
+Use this file as the cross-project policy layer. It defines the minimum repo contract, document roles, mandatory rules, optional modules, anti-bloat guardrails, and the forking model. `README.md` explains a repo to humans. `AGENT.md` is the cold-start router for agents. In downstream repos, `docs/context-orientation.md` is the default running state log. In this canonical source repo, the internal running state log lives under `docs/memory-context/context-orientation.md`.
 
 ## 1. Purpose and Scope
 
@@ -34,6 +34,7 @@ Only include the folders the repo actually needs. Common modules are:
 - `workflows/` for repeatable procedures
 - `skills/` for reusable agent capabilities
 - `architecture/` for memory or systems architecture
+- `agent-architecture/` for multi-agent role and orchestration guidance
 - `design/` for UI and visual rules
 
 If a folder is not serving the repo, do not create it just to match a template.
@@ -48,9 +49,12 @@ If a folder is not serving the repo, do not create it just to match a template.
 - `workflows/`: step-by-step procedures that implement policy without redefining it
 - `skills/`: reusable capabilities, with pointers back to canonical docs instead of duplicated rule bodies
 - `architecture/`: systems-level design, especially memory and governance architecture
+- `agent-architecture/`: multi-agent role, identity, and orchestration design
 - `design/`: project-specific UI, UX, and visual rules
 
 The roles do not overlap. If two docs try to be authoritative for the same rule, collapse them into one source and point to it from everywhere else.
+
+This source repo uses `docs/memory-context/` for its own operational memory because the repository itself is documenting memory systems. That does not change the default downstream contract unless a fork intentionally adopts the same layout.
 
 ## 4. Mandatory Rules
 
@@ -69,6 +73,7 @@ The roles do not overlap. If two docs try to be authoritative for the same rule,
 These modules are opt-in. They are not default cold-start requirements unless the repo depends on them.
 
 - `architecture/`: only when system architecture or memory architecture is part of the work
+- `agent-architecture/`: only when multi-agent role structure or orchestration is part of the work
 - `design/`: only when the repo owns UI, UX, or visual standards
 - heavy workflow packs: only when the repo repeatedly performs those procedures
 - `skills/`: only when the repo contains reusable capabilities worth carrying across projects

@@ -48,4 +48,4 @@ Cleaned up early PLTRF drift before it became normal. Fixed the broken `referenc
 
 ---
 
-Older entries moved to `docs/context-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.
+Older entries moved to `docs/memory-context/context-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.
