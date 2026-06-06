@@ -7,7 +7,7 @@ description: repository memory watchdog skill for auditing stale maps, broken re
 
 This Skill is the repo hygiene auditor.
 
-The Watchdog exists because memory rots quietly. A file moves. A map does not. A Skill points at an old reference. A Knob gets logged in README but not in `context-orientation.md`. Then six weeks later the repo becomes the thing the agent fights. In this canonical repo, the active Knob log lives in `docs/memory-context/context-orientation.md`. In downstream repos, the default remains `docs/context-orientation.md`.
+The Watchdog exists because memory rots quietly. A file moves. A map does not. A Skill points at an old reference. A Knob gets logged in README but not in `ctx-orientation.md`. Then six weeks later the repo becomes the thing the agent fights. In this canonical repo, the active Knob log lives in `docs/memory-ctx/ctx-orientation.md`. In downstream repos, the default remains `docs/ctx-orientation.md`.
 
 Use this Skill when:
 - adding, moving, or renaming docs
@@ -38,7 +38,7 @@ The Watchdog should be strict about structure and light about voice. Do not over
 - New Skill gets `skills/skill-map.md` and `docs/repo-organization.md` updates.
 - New architecture memory doc gets `docs/repo-organization.md` and the relevant Skill pointer updated.
 - Every Bump that changes repo structure gets a Knob entry in the repo's active context log.
-- In this repo that means `docs/memory-context/context-orientation.md`; in downstream repos that usually means `docs/context-orientation.md`.
+- In this repo that means `docs/memory-ctx/ctx-orientation.md`; in downstream repos that usually means `docs/ctx-orientation.md`.
 - If the active context log crosses 5000 characters, roll older entries into the next summary file in the same folder.
 - Broken references are memory rot. Fix them before they become normal.
 
@@ -59,7 +59,7 @@ Adjust the names to the current Knob. The point is not the exact command. The po
 
 Read only what the audit needs:
 - `docs/repo-organization.md`
-- `docs/memory-context/context-orientation.md`
+- `docs/memory-ctx/ctx-orientation.md`
 - `skills/skill-map.md`
 - `AGENT.md`
 - `CLAUDE.md`

@@ -8,7 +8,7 @@ Canonical documentation and agent-governance starter for AI-assisted repositorie
 
 The policy source lives in `Documentation.md`.
 Agents start in `AGENT.md`.
-Recent state for this repo lives in `docs/memory-context/context-orientation.md`.
+Recent state for this repo lives in `docs/memory-ctx/ctx-orientation.md`.
 
 ## What It Includes
 
@@ -24,13 +24,13 @@ These modules are reusable, but downstream repos should only copy the parts they
 
 ## How To Adopt It
 
-1. Copy `Documentation.md`, `README.md`, `AGENT.md`, and `docs/context-orientation.md`.
+1. Copy `Documentation.md`, `README.md`, `AGENT.md`, and `docs/ctx-orientation.md`.
 2. Bring over only the folders the project needs.
 3. Rewrite the project `README.md` immediately so it describes the actual product or workspace.
 4. Keep `AGENT.md` short and repo-specific.
 5. Add real working folders early so the repo is not mostly governance docs.
 
-This repo keeps its own operational log under `docs/memory-context/`, but the default downstream template contract stays `docs/context-orientation.md` unless a project explicitly chooses a different layout.
+This repo keeps its own operational log under `docs/memory-ctx/`, but the default downstream template contract stays `docs/ctx-orientation.md` unless a project explicitly chooses a different layout.
 
 ## Who It Is For
 

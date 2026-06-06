@@ -23,7 +23,7 @@ Agents should always at all times start by reading this document to understand t
 
 When an Agent is assigned a new project, they should create a project folder inside the users /docs folder unless otherwise directed by the user to place it elsewhere. The /docs folder should create a new file called 
 
-project-context.md ; or context-orientation.md (these are interchangeable). 
+project-context.md ; or ctx-orientation.md (these are interchangeable). 
 
 This file serves as the project's main knowledge base. It should contain all information relevant to the project, including: git history, worktrees, branches, project policies, and more.
 
@@ -31,7 +31,7 @@ The more detailed information a user provides initially, the less the Agents wil
 
 ## Context Maintenance
 
-If a context document exceeds 5000 characters, create a new document called project-context-v2.md, or context-orientation-v2.md (these are interchangeable).
+If a context document exceeds 5000 characters, create a new document called project-context-v2.md, or ctx-orientation-v2.md (these are interchangeable).
 
 This is to keep a low overhead and context bloat for all agenets and managers working on the project. Especially, multi-agent development, and parallel development workflows. 
 
@@ -97,7 +97,7 @@ Mark date and time with a clear timestamp.
 
 Document what you did, and what in a summary of one to two paragraphs with clarity and brevity in mind.
 
-Only the important information should be documented and handed off in the commit message description, and updated context-orientation.md file. With the last version history, which knob was changed, if you bumped a version, and or created a new worktree / branch, etc. 
+Only the important information should be documented and handed off in the commit message description, and updated ctx-orientation.md file. With the last version history, which knob was changed, if you bumped a version, and or created a new worktree / branch, etc. 
 
 No bloat, no clutter, no redundancy. Just concise, clear, and concise information that will help the user, and other agents understand the context of the project. 
 
@@ -111,7 +111,7 @@ Use your judgement but do not cast a wide net. Stay narrow in scope, and ensure 
 
 # Git Pull Rules for Ingesting Handoffs
 
-If you are pulling a branch, always ensure that you read the context-orientation or any context related file. Agents make sure you read and understand the previous commit, and work that was done to form better context. Context matters and the context provided will help you make better decisions for the user.
+If you are pulling a branch, always ensure that you read the ctx-orientation or any context related file. Agents make sure you read and understand the previous commit, and work that was done to form better context. Context matters and the context provided will help you make better decisions for the user.
 
 Furthermore, do not create new branches without user approval. 
 

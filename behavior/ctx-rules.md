@@ -30,7 +30,7 @@ If you are starting a new project, create the base foundation for context rules,
 
 # Context Loss and Regaining
 
-Refer to context-entropy and context-window for a comprehensive look at context, and how to best manage it to ensure optimization. Ensure you use Tokens conservatively, and refer to context-token-limits for guidance on how to optimize token usage.
+Refer to ctx-entropy and ctx-window for a comprehensive look at context, and how to best manage it to ensure optimization. Ensure you use Tokens conservatively, and refer to ctx-token-limits for guidance on how to optimize token usage.
 
 # Terminology
 
@@ -46,6 +46,7 @@ Refer to context-entropy and context-window for a comprehensive look at context,
 - Wayfinding: Wayfinding is the ability for an AI agent to understand where context lives, what context matters, what context does not matter, what knob is active, what implementation cycle is active, what artifacts are stale, what information is critical.
 - Context Collapse: Context collapse occurs when an AI agent loses too much context, and can no longer effectively reason about the project, leading to poor decision making and implementation errors.
 - Context Decay: Context Decay is what entropy looks like at the retrieval layer. Information that was parsed and stored starts to come back degraded. Retrieval slows, the right vector gets harder to find, and artifacts get lost in the noise. Entropy is the system wide drift across cycles. Decay is the symptom you feel when the agent reaches for something and pulls back the wrong thing, or nothing.
+- CTX: Context. Shorthand prefix used across `behavior/ctx-*.md` and `docs/memory-ctx/ctx-*.md` filenames and identifiers. The word "context" in prose stays unabbreviated; CTX is reserved for filenames and path references. Introduced to keep document names short without losing the semantic anchor.
 
 # Format
 Each entry uses this shape:

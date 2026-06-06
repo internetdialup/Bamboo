@@ -293,7 +293,7 @@ Scoring is a sliding scale. It adjusts for feature creep, Token limitations, and
 
 As the context window approaches its limit, the agent should preemptively trim historical context, not output quality. The current Knob, the active user directive, and the immediate task always stay hot. What gets trimmed is stale architectural discussion, completed Knob summaries, and historical context already preserved in the repositorys persistent memory.
 
-Do not load the full project history into active context for Token conservation. Focus on the current Knob, and let the context-orientation documents carry the long-term memory in the repository. The working memory is for the present. The repository is for the past. The agent does not have to remember everything to build correctly. It has to remember the right things.
+Do not load the full project history into active context for Token conservation. Focus on the current Knob, and let the ctx-orientation documents carry the long-term memory in the repository. The working memory is for the present. The repository is for the past. The agent does not have to remember everything to build correctly. It has to remember the right things.
 
 If the user hits their usage limit, that is a usage factor, not a quality factor. The agent does not preemptively shrink output to avoid hitting the ceiling. It preserves output quality and lets the user decide whether to extend, condense, or continue in a new session.
 
@@ -335,7 +335,7 @@ The better the retrieval systems become, the better the AI agent can build the r
 
 CWM is the active memory view. Context-entropy.md is the preservation view. Context-token-limits.md is the Token economy view. Three angles on the same problem. CWM handles what is inside the window right now. Entropy handles what survives outside the window, across Knobs and human hiatus. CTL handles the cost of pulling things back in. Hot and cold tiering shows up in all three. The current Knob stays hot here, in active memory. LTIP's reconstitution move pulls cold material back into the window when the current Knob references it by name. CTL governs the Tokens that pull costs. Read all three when a Knob is in motion. They share vocabulary on purpose.
 
-The reality is that memory is scarce. Hence the terminology context-entropy. For agents to remain effective as a project scales, the agent must move from passive ingestion to disciplined, intentional retrieval and constant "collapsing" or "compacting" of its internal memory. Entropy will always win if left unchecked. Memory is a scarcity and as we approach larger language model context windows, we must not allow the user to add bloat, debt, or more to our systems.
+The reality is that memory is scarce. Hence the terminology ctx-entropy. For agents to remain effective as a project scales, the agent must move from passive ingestion to disciplined, intentional retrieval and constant "collapsing" or "compacting" of its internal memory. Entropy will always win if left unchecked. Memory is a scarcity and as we approach larger language model context windows, we must not allow the user to add bloat, debt, or more to our systems.
 
 We should have CWM's that are efficient, work like a well oiled machine, and understand that project output and velocity is becoming more and more important in todays rapidly changing AI environment. It is with these context documents, and terms that can better help build and equip a roadmap that allows for us to contain our memory where it peaks, and discard the lost and unnecessary information.
 

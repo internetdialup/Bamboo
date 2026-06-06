@@ -19,10 +19,10 @@ The goal is to retrieve the right information at the right time while preserving
 - contextual understanding
 
 Follow the principles established in:
-- references/context-entropy.md
-- references/context-window.md
-- references/context-rules.md
-- references/context-token-limits.md
+- references/ctx-entropy.md
+- references/ctx-window.md
+- references/ctx-rules.md
+- references/ctx-token-limits.md
 
 Maintain awareness of:
 - context drift

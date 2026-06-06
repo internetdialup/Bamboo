@@ -1,6 +1,6 @@
 # Context Entropy
 
-As a project grows and matures, so does our AI & ML agents. The memory banks of an AI agent also grow with the standardization of creating context-orientation and context-summaryv-0.0.1 documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
+As a project grows and matures, so does our AI & ML agents. The memory banks of an AI agent also grow with the standardization of creating ctx-orientation and context-summaryv-0.0.1 documents for each cycle. The downside to this is the matter of context entropy, and decay when it comes to an AI being able to accurately reference the past to develop for the present.
 
 This is known as Context Entropy. Entropy like energy has to go somewhere. It is not infinite, but it is also not static. It can be managed, and redirected. But over time it can slow down. It degrades. This is called Context Decay. Where information parsed starts to become degraded. The retrieval slows down, and artifacts get lost in noise. AI and ML agents start to have a harder time with retrieving the right vector, and can accidentally deliver the wrong end point.
 
@@ -38,7 +38,7 @@ This means prioritizing the following:
 - Which Knob we are currently working on
 - What external factors are a risk to the project
 - Internal factors that are a risk to the project
-- Managing the amount of context-orientation, and or context related documents that are being generated for historical context and memory.
+- Managing the amount of ctx-orientation, and or context related documents that are being generated for historical context and memory.
 - When to purge memory and reorganize for performance, and or relevance.
 - What is the users directive when it comes to risk management, compliance, and security.
 - What is the users directive for managing memory internally and their documentation standards.
@@ -97,7 +97,7 @@ There are three distinct moves inside LTIP and they fail in different ways. Most
 
 The first move is getting the information out of the agent and into the repo. Working memory does not survive compaction. Anything worth keeping has to leave the context window and land somewhere durable. A ctx-orientation entry, a commit message that actually says something, a summary file when the orientation file overflows. The discipline here is not what to save. It is when. Saving at the moment of change is cheap. Saving five Knobs later, after the project has already drifted, is what produced the v0.9.31 backfill scramble.
 
-The second move is making the saved thing findable again. Information that exists in the repo but never gets loaded back is not preserved, it is buried. This is where LTIP fails quietly. A 4900 character summary-2 file that no agent ever opens on cold start is dead storage. The fix is structural. Filenames that telegraph their contents, headers an agent can scan without reading the body, cross-references from context-orientation back to the canonical docs so an agent dropped into the repo cold can follow the trail without ingesting everything.
+The second move is making the saved thing findable again. Information that exists in the repo but never gets loaded back is not preserved, it is buried. This is where LTIP fails quietly. A 4900 character summary-2 file that no agent ever opens on cold start is dead storage. The fix is structural. Filenames that telegraph their contents, headers an agent can scan without reading the body, cross-references from ctx-orientation back to the canonical docs so an agent dropped into the repo cold can follow the trail without ingesting everything.
 
 The third move is reconstitution. Pulling the right slice back into context at the right time, without dragging the whole archive in with it. This is where hot and cold storage tiering does its work. The active Knob lives hot, in the current ctx-orientation entry. The last three Knobs live warm, easy to scan in the same file. Everything beyond that is cold, and only gets read when something in the current Knob references it by name. LTIP without reconstitution discipline is hoarding. The information is technically preserved and effectively useless.
 
@@ -132,35 +132,6 @@ Then I started building for localization. Japanese first. And the moment I turne
 That was the refactor moment. Polish versus form and function. Form and function won. The UI Refactor commit pulled the structure apart and rebuilt it so the surface effects sat on top of layout that could actually flex. Polish came back afterward, but it came back on top of something that could hold it.
 
 The lesson here is older than this project and older than this document. Postel's Law: be liberal in what you receive, conservative in what you give. The UI was conservative in what it gave (clean, polished, designed) but it was not liberal in what it received (Japanese characters, large text mode, accessibility flags, real user environments). Dog-fooding for accessibility and localization is what surfaces that gap. Context entropy at the UI layer is not always about losing history. Sometimes it is about polish accumulating faster than the foundation it sits on, until the gap shows up only when a user who is not you arrives.
-
-
-## Computing Entropy
-
-Entropy has been a word in this document up to now. A direction, not a number. If it is going to trigger anything automatically, like a compression sweep, it has to be measured. The trap is measuring it the easy wrong way. Multiply volume by duplication by age and you get a number that grows with the size of the repo and means nothing. A real entropy measure does not grow just because the repo got bigger. It measures disorder in a distribution, normalized, so a fifty file repo and a two thousand file repo land on the same scale and can actually be compared. Size is volume. Entropy is how tangled the volume is.
-
-There are two places worth measuring it, and they do different jobs.
-
-### Retrieval Entropy
-
-This is the one that improves retrieval directly, because it tells the agent when its own retrieval cannot be trusted, before it answers.
-
-When the agent retrieves for a query it gets back a set of candidates with similarity scores. Turn those scores into a distribution, softmax over the top k, and take the entropy of that distribution. Normalize by the log of k so it lands between zero and one. A peaked distribution, one candidate far above the rest, is low entropy. The retriever found a clear answer. A flat distribution, ten candidates all scoring about the same, is high entropy. The retriever cannot tell the documents apart, and that is the exact moment retrieval turns into noise.
-
-Low retrieval entropy, proceed. High retrieval entropy is the signal to widen the net, dedupe the region, or warn the user before the agent blends a muddy retrieval into a confident answer. This is the same alarm as the conflict detection in memory-compression.md, coming from a different angle. Conflict detection asks whether the retrieved docs disagree. Retrieval entropy asks whether the retriever could even pick between them. When both fire on the same query you are looking at a topic that has rotted.
-
-### Corpus Entropy
-
-This is the health number. The one that crosses a threshold and triggers a sweep.
-
-Embed the chunks of the repo and measure how much of the corpus is a near duplicate of itself. For each chunk find its nearest neighbor. If that neighbor sits above a high similarity threshold, the chunk is redundant. The fraction of the corpus that is redundant, weighted by how tightly it clusters, is the corpus entropy. A repo where every concept has one clean home scores low. A repo where auth is described four slightly different ways across four files scores high, because the retrieval probability mass for any auth query gets split across near copies, and the conflicting versions all surface together.
-
-That is the disorder this document has been describing, finally as a number. When it crosses the project threshold, the compression pass in memory-compression.md fires, scores the docs, dedupes the redundant cluster, and re-tiers. Garbage collection, triggered by a measurement instead of a feeling. The threshold is a project level dial. A small SaaS tolerates more tangle before a sweep earns its cost than a large monolith does.
-
-### Where The Number Lives
-
-Both of these need embeddings and a retrieval index to compute. This document defines what they measure and why. It does not compute them. A markdown file does not run a softmax. The indexing layer does, and the implementation belongs with the algorithm work, not the behavior doc. Keep the definition here and the computation there, the same split this framework keeps everywhere else.
-
-One honest note on why this earns its place. The degradation this framework calls Context Decay is the same thing the long context research measures as context rot, where retrieval quality falls as the corpus grows and the right chunk competes against more and more noise. Corpus entropy is a lightweight proxy for that. Something you can compute on your own repo without running a full benchmark. It is not the whole story. It is a cheap early warning, and a cheap early warning is the entire point of measuring entropy before it collapses into decay.
 
 
 ## End of Documentation

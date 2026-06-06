@@ -1,24 +1,24 @@
-# context-utility.md
+# ctx-utility.md
 
-context-utility.md is the map for behavior/. It points at where the canonical concepts live. The docs themselves do the defining.
+ctx-utility.md is the map for behavior/. It points at where the canonical concepts live. The docs themselves do the defining.
 
 Each doc gets a short description, and a list of the named concepts inside it. One sentence each, maybe two. Just enough to orient.
 
-This is not a glossary. The terminology lives inside context-rules.md for now. When the vocabulary outgrows that home, the glossary spawns its own file.
+This is not a glossary. The terminology lives inside ctx-rules.md for now. When the vocabulary outgrows that home, the glossary spawns its own file.
 
-Order is weighted by importance and topic load. context-rules.md first as the foundational layer, then context-entropy.md, context-window.md, and context-token-limits.md. Not a reading sequence. The agent decides what to load when based on the task in front of it.
+Order is weighted by importance and topic load. ctx-rules.md first as the foundational layer, then ctx-entropy.md, ctx-window.md, and ctx-token-limits.md. Not a reading sequence. The agent decides what to load when based on the task in front of it.
 
 Updates trigger on file-level growth. When a large new context-NAME file spawns inside behavior/, this doc updates. Concept-level changes inside existing docs do not touch it.
 
 ---
 
-## context-rules.md
+## ctx-rules.md
 
 The foundational layer. Hard operational rules, behavioral constraints, and retrieval policies for agents working in the project. Also holds the working glossary for framework terminology until the vocabulary outgrows its embedded home.
 
 ---
 
-## context-entropy.md
+## ctx-entropy.md
 
 The preservation view of the framework. How context survives across Knobs, agent handoffs, and human hiatus. Holds the worked examples that anchor the rest of the framework's vocabulary.
 
@@ -31,7 +31,7 @@ The preservation view of the framework. How context survives across Knobs, agent
 
 ---
 
-## context-window.md (CWM)
+## ctx-window.md (CWM)
 
 The active memory view of the framework. Treats the context window as virtual RAM. Limited, temporary, prone to saturation and drift. The disciplines here keep working memory clean across long development cycles.
 
@@ -44,7 +44,7 @@ The active memory view of the framework. Treats the context window as virtual RA
 
 ---
 
-## context-token-limits.md (CTL)
+## ctx-token-limits.md (CTL)
 
 The Token economy view of the framework. How Tokens get spent, conserved, and prioritized at runtime. The runtime counterpart to entropy's preservation discipline.
 

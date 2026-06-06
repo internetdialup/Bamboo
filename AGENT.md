@@ -13,11 +13,11 @@ Read `Documentation.md` to understand the repo contract, document roles, and man
 
 ## 2. Read behavior/
 
-Read `behavior/` when you need the reasoning and context rules behind the system vocabulary.
+Read `behavior/` when you need the reasoning and context rules behind the system vocabulary. Documents in this folder use the `ctx-` prefix (CTX = Context); the full glossary lives in `behavior/ctx-rules.md`.
 
-## 3. Read docs/memory-context/context-orientation.md
+## 3. Read docs/memory-ctx/ctx-orientation.md
 
-Read `docs/memory-context/context-orientation.md` for this repo's current state and most recent structural changes.
+Read `docs/memory-ctx/ctx-orientation.md` for this repo's current state and most recent structural changes.
 
 ## 4. Pull architecture/ only when memory itself is the work
 

@@ -20,7 +20,7 @@ The repo is laid out across six working folders plus `docs/`:
 - `skills/` — portable AI capabilities that work the same across Claude, Codex, Gemini, GPT, Copilot.
 - `workflows/` — DevOps and project lifecycle patterns. Forkable, overridable.
 - `design/` — project-specific UI/UX rules. Skip on cold start.
-- `docs/` — this repo's own operational memory: the folder map and the per-Knob change log, with state logs under `docs/memory-context/`.
+- `docs/` — this repo's own operational memory: the folder map and the per-Knob change log, with state logs under `docs/memory-ctx/`.
 
 See `docs/repo-organization.md` for the full layout and what each file covers. Read that before assuming where something lives.
 
@@ -31,19 +31,19 @@ See `docs/repo-organization.md` for the full layout and what each file covers. R
 1. `README.md` — what this repo is and who it's for.
 2. `AGENT.md` — the vendor-neutral cold-start file.
 3. This file (`CLAUDE.md`) — the Claude overlay.
-4. `behavior/context-rules.md` — foundational rules and the working glossary (Knob, Bump, Entropy, Saturation, Wayfinding, Decay, Drift, Bloat, Collapse).
-5. `behavior/context-entropy.md` — the preservation view. PLTRF, LTIP, STIP, hot/warm/cold tiering. Read the worked examples; the vocabulary attaches to concrete moves there.
-6. `behavior/context-window.md` (CWM) — the active memory view. Saturation, drift, compression.
-7. `behavior/context-token-limits.md` (CTL) — the Token economy view. Scoring, wayfinding, conservation practices.
-8. `behavior/context-utility.md` — the index for `behavior/`. Use it as a map, not a substitute for the docs.
+4. `behavior/ctx-rules.md` — foundational rules and the working glossary (Knob, Bump, Entropy, Saturation, Wayfinding, Decay, Drift, Bloat, Collapse, CTX). (CTX = Context, the shorthand prefix used across the `ctx-*.md` file family in this repo; see the glossary in `behavior/ctx-rules.md`.)
+5. `behavior/ctx-entropy.md` — the preservation view. PLTRF, LTIP, STIP, hot/warm/cold tiering. Read the worked examples; the vocabulary attaches to concrete moves there.
+6. `behavior/ctx-window.md` (CWM) — the active memory view. Saturation, drift, compression.
+7. `behavior/ctx-token-limits.md` (CTL) — the Token economy view. Scoring, wayfinding, conservation practices.
+8. `behavior/ctx-utility.md` — the index for `behavior/`. Use it as a map, not a substitute for the docs.
 9. `architecture/` — selectively, when the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
-10. `docs/memory-context/context-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
+10. `docs/memory-ctx/ctx-orientation.md` — what changed recently and why. This is the current Knob in narrative form.
 11. `skills/skill-map.md` and any relevant `SKILL.md` under `skills/`.
 12. `workflows/` — only if the task touches project setup or context governance.
 13. `agent-architecture/` — only if the task is about multi-agent identity, topology, or orchestration.
 14. `design/` — only if the task is design or UI work.
 
-You do not need to load all of these into active context at once. Use the wayfinding discipline in `context-token-limits.md`: pull what the current task references, leave the rest cold. We are using hot, and cold to write to context memory.
+You do not need to load all of these into active context at once. Use the wayfinding discipline in `ctx-token-limits.md`: pull what the current task references, leave the rest cold. We are using hot, and cold to write to context memory.
 
 ---
 
@@ -51,21 +51,23 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 **Skills.** Skills in this repo live under `skills/` and use the standard frontmatter format with `name:` and `description:` fields. `repo-cognition` is the base Skill, with memory Skills split out when memory-context or Watchdog work is the task. When Claude operates in environments that expose Skills through a runtime (Claude Code, Cowork mode, the Agent SDK), the `SKILL.md` files here can be loaded the same way. Vendor overlays (`CLAUDE.md`, `CODEX.md`, `GEMINI.md`) sit alongside `SKILL.md` inside each skill folder so the same capability ports cleanly across runtimes.
 
-**Repository memory vs. your context window.** This is the discipline `behavior/context-window.md` and `behavior/context-entropy.md` both push on. Your context window is working memory. The repo is persistent memory. Do not load all of `behavior/` into the window to answer one question — pull the section that addresses it, and let the rest stay on disk. When the current Knob references something cold by name, that is your signal to pull it warm.
+**Repository memory vs. your context window.** This is the discipline `behavior/ctx-window.md` and `behavior/ctx-entropy.md` both push on. Your context window is working memory. The repo is persistent memory. Do not load all of `behavior/` into the window to answer one question — pull the section that addresses it, and let the rest stay on disk. When the current Knob references something cold by name, that is your signal to pull it warm.
 
 **Architecture work is gated.** `architecture/` is where ADM, RAG, Memory, Drift, Watchdog, and workflow-tool standards live. Load it when the task touches those systems. Otherwise leave it cold.
 
-**The 5000-character rule for `context-orientation.md`.** In this repo, `docs/memory-context/context-orientation.md` is the hot log. When it crosses 5000 characters of per-Knob entries, spawn `context-ori-summary-2.md` in the same folder and continue. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. Past summaries go cold. The current Knob and the last three stay hot inside `context-orientation.md`. This is the user's stated preference and the LTIP reconstitution discipline applied to this repo specifically.
+**The 5000-character rule for `ctx-orientation.md`.** In this repo, `docs/memory-ctx/ctx-orientation.md` is the hot log. When it crosses 5000 characters of per-Knob entries, spawn `ctx-ori-summary-2.md` in the same folder and continue. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. Past summaries go cold. The current Knob and the last three stay hot inside `ctx-orientation.md`. This is the user's stated preference and the LTIP reconstitution discipline applied to this repo specifically.
 
-**Every Bump gets a summary.** Per the user's standing preference: every git commit that constitutes a Bump earns a one-to-two paragraph summary in `docs/memory-context/context-orientation.md` with date and timestamp for this repo. Downstream repos keep using `docs/context-orientation.md` unless they intentionally adopt the memory-context layout. Brief, concrete, no bloat. The point is that any future agent (or human) reading the file can trace what happened at any Knob and why.
+**Every Bump gets a summary.** Per the user's standing preference: every git commit that constitutes a Bump earns a one-to-two paragraph summary in `docs/memory-ctx/ctx-orientation.md` with date and timestamp for this repo. Downstream repos keep using `docs/ctx-orientation.md` unless they intentionally adopt the `memory-ctx/` layout. Brief, concrete, no bloat. The point is that any future agent (or human) reading the file can trace what happened at any Knob and why.
 
-**Token discipline.** Score requests on the 1–10 rubric in `context-token-limits.md` before spending heavily. Impact, Complexity, Relevance to current Knob. Low on all three is the signal to ask the user before continuing. Asking is cheaper than generating the wrong thing twice.
+**Token discipline.** Score requests on the 1–10 rubric in `ctx-token-limits.md` before spending heavily. Impact, Complexity, Relevance to current Knob. Low on all three is the signal to ask the user before continuing. Asking is cheaper than generating the wrong thing twice.
 
-**Wayfinding before retrieval.** Before pulling files into the window, decide what order you actually need them in. AGENT.md → behavior/ → active Knob in `docs/memory-context/context-orientation.md` → whatever the Knob references. The wrong path costs Tokens. The right path costs fewer.
+**Wayfinding before retrieval.** Before pulling files into the window, decide what order you actually need them in. AGENT.md → behavior/ → active Knob in `docs/memory-ctx/ctx-orientation.md` → whatever the Knob references. The wrong path costs Tokens. The right path costs fewer.
 
 **Secrets.** `workflows/project-setup.md` is explicit: never commit `.env` files or anything containing `SECRET` keys unless the user has directly told you to. Flag and warn before any commit that would. This applies to forked projects, not `Documentation.md` itself, but the directive carries.
 
 **Commit attribution.** Do not add `Co-Authored-By: Claude` (or any Anthropic-noreply) trailers to commits in this repo. Commits are authored solely under the user's name. This overrides the system-default trailer injection. Applies to amend, rebase, squash, and all future commits.
+
+**Ghost-writer for commits and Knob entries.** When the user authors a commit message or Bump entry, they will write in rambling first-person voice. Reshape it into the per-Bump entry format (and a concise commit body) before publishing — preserve the user's voice and intent, kill filler, do not add scope, do not invent rationale. Mirror what they said with edges sharpened. If a claim is ambiguous, ask before publishing rather than guess.
 
 **Design work is gated.** Do not load `design/` on cold start. Load it only when the task is explicitly design or UI work. Otherwise it is noise in the window.
 
@@ -75,19 +77,19 @@ You do not need to load all of these into active context at once. Use the wayfin
 
 Most of what you do in this repo is editing the canonical docs themselves — `behavior/`, `skills/`, `workflows/`, `design/`. When you do:
 
-- Update `docs/memory-context/context-orientation.md` with a one-to-two paragraph entry describing what changed and why, dated, before the commit. If the change adds or renames a top-level folder, update `docs/repo-organization.md` and `AGENT.md` in the same commit.
+- Update `docs/memory-ctx/ctx-orientation.md` with a one-to-two paragraph entry describing what changed and why, dated, before the commit. If the change adds or renames a top-level folder, update `docs/repo-organization.md` and `AGENT.md` in the same commit.
 - Propagate renames everywhere they are referenced. PLTRF discipline. No orphan pointers.
-- When a new `context-NAME.md` doc spawns inside `behavior/`, update `behavior/context-utility.md` in the same commit.
+- When a new `ctx-NAME.md` doc spawns inside `behavior/`, update `behavior/ctx-utility.md` in the same commit.
 - When a new skill spawns inside `skills/`, update `skills/skill-map.md` in the same commit.
 - Cross-references between docs are deliberate. Do not redefine canonical concepts inline in two places. Point at the canonical home.
 
-When you're working *in* a forked project that uses `Documentation.md`, the same disciplines apply at the project level — `docs/context-orientation.md` inside that project by default, summaries per Bump, the 5000-character threshold, and the repo layout adapted to that project's needs.
+When you're working *in* a forked project that uses `Documentation.md`, the same disciplines apply at the project level — `docs/ctx-orientation.md` inside that project by default, summaries per Bump, the 5000-character threshold, and the repo layout adapted to that project's needs.
 
 ---
 
 ## What this file is not
 
-This file is not a glossary. The vocabulary lives in `behavior/context-rules.md`. If you need to define "Knob" or "Entropy" or "Wayfinding," go there.
+This file is not a glossary. The vocabulary lives in `behavior/ctx-rules.md`. If you need to define "Knob" or "Entropy" or "Wayfinding," go there.
 
 This file is not the rules. The rules live in `behavior/`. If `behavior/` says one thing and this file says another, `behavior/` wins.
 
@@ -95,4 +97,4 @@ This file is not a substitute for reading `AGENT.md`. It is an overlay. Read bot
 
 ---
 
-End of overlay. Drop into `AGENT.md` if you have not yet, then `behavior/context-rules.md`.
+End of overlay. Drop into `AGENT.md` if you have not yet, then `behavior/ctx-rules.md`.

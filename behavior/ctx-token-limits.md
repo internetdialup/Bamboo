@@ -24,7 +24,7 @@ Once the context is found, it has to be sized. Loading every file in behavior/ t
 
 The optimized move is to pull in the section of the file that addresses the question, and leave the rest cold. Optimization is hot and cold tiering applied to the current Tokens budget. The active Knob is hot. The last three are warm. Everything else is cold until something in the current Knob names it by reference.
 
-This is the runtime version of LTIP's reconstitution discipline in context-entropy.md. Entropy preserves the cold material on disk. CTL pulls only what is needed into the Tokens budget. Same tiering, different surface.
+This is the runtime version of LTIP's reconstitution discipline in ctx-entropy.md. Entropy preserves the cold material on disk. CTL pulls only what is needed into the Tokens budget. Same tiering, different surface.
 
 ## Token Conservation Practices
 

@@ -2,9 +2,19 @@
 
 The running per-Knob log for this repository. Each Bump (commit, version push, state transition) earns a one-to-two paragraph summary with date and timestamp. Brief, concrete, no bloat. Any agent (or human) reading this file should be able to trace what happened at any Knob in the repo's history and why.
 
-When this file crosses 5000 characters of per-Knob entries, spawn `context-ori-summary-2.md` and continue here. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. The current Knob and the last three stay hot in this file. Older entries migrate to the numbered summary files as cold storage.
+When this file crosses 5000 characters of per-Knob entries, spawn `ctx-ori-summary-2.md` and continue here. Then `-3.md`, `-4.md`, `-5.md` as the repo grows. The current Knob and the last three stay hot in this file. Older entries migrate to the numbered summary files as cold storage.
 
 Read in reverse chronological order — newest at the top. The active Knob is whatever appears first.
+
+---
+
+## Knob: ctx- rename + CTX acronym + ghost-writer policy — Saturday, June 6, 2026, 06:27 PM CDT
+
+Refactored the `context-` filename prefix to `ctx-` across the repo and renamed the `docs/memory-context/` folder to `docs/memory-ctx/`. Twelve files moved via `git mv` (six in `behavior/`, two in `docs/memory-ctx/`, four in `skills/repo-cognition/references/`) plus the folder itself. Path and identifier references in every doc inside the Documentation.md radius — CLAUDE.md, AGENT.md, README.md, Documentation.md, docs/repo-organization.md, the skill files, the workflow docs, and the architecture/memory docs — were updated in lockstep so no orphan pointers were left behind. The standalone word "context" in prose was preserved per the user's rule; only doc-name references and folder paths flipped.
+
+Introduced CTX as a canonical acronym. Definition lives in the glossary inside `behavior/ctx-rules.md` alongside Knob, Bump, Entropy, and the other foundational terms. A one-sentence gloss was added to the cold-start sections of both `CLAUDE.md` and `AGENT.md` so a fresh agent encounters the acronym before relying on it. The rename is the kind of move `behavior/ctx-entropy.md` explicitly warns against — Drift starts when renames stack without their references — so all of it landed in a single atomic commit under PLTRF discipline.
+
+Same Knob also added a **Ghost-writer for commits and Knob entries** bullet to `CLAUDE.md`. The user writes commit drafts and Bump entries in rambling first-person voice; Claude reshapes them into the per-Bump format while preserving voice and intent, killing filler, and never adding scope or inventing rationale. Codifying it in `CLAUDE.md` means future Claude sessions inherit the role without being re-briefed.
 
 ---
 
@@ -18,7 +28,7 @@ History scrub paired with the policy: the trailer existed on exactly one commit,
 
 ## Knob: memory-context normalization + agent topology — Thursday, June 4, 2026, 04:44 AM CDT
 
-Normalized this repo's internal memory path to `docs/memory-context/` and propagated the rename through the cold-start docs, canonical maps, and memory Skills. `README.md`, `AGENT.md`, `Documentation.md`, `CLAUDE.md`, `docs/repo-organization.md`, and the relevant workflow and Skill docs now distinguish between this repo's internal memory layout and the default downstream template contract, which still points project forks at `docs/context-orientation.md` unless they intentionally adopt the same folder structure.
+Normalized this repo's internal memory path to `docs/memory-ctx/` and propagated the rename through the cold-start docs, canonical maps, and memory Skills. `README.md`, `AGENT.md`, `Documentation.md`, `CLAUDE.md`, `docs/repo-organization.md`, and the relevant workflow and Skill docs now distinguish between this repo's internal memory layout and the default downstream template contract, which still points project forks at `docs/ctx-orientation.md` unless they intentionally adopt the same folder structure.
 
 Added `agent-architecture/agent-topology.md` as the source of truth for multi-agent squad structure. The new doc defines a practical startup tech-squad topology with core lanes, optional lanes, ownership boundaries, handoff expectations, escalation rules, and anti-conflict rules for parallel work. Also added a light cross-reference in `agent-identity.md` so identity stays about persona while topology owns coordination.
 
@@ -52,8 +62,8 @@ Added the first pass of ADM, RAG, and CRUD memory docs. ADM carries episodic cha
 
 Added `architecture/` to the repo's cold-start map as the fifth working folder. It now shows up in `README.md`, `AGENT.md`, `CLAUDE.md`, and `docs/repo-organization.md`, but it is selective cold-start material. Agents load it when memory itself is the work: drift, Watchdog, audits, workflow governance, or memory architecture. Otherwise it stays cold so the Token budget does not get eaten just because a folder exists.
 
-Cleaned up early PLTRF drift before it became normal. Fixed the broken `references/context-token-limits.md` pointers, corrected the long-term preservation acronym split, synced the repo-cognition reference mirrors back to canonical `behavior/`, and turned the Codex/Claude/Gemini overlays into thin wrappers around `SKILL.md`. Same hooks, fewer duplicated rules, less chance the repo becomes the thing the agent fights.
+Cleaned up early PLTRF drift before it became normal. Fixed the broken `references/ctx-token-limits.md` pointers, corrected the long-term preservation acronym split, synced the repo-cognition reference mirrors back to canonical `behavior/`, and turned the Codex/Claude/Gemini overlays into thin wrappers around `SKILL.md`. Same hooks, fewer duplicated rules, less chance the repo becomes the thing the agent fights.
 
 ---
 
-Older entries moved to `docs/memory-context/context-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.
+Older entries moved to `docs/memory-ctx/ctx-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.

@@ -8,7 +8,7 @@ Gemini note: stay strict on wayfinding. Use the Skill to keep context retrieval 
 
 Load:
 - `SKILL.md`
-- `references/context-entropy.md`
-- `references/context-window.md`
-- `references/context-rules.md`
-- `references/context-token-limits.md`
+- `references/ctx-entropy.md`
+- `references/ctx-window.md`
+- `references/ctx-rules.md`
+- `references/ctx-token-limits.md`

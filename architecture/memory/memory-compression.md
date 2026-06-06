@@ -1,6 +1,6 @@
 # Memory Compression
 
-Compression already has a home in this repo. context-window.md defines what it is. Compression is not deletion, it is prioritization, and the hot and cold tiering rules live there. This document does not redefine any of that. This document is the scoring layer that sits underneath it. The part that answers the harder question. When the agent decides to compress, archive, promote, or delete a document, what is that decision actually based on.
+Compression already has a home in this repo. ctx-window.md defines what it is. Compression is not deletion, it is prioritization, and the hot and cold tiering rules live there. This document does not redefine any of that. This document is the scoring layer that sits underneath it. The part that answers the harder question. When the agent decides to compress, archive, promote, or delete a document, what is that decision actually based on.
 
 Right now the answer is judgment. The active Knob stays hot, the last few Knobs stay warm, everything older goes cold. That works while a project is small and the agent can hold the whole shape in its head. It stops working when the repo grows past the point where any one agent can eyeball what matters. At that scale the tiering needs a number behind it, not a feel.
 
@@ -8,13 +8,13 @@ So this doc is about giving each document a value the agent can compute, and a s
 
 ## What This Doc Is Not
 
-It is not the request scoring rubric. context-token-limits.md scores a users request 1 to 10 on Impact, Complexity, and Relevance. That is about whether a request is worth the Tokens right now. The scores here are about documents, not requests. How much a file is worth keeping hot, how much the corpus is drifting, how much the agent should trust what it just retrieved. Different axis, different job. Do not collapse the two into one pile of numbers.
+It is not the request scoring rubric. ctx-token-limits.md scores a users request 1 to 10 on Impact, Complexity, and Relevance. That is about whether a request is worth the Tokens right now. The scores here are about documents, not requests. How much a file is worth keeping hot, how much the corpus is drifting, how much the agent should trust what it just retrieved. Different axis, different job. Do not collapse the two into one pile of numbers.
 
 ## The Memory Value Score
 
 Every document in the repo can carry a value that decides which tier it belongs in. The first instinct is to multiply the things that make a doc important and divide by how old it is. That instinct is close but it breaks in two specific ways, and both of them delete the wrong files.
 
-The first break is age. Age in the denominator punishes old docs. But the oldest docs in this repo are the foundational ones. context-rules.md is old and it is the first thing every agent reads. A formula that divides by age wants to archive the constitution. What matters is not age, it is recency. Time since the doc was last touched or retrieved. A doc read yesterday is hot no matter when it was written. A doc untouched for fifty Knobs is cold even if it is new.
+The first break is age. Age in the denominator punishes old docs. But the oldest docs in this repo are the foundational ones. ctx-rules.md is old and it is the first thing every agent reads. A formula that divides by age wants to archive the constitution. What matters is not age, it is recency. Time since the doc was last touched or retrieved. A doc read yesterday is hot no matter when it was written. A doc untouched for fifty Knobs is cold even if it is new.
 
 The second break is multiplication. Multiply relevance by access count by dependency count and any single zero zeros the whole score. A license file gets retrieved almost never and cannot be deleted. A spec that nothing references yet but the user just wrote is not worthless. Raw multiplication also lets the biggest number win. Access count in the thousands swamps a relevance score that lives between zero and one.
 
@@ -31,7 +31,7 @@ So now all files and memories are not treated equally. The AI now can score and 
 - Promote. High value. Pull it hot, keep it in the active window.
 - Compress. Middle value. Summarize it, keep the summary hot and the full text cold.
 - Archive. Low value. Move it to cold storage. Recoverable, out of the working set.
-- Delete. Lowest value, and only when it is also unpinned, referenced by nothing, and superseded by a newer doc. Deletion is the one action that asks the user first. context-window.md already says we do not discard without understanding the project state. The score does not get to override that.
+- Delete. Lowest value, and only when it is also unpinned, referenced by nothing, and superseded by a newer doc. Deletion is the one action that asks the user first. ctx-window.md already says we do not discard without understanding the project state. The score does not get to override that.
 
 ## Scoring Table
 
@@ -61,7 +61,7 @@ That warning fires before the bad answer, not after. Version drift is exactly wh
 
 ## When Compression Triggers
 
-The Memory Value score sorts individual docs. It does not tell you when to run a pass over the whole repo. That trigger belongs to entropy, and entropy is defined in context-entropy.md, not here. This doc does not get its own competing entropy number.
+The Memory Value score sorts individual docs. It does not tell you when to run a pass over the whole repo. That trigger belongs to entropy, and entropy is defined in ctx-entropy.md, not here. This doc does not get its own competing entropy number.
 
 What this doc adds is the garbage collection framing. A reorganization pass is expensive, so you do not run it every Knob. You run it when the corpus crosses a threshold. Too much volume, too much duplication, retrieval accuracy starting to slide. This is where the theory of context entropy falls into place. Trigger Context Reorganization once entropy crosses a threshold, and the compression pass fires, scores every doc, and re-tiers the repo. Same idea as a runtime pausing to collect garbage. Let it accumulate, sweep, keep going.
 
@@ -77,4 +77,4 @@ Signal over noise at retrieval is the open one, and it needs a definition before
 
 ## End of Documentation
 
-This doc is the scoring layer. context-window.md owns the compression principle and the hot and cold tiering it scores against. context-entropy.md owns entropy and the decay this pass fights, and it holds the threshold that triggers a sweep. memory.md owns the broad memory standard these scores operate inside. memory-tal.md, when it is written, owns the temporal side, and the recency decay in the Memory Value score is the first place the two will meet. Update this doc when the scoring changes shape, not when a weight gets tuned.
+This doc is the scoring layer. ctx-window.md owns the compression principle and the hot and cold tiering it scores against. ctx-entropy.md owns entropy and the decay this pass fights, and it holds the threshold that triggers a sweep. memory.md owns the broad memory standard these scores operate inside. memory-tal.md, when it is written, owns the temporal side, and the recency decay in the Memory Value score is the first place the two will meet. Update this doc when the scoring changes shape, not when a weight gets tuned.

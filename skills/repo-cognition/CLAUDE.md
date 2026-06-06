@@ -8,7 +8,7 @@ Claude note: keep the Skill loaded as a working discipline, not a wall of duplic
 
 Load:
 - `SKILL.md`
-- `references/context-entropy.md`
-- `references/context-window.md`
-- `references/context-rules.md`
-- `references/context-token-limits.md`
+- `references/ctx-entropy.md`
+- `references/ctx-window.md`
+- `references/ctx-rules.md`
+- `references/ctx-token-limits.md`

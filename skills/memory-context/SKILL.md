@@ -13,13 +13,13 @@ Use this Skill when:
 - reconstructing project state after a cold start or hiatus
 - deciding what memory to load and what to leave cold
 - preparing a handoff between agents
-- aligning ADM, RAG, Watchdog, and context-orientation
+- aligning ADM, RAG, Watchdog, and ctx-orientation
 - deciding what belongs in hot, warm, or cold memory
 - preventing a Knob from losing its thread
 
 ## Operating Rules
 
-- Read the active Knob first. In this repo that usually means `docs/memory-context/context-orientation.md`. In downstream repos it usually means `docs/context-orientation.md`.
+- Read the active Knob first. In this repo that usually means `docs/memory-ctx/ctx-orientation.md`. In downstream repos it usually means `docs/ctx-orientation.md`.
 - Load `behavior/` when the question is about rules, context windows, entropy, or Token budget.
 - Load `architecture/memory/` when the question is about ADM, RAG, Watchdog, drift, CRUD, or memory structure.
 - Do not pull the whole repo into context just because it is available.
@@ -34,19 +34,19 @@ Memory is not one bucket.
 - ADM is episodic memory. Knobs, chapters, sessions, handoffs, cool-down periods.
 - RAG is semantic and procedural memory. Terms, stable rules, retrieval paths, architecture patterns.
 - Watchdog is the auditor. It checks drift, rot, missing updates, and bad memory hygiene.
-- `context-orientation.md` is the temporal source of truth. In this repo it lives under `docs/memory-context/`. In downstream repos it normally lives directly under `docs/`. It tells the next agent what changed and why.
+- `ctx-orientation.md` is the temporal source of truth. In this repo it lives under `docs/memory-ctx/`. In downstream repos it normally lives directly under `docs/`. It tells the next agent what changed and why.
 
 If these disagree, do not smooth it over. Name the conflict and repair the map.
 
 ## Canonical References
 
 Read only what the current task needs:
-- `docs/memory-context/context-orientation.md`
+- `docs/memory-ctx/ctx-orientation.md`
 - `docs/repo-organization.md`
-- `behavior/context-rules.md`
-- `behavior/context-entropy.md`
-- `behavior/context-window.md`
-- `behavior/context-token-limits.md`
+- `behavior/ctx-rules.md`
+- `behavior/ctx-entropy.md`
+- `behavior/ctx-window.md`
+- `behavior/ctx-token-limits.md`
 - `architecture/memory/memory.md`
 - `architecture/memory/memory-adm.md`
 - `architecture/memory/memory-rag.md`

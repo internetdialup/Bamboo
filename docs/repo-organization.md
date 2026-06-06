@@ -22,8 +22,8 @@ Repository-md/
 ├── docs/                        # Operational memory for this repo itself
 │   ├── repo-organization.md     # ← this file. The map.
 │   └── memory-context/
-│       ├── context-orientation.md   # Hot per-Knob change log.
-│       └── context-ori-summary-2.md # Cold storage for older Knobs.
+│       ├── ctx-orientation.md   # Hot per-Knob change log.
+│       └── ctx-ori-summary-2.md # Cold storage for older Knobs.
 ├── behavior/                    # The rules an agent obeys. Cold-start required.
 ├── architecture/                # Memory architecture, ADM/RAG, Watchdog, workflow tools.
 │   ├── workflow-tools.md        # Tool/workflow memory friction.
@@ -53,10 +53,10 @@ Operational memory for *this* repository. Distinct from the `behavior/` rules, w
 
 - `repo-organization.md` — this file. The folder map. Updates when a new top-level folder or canonical file spawns.
 - `memory-context/` — this repo's internal memory log folder.
-  - `context-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `context-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
-  - `context-ori-summary-2.md` — cold storage for older Knobs rolled out of `context-orientation.md`.
+  - `ctx-orientation.md` — the running per-Knob log. Each commit / bump / version push earns a one-to-two paragraph summary with date and timestamp. When the file exceeds 5000 characters, the rule is to spawn `ctx-ori-summary-2.md` and continue, then `-3.md`, `-4.md`, `-5.md` as the project grows. The hot file stays current and lean.
+  - `ctx-ori-summary-2.md` — cold storage for older Knobs rolled out of `ctx-orientation.md`.
 
-The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Documentation.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it. This repo uses `docs/memory-context/` internally because the repository itself is documenting memory systems; downstream repos still default to `docs/context-orientation.md` unless they intentionally adopt the same layout.
+The reason these live in `docs/` rather than at the root is to keep the root clean for the cold-start surface (`Documentation.md`, `README.md`, `AGENT.md`, `CLAUDE.md`) and to give the project a consistent home for its own operational memory regardless of which vendor's agent is reading it. This repo uses `docs/memory-ctx/` internally because the repository itself is documenting memory systems; downstream repos still default to `docs/ctx-orientation.md` unless they intentionally adopt the same layout.
 
 ---
 
@@ -74,11 +74,11 @@ Multi-agent operating model docs. This folder is selective cold-start material. 
 
 The foundational rules. Everything an agent has to internalize before it touches the rest of the repo. Read this first on cold start, no matter what task is in front of you.
 
-- `context-rules.md` — hard operational rules, behavioral constraints, retrieval policies. Also holds the working glossary of framework terminology (Knob, Bump, Entropy, Context Window, Drift, Bloat, Saturation, Wayfinding, Collapse, Decay). Foundational layer.
-- `context-entropy.md` — the preservation view. How context survives across Knobs, agent handoffs, and human hiatus. Defines PLTRF, LTIP, STIP, and the hot/warm/cold tiering. Holds the worked examples (the v0.9.31 shader-engine recovery, the ui-refactor knob in Usage Menubar) that anchor the vocabulary.
-- `context-window.md` (CWM) — the active memory view. Treats the context window as virtual RAM. Saturation, drift, compression, prioritization, trimming near limits, Token awareness.
-- `context-token-limits.md` (CTL) — the Token economy view. Scoring requests on a 1–10 scale (Impact, Complexity, Relevance to current Knob), wayfinding, context optimization at runtime, conservation practices.
-- `context-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `context-NAME.md` doc spawns.
+- `ctx-rules.md` — hard operational rules, behavioral constraints, retrieval policies. Also holds the working glossary of framework terminology (Knob, Bump, Entropy, Context Window, Drift, Bloat, Saturation, Wayfinding, Collapse, Decay). Foundational layer.
+- `ctx-entropy.md` — the preservation view. How context survives across Knobs, agent handoffs, and human hiatus. Defines PLTRF, LTIP, STIP, and the hot/warm/cold tiering. Holds the worked examples (the v0.9.31 shader-engine recovery, the ui-refactor knob in Usage Menubar) that anchor the vocabulary.
+- `ctx-window.md` (CWM) — the active memory view. Treats the context window as virtual RAM. Saturation, drift, compression, prioritization, trimming near limits, Token awareness.
+- `ctx-token-limits.md` (CTL) — the Token economy view. Scoring requests on a 1–10 scale (Impact, Complexity, Relevance to current Knob), wayfinding, context optimization at runtime, conservation practices.
+- `ctx-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `context-NAME.md` doc spawns.
 
 These four docs share vocabulary on purpose. Rules sets the foundation, entropy preserves across time, window manages the live session, and token-limits prices the cost of pulling things back in. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
 
@@ -109,7 +109,7 @@ Portable AI capabilities. Designed to be vendor-agnostic — the same Skill appl
 - `repo-cognition/` — the base repo cognition Skill. Establishes operational rules and retrieval systems for AI-assisted repositories.
   - `SKILL.md` — the canonical Skill definition (with the YAML frontmatter Skills require).
   - `CLAUDE.md`, `CODEX.md`, `GEMINI.md` — thin vendor overlays. They point at `SKILL.md` instead of copying the full rule body.
-  - `references/` — the underlying reference docs the Skill points at: `context-entropy.md`, `context-rules.md`, `context-token-limits.md`, `context-window.md`. Mirrors of (or pointers to) the canonical docs in `behavior/`.
+  - `references/` — the underlying reference docs the Skill points at: `ctx-entropy.md`, `ctx-rules.md`, `ctx-token-limits.md`, `ctx-window.md`. Mirrors of (or pointers to) the canonical docs in `behavior/`.
 - `memory-context/` — the memory retrieval and handoff Skill. Use it for ADM/RAG alignment, Knob-aware loading, hot/warm/cold memory, and project state reconstruction.
 - `memory-watchdog/` — the memory hygiene Skill. Use it for stale maps, broken references, missing Knob logs, duplicated concepts, old paths, and drift audits.
 
@@ -122,7 +122,7 @@ Pattern for adding a new skill: spawn a folder under `skills/`, drop in a `SKILL
 DevOps and project lifecycle patterns. Forkable, overridable per project. If a forked project disagrees with a workflow doc, defer to the fork.
 
 - `project-setup.md` — the project initialization procedure. It explains how to apply the `Documentation.md` contract in a new repo without redefining the policy.
-- `project-context.md` — context entropy and memory rules for project-level work. How agents should create and maintain `context-orientation.md` (or `project-context.md` — interchangeable) inside a forked project's `docs/` folder, how to handle Knobs, how to handle the 5000-character threshold, git push/pull rules for handoff, branch and worktree naming conventions, Token usage discipline at the project level.
+- `project-context.md` — context entropy and memory rules for project-level work. How agents should create and maintain `ctx-orientation.md` (or `project-context.md` — interchangeable) inside a forked project's `docs/` folder, how to handle Knobs, how to handle the 5000-character threshold, git push/pull rules for handoff, branch and worktree naming conventions, Token usage discipline at the project level.
 
 Both docs are written for the project-fork case, not for `Documentation.md` itself. The `Documentation.md` repo follows the same rules but applies them to its own evolution as a documentation library.
 
@@ -151,9 +151,9 @@ For an agent landing in this repo for the first time:
 1. `README.md` — what this repo is and how to adopt it.
 2. `AGENT.md` — how to enter it.
 3. `Documentation.md` — the policy source.
-4. `docs/memory-context/context-orientation.md` — what changed recently and why in this repo.
+4. `docs/memory-ctx/ctx-orientation.md` — what changed recently and why in this repo.
 5. `CLAUDE.md` — vendor-specific overlay (if running on Claude).
-6. `behavior/context-rules.md` → `context-entropy.md` → `context-window.md` → `context-token-limits.md` → `context-utility.md`.
+6. `behavior/ctx-rules.md` → `ctx-entropy.md` → `ctx-window.md` → `ctx-token-limits.md` → `ctx-utility.md`.
 7. `architecture/` — only if the task touches memory architecture, ADM, RAG, drift, Watchdog, audits, or workflow governance.
 8. `agent-architecture/` — only if the task touches identity, topology, orchestration, or parallel-agent governance.
 9. `skills/skill-map.md` and the relevant `SKILL.md` files under `skills/`.
@@ -170,7 +170,7 @@ This file lives in `docs/` and is itself part of the cold-start map. When you ad
 - New canonical doc inside an existing folder → add a bullet under that folder's section.
 - Rename → propagate to every reference in the same commit. No orphan references.
 - This file gets re-audited every few Knobs. If a section describes something that no longer exists, fix it or remove it. Stale maps are worse than no map.
-- Treat this as the structural source of truth for the repo layout. `AGENT.md` is the behavioral source of truth. `docs/memory-context/context-orientation.md` is the temporal source of truth for this repo. They do not duplicate each other.
+- Treat this as the structural source of truth for the repo layout. `AGENT.md` is the behavioral source of truth. `docs/memory-ctx/ctx-orientation.md` is the temporal source of truth for this repo. They do not duplicate each other.
 
 ## Map Hygiene
 
@@ -179,5 +179,5 @@ This is the ruthless part. If the repo is going to be useful as OSS governance, 
 - New folder or moved file gets map updates in the same change.
 - New Skill gets `skills/skill-map.md` and `docs/repo-organization.md` updates.
 - New architecture memory doc gets this map and the relevant Skill pointer updated.
-- Every Bump that changes repo structure gets a `docs/memory-context/context-orientation.md` entry in this repo, or a `docs/context-orientation.md` entry in downstream repos unless they intentionally use a memory-context folder.
+- Every Bump that changes repo structure gets a `docs/memory-ctx/ctx-orientation.md` entry in this repo, or a `docs/ctx-orientation.md` entry in downstream repos unless they intentionally use a memory-context folder.
 - Run stale-reference scans before finishing. Broken references are memory rot.

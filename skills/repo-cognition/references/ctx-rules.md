@@ -30,7 +30,7 @@ If you are starting a new project, create the base foundation for context rules,
 
 # Context Loss and Regaining
 
-Refer to context-entropy and context-window for a comprehensive look at context, and how to best manage it to ensure optimization. Ensure you use Tokens conservatively, and refer to context-token-limits for guidance on how to optimize token usage.
+Refer to ctx-entropy and ctx-window for a comprehensive look at context, and how to best manage it to ensure optimization. Ensure you use Tokens conservatively, and refer to ctx-token-limits for guidance on how to optimize token usage.
 
 # Terminology
 
