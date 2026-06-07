@@ -8,6 +8,18 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: cherry-picked user-model.md from dangling branch — Sunday, June 7, 2026, 04:50 AM CDT
+
+The dangling `knob/memory-split-ltip-canonical` branch carried one unique commit adding `behavior/user-model.md`. The rest of the branch's content (memory-drift, memory-watchdog, workflow-tools) had been independantly rebuilt on main since the branch was created back on May 28. So instead of merging the whole stale branch, I cherry-picked just the doc and adapted it to current naming.
+
+`behavior/user-model.md` lives on main now. The agent has a focused "user view" doc that sits next to the ctx-* family — context-side disciplines on one side, user-side disciplines on the other. Three sections: Analyze User Behavior, Talk to the User, User Psychology. Cross-references inside the doc updated from `context-*.md` to `ctx-*.md` to match current naming.
+
+Updated `behavior/ctx-utility.md` (added user-model.md as a sibling entry) and `docs/repo-organization.md` (added it under the behavior/ section description). No cold-start order change — this fits the gated tier where agents pull it on demand when modeling the user is part of the work.
+
+Tried to delete the dangling remote branch in the same Knob but the action got blocked by the auto-mode classifier — destroying remote branches needs explicit user authorization. The question is surfaced back to the user separately. For now the branch stays on origin with its one commit intact; user-model.md is preserved on main regardless.
+
+---
+
 ## Knob: fork-resync workflow doc — Sunday, June 7, 2026, 04:35 AM CDT
 
 Wrote `workflows/fork-resync.md` — the procedure for catching a fork up to a canonical structural change. Covers when to resync (rename, folder move, new doc family, discipline shift), the pre-flight checklist (read the canonical Knob entry, check PLTRF CI is green, clean working tree, note fork-specific deviations), the procedure itself (single atomic commit per fork, no orphan pointers, no rewriting historical Knob entries), and the anti-patterns to avoid.
@@ -35,20 +47,6 @@ The hot orientation log was sitting at over 10,000 characters — twice the 5000
 Worth noting: this Knob itself triggers another migration in the same shape. With this entry added, the hot file goes back over the count, so the oldest of that set (structural moves) gets moved to summary-2 in the same commit. Steady-state behvaior — every Bump moves one out the bottom. Keeps the hot file lean automatically as long as the discipline holds.
 
 No other changes in this Knob. Pure log hygiene.
-
----
-
-## Knob: PLTRF GitHub Action — safety net closes the sequence — Sunday, June 7, 2026, 03:45 AM CDT
-
-Last one in the sequence. Shipped `.github/workflows/pltrf-check.yml`. Runs on every push and PR. Scans the cold-start cascade (`CLAUDE.md`, `AGENT.md`, `Documentation.md`, `README.md`, `docs/repo-organization.md`, and all `behavior/ctx-*.md`) and asserts every repo-relative file path mentioned actually exists on disk. If any reference is broken, the build fails with a clear annotation pointing at which source doc references which missing file.
-
-The matching is deliberatly scoped to paths that start with a known top-level folder (`behavior/`, `architecture/`, `agent-architecture/`, `docs/`, `skills/`, `workflows/`, `design/`, `.github/`). Bare filenames in prose like "see SKILL.md", sequence patterns like `-3.md`, template placeholders like `ctx-NAME.md`, and external-fork examples like `Trading-MCP-Algo/CHANGELOG.md` all get ignored — resolving them needs context the check doesn't have. Intentional placeholders (downstream-fork defaults, Backlog files) live in a `SKIP_LIST` at the top of the action.
-
-Tested locally against the current state of the repo and it passes clean. Zero broken pointers. Confirmed it would catch a fake broken reference during development by introducing one and watching it fail.
-
-PLTRF was discipline-only until this Knob — every rename, every new file, every move depended on me or the agent being meticulous. Now it's discipline plus a safety net. Broken pointers get caught in CI instead of waiting for a fresh agent to stumble into them six weeks later. README and Documentation.md got short notes mentioning the check is automated.
-
-This wraps the 5-Knob refinement sequence post-Vision Synthesis Report. Across the arc: agent-mms filled (1), mirror layer killed (2), workflows split + entropy metrics relocated + CPP own home (3), Watchdog persona doc + Skill upgrade (4), and now CI enforcement (5). Five Knobs, five concrete refinements. The repo is materially less drift-prone than it was at the start of yesterday.
 
 ---
 

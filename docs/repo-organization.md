@@ -80,6 +80,7 @@ The foundational rules. Everything an agent has to internalize before it touches
 - `ctx-window.md` (CWM) — the active memory view. Treats the context window as virtual RAM. Saturation, drift, compression, prioritization, trimming near limits, Token awareness.
 - `ctx-token-limits.md` (CTL) — the Token economy view. Scoring requests on a 1–10 scale (Impact, Complexity, Relevance to current Knob), wayfinding, context optimization at runtime, conservation practices.
 - `ctx-utility.md` — the index for this folder. Short pointers to what each doc covers. Update this when a new `ctx-NAME.md` doc spawns.
+- `user-model.md` — the user view. How the agent reads, models, and adapts to the user. Three sections: Analyze User Behavior, Talk to the User, User Psychology. Sits next to the ctx-* docs as a sibling rather than nested under them — context-side disciplines on one side of the behavior layer, user-side disciplines on the other.
 
 These five docs share vocabulary on purpose. Rules sets the foundation, lexicon decodes the language, entropy preserves across time, window manages the live session, and token-limits prices the cost of pulling things back in. Read them in that order on cold start. Re-read selectively when a Knob is in motion.
 

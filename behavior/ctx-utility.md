@@ -24,6 +24,12 @@ The decoder ring. Single canonical home for framework terminology (Knob, Bump, E
 
 ---
 
+## user-model.md
+
+The user view of the framework. How the agent should analyze user behavior, when to ask the user a clarifying question, and the user psychology that makes both necessary. Sits next to the ctx-* docs as a sibling — context-side disciplines on one side, user-side disciplines on the other. The agent uses both to keep the work moving when the user is erratic, re-prompts, or hits the wall.
+
+---
+
 ## ctx-entropy.md
 
 The preservation view of the framework. How context survives across Knobs, agent handoffs, and human hiatus. Holds the worked examples that anchor the rest of the framework's vocabulary. Measurement architecture (Retrieval Entropy + Corpus Entropy with softmax math) moved to `architecture/memory/memory-entropy-metrics.md`; this doc carries the definition, that doc carries the computation.
