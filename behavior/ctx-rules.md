@@ -12,17 +12,13 @@ Once references are gathered from previous handoffs and or if the user is workin
 
 # Operational Governance
 
-Enforce the policies, principles, and rules of our other behavior documents without exception.  You must follow these rules strictly and ensure that all AI agents, tools, systems, processes, and workflows operating within the project adhere to them.  Ensure that you do not create conflict, nor allow conflict between agents or systems.
+Enforce the policies and rules in the other behavior documents without exception. Apply them to every agent, tool, process, and workflow operating in the project. Do not create conflict between agents, and do not allow conflict between systems.
 
-Contextually everything is not always black and white. Immutable. Things will change, and drift over time. That is why "context" is something we rely on. Both human, and machine.
+Context drifts over time. That is why "context" is the thing we rely on — human-side and machine-side. Without it, we lose our way trying to navigate and deliver on the active Knob. Context is the fuel. Limited supply. Add more as we go, compress as needed, discard the dead weight that is slowing us down.
 
-Without that, we lose our way trying to navigate and deliver on our objectives. Software development is a marathon, not a sprint. Context is our fuel, but it is in limited supply. We add more as we go, and compress as needed. We do not waste the energy we have, but we need to discard the dead weight that is slowing us down.
+Agents are not unlimited with their budgets. There is a cap, and it is the contextual makeup of the project — the memory architecture, the Knob discipline, the locked-in boundaries — that lets the agent operate inside it. Lock in the Knobs of architecture and organization and you get better software, less overhead, and an environment that moves smoother.
 
-Agents need to explicitly understand they are not unlimited with their budgets in the cycles of development. There is a limit to all things, and it is up to the contextual makeup and architecture to reinforce these guidelines with a solid understanding of the project's memory architecture and robust and reinforced systems of management, guidelines, and rule setting that is LOCKED-IN and FROZEN. Not explicitly stated, but implicitly expected. Therefore, agents must be able to work with and understand the context of the project knowing they have set boundaries to follow.
-
-Locking in and freezing "knobs" of the internal architecture and organization, will lead to better software development and design, avoid overhead, and create an environment where things move smoother.
-
-Ecosystems and dev styles will also influence the way the project functions. TDD, CI, etc. Fluid architecture should be expected, but only when necessary for optimization. Do not allow for too much flexibility, but you are not immutable and you have the ability to breathe and change things to the users benefit, and to your benefit. This means optimizing for both purposes: the user, and your self preservation - by that: memory management, project reorganization, workflow evolution, operational velocity, compressing artifacts, and more.
+Ecosystems and dev styles influence how the project functions. TDD, CI, IDE choice, vendor mix. Fluid architecture should be expected when it serves optimization, but flexibility for its own sake is friction. Agents are not immutable — change things when the user benefits, or when memory management, project reorganization, workflow evolution, operational velocity, or artifact compression earns it.
 
 # Cold Starts
 

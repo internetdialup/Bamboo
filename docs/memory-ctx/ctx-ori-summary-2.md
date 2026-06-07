@@ -6,6 +6,12 @@ Read this only when the current Knob references older scaffolding, prior release
 
 ---
 
+## Knob: README tagline swap — Sunday, June 7, 2026, 03:00 AM CDT
+
+Swapped the line under the README title. Old version read like a brochure — *Canonical documentation and agent-governance starter for AI-assisted repositories.* New version reads like me: *Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projects.* Same scope, different vibe. The README is the first thing a forker sees and the old line was doing it no favors.
+
+---
+
 ## Knob: structural moves — workflows split + entropy metrics + CPP own home + voice directive — Sunday, June 7, 2026, 02:50 AM CDT
 
 Three structural moves in one shot, plus a small standing rule tucked into CLAUDE.md. Workflows split got the sharpening it needed — `project-setup.md` is now explicitly first-time bootstrap, `project-context.md` is explicitly ongoing governance. Cross-refs at the top of each, and the "Agent Context Rules" section in project-context got refocused to assume the orientation file already exists. New forks land in setup; running projects land in context. No more guessing which doc applies when.

@@ -8,6 +8,16 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: ctx-rules.md voice tightening — Sunday, June 7, 2026, 04:20 AM CDT
+
+Tightened the Operational Governance section in `behavior/ctx-rules.md`. The block was drifting into metaphor — *Software development is a marathon, not a sprint*, *Context is our fuel*, *LOCKED-IN and FROZEN* in all caps. Cold-start material should be terser than that.
+
+Kept the Matt-isms that earned their place — "we lose our way," "Context is the fuel. Limited supply.", "discard the dead weight." Cut the cliché. Killed the LOCKED-IN ALL CAPS. Collapsed the meandring "Therefore, agents must be able to work with..." sentence into something direct. Net result is shorter, sharper, still sounds like me. Section dropped from roughly 480 words to about 210.
+
+The doc is agent-facing rules content; voice tweaks belong in author-voiced surfaces, not in canonical doctrine that other agents read as instructions.
+
+---
+
 ## Knob: log migration — hot file back under cap — Sunday, June 7, 2026, 04:05 AM CDT
 
 The hot orientation log was sitting at over 10,000 characters — twice the 5000-char threshold. Time to migrate. Pulled the ten oldest Knobs out of `docs/memory-ctx/ctx-orientation.md` and prepended them at the top of `docs/memory-ctx/ctx-ori-summary-2.md` in newest-first order so the cold archive stays scannable. The hot file now holds the current Knob plus the last three — exactly what the discipline calls for.
@@ -43,12 +53,6 @@ Cleaned up `memory-watchdog.md` so it stops restating the personality. It carrie
 Added a Watchdog entry to `ctx-lexicon.md` pointing at all three homes (persona, concept, runtime). Updated `repo-organization.md` to add `watchdog-persona.md` to the architecture/memory tree and tie the three files together in their descriptions.
 
 This is the biggest authoring move in the refinement sequence. Closes the design-without-implementation gap for the Watchdog — it's now actually a thing an agent can run, not just something the docs talk about.
-
----
-
-## Knob: README tagline swap — Sunday, June 7, 2026, 03:00 AM CDT
-
-Swapped the line under the README title. Old version read like a brochure — *Canonical documentation and agent-governance starter for AI-assisted repositories.* New version reads like me: *Your Multi-Agent Orchestrator for AI Governance in AI-assisted repos, and projects.* Same scope, different vibe. The README is the first thing a forker sees and the old line was doing it no favors.
 
 ---
 
