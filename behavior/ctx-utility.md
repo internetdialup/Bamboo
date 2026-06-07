@@ -26,7 +26,7 @@ The decoder ring. Single canonical home for framework terminology (Knob, Bump, E
 
 ## ctx-entropy.md
 
-The preservation view of the framework. How context survives across Knobs, agent handoffs, and human hiatus. Holds the worked examples that anchor the rest of the framework's vocabulary.
+The preservation view of the framework. How context survives across Knobs, agent handoffs, and human hiatus. Holds the worked examples that anchor the rest of the framework's vocabulary. Measurement architecture (Retrieval Entropy + Corpus Entropy with softmax math) moved to `architecture/memory/memory-entropy-metrics.md`; this doc carries the definition, that doc carries the computation.
 
 - PLTRF is Preventative Long Term Repo Fragmentation. The discipline that stops the repo from becoming the thing the agent has to fight against. Canonical homes, propagated renames, audited cross-references.
 - LTIP is Long Term Information Preservation. Three moves. Externalize working memory into the repo. Make the saved thing findable again. Reconstitute the right slice back into context when it is needed.

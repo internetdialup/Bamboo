@@ -97,6 +97,7 @@ The memory architecture layer. This is where the repo talks about Memory, ADM, R
   - `memory-crud.md` — the Create, Read, Update, Delete/Destroy rule for keeping memory files alive and not stale.
   - `memory-drift.md` — how memory drifts, rots, repeats itself, and starts to make the repo harder to navigate.
   - `memory-watchdog.md` — the Watchdog concept. A file-level auditor for memory standards, secret awareness, context decay, and repository hygiene.
+  - `memory-entropy-metrics.md` — measurement architecture for Context Entropy. Retrieval Entropy (softmax over top-k candidates) and Corpus Entropy (near-duplicate fraction). The number that triggers the compression sweep instead of acting on a feeling.
 
 This folder is selective cold-start material. If the task is normal repo navigation, `behavior/` is enough. If the task is about the memory system itself, this folder comes warm.
 
@@ -122,8 +123,9 @@ Pattern for adding a new skill: spawn a folder under `skills/`, drop in a `SKILL
 
 DevOps and project lifecycle patterns. Forkable, overridable per project. If a forked project disagrees with a workflow doc, defer to the fork.
 
-- `project-setup.md` — the project initialization procedure. It explains how to apply the `Documentation.md` contract in a new repo without redefining the policy.
-- `project-context.md` — context entropy and memory rules for project-level work. How agents should create and maintain `ctx-orientation.md` (or `project-context.md` — interchangeable) inside a forked project's `docs/` folder, how to handle Knobs, how to handle the 5000-character threshold, git push/pull rules for handoff, branch and worktree naming conventions, Token usage discipline at the project level.
+- `project-setup.md` — **first-time** project initialization procedure. How to apply the `Documentation.md` contract in a new repo without redefining the policy. 8-step bootstrap.
+- `project-context.md` — **ongoing** context governance once the repo is running. The 5000-char threshold, the 20-document threshold, Git push/pull rules for handoff, branch and worktree naming, Token discipline at the project level. Setup-only content lives in `project-setup.md`; ongoing-only content lives here.
+- `cpp.md` — Context Preservation Protocol. The workflow that keeps project memory alive across the big transitions — branch closes, phase rollovers, production deploys. Triggers, anti-patterns, archiving standards. Used to live as a section inside `architecture/workflow-tools.md`; got its own home when the named concept earned it.
 
 Both docs are written for the project-fork case, not for `Documentation.md` itself. The `Documentation.md` repo follows the same rules but applies them to its own evolution as a documentation library.
 

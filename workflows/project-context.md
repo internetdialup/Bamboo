@@ -1,6 +1,8 @@
 
 # Introduction
 
+This doc is about **ongoing** context governance once a repo is already running on the `Documentation.md` system. The 5000-character threshold, the 20-document threshold, Git push and pull discipline for handoff, branch and worktree naming, Token usage at the project level — all of it lives here. For **first-time** repo bootstrap (how to initialize the governance layer, what to copy, what to localize), see `workflows/project-setup.md`.
+
 This document is about agent context entropy, and memory. Entropy management so we have a clean codebase, Agent intelligence and feedback that can provide higher quality project context.
 
 Key points: 
@@ -21,13 +23,11 @@ Agents should always at all times start by reading this document to understand t
 
 # Agent Context Rules
 
-When an Agent is assigned a new project, they should create a project folder inside the users /docs folder unless otherwise directed by the user to place it elsewhere. The /docs folder should create a new file called 
+The orientation file (`docs/ctx-orientation.md`, or `project-context.md` — interchangeable) should already exist by the time this doc applies. If it does not, follow `workflows/project-setup.md` first to bootstrap the governance layer. This doc assumes the file is there and focuses on the discipline of keeping it useful over time.
 
-project-context.md ; or ctx-orientation.md (these are interchangeable). 
+The orientation file serves as the project's main knowledge base while it's running. It should carry information relevant to the project's ongoing state: git history, worktrees, branches, current Knob, project policies, and anything that future agents (or the user after a hiatus) need to reconstitute working context fast.
 
-This file serves as the project's main knowledge base. It should contain all information relevant to the project, including: git history, worktrees, branches, project policies, and more.
-
-The more detailed information a user provides initially, the less the Agents will have to infer, and the less likely an Agent drifts in setting up a project's structure, or making the incorrect decision making. 
+The more detailed information the user provides at each Knob, the less the agents have to infer, and the less likely an agent drifts in either project structure or decision making. 
 
 ## Context Maintenance
 

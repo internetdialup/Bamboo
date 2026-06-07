@@ -8,6 +8,18 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: structural moves — workflows split + entropy metrics + CPP own home + voice directive — Sunday, June 7, 2026, 02:50 AM CDT
+
+Three structural moves in one shot, plus a small standing rule tucked into CLAUDE.md. Workflows split got the sharpening it needed — `project-setup.md` is now explicitly first-time bootstrap, `project-context.md` is explicitly ongoing governance. Cross-refs at the top of each, and the "Agent Context Rules" section in project-context got refocused to assume the orientation file already exists. New forks land in setup; running projects land in context. No more guessing which doc applies when.
+
+Computing Entropy math (retrieval entropy + corpus entropy, all the softmax stuff) moved out of `behavior/ctx-entropy.md` into a new `architecture/memory/memory-entropy-metrics.md`. Right content, correct home. ctx-entropy keeps the *definition* of entropy as a direction; the metrics doc carries the *measurement* the Watchdog actually acts on. Replaced the math block in ctx-entropy with a four-line pointer. Updated ctx-utility and repo-organization so the index reflects where the computation lives now.
+
+CPP earned its own doc. It used to be a section inside `architecture/workflow-tools.md` — now it's `workflows/cpp.md` with explicit triggers (branch close, phase rollover, prod deploy), anti-patterns, and cross-refs to the Watchdog. Added CPP, MVS, and MMS entries to `behavior/ctx-lexicon.md` so the decoder ring stays current.
+
+Also tucked a voice directive into CLAUDE.md under the ghost-writer bullet. Future Claude sessions get explicit guidance to sound like me, not a corporate changelog. Direct, light contractions, occasional sentence fragments to keep the output from reading too polished. Applies to commits, Knob entries, and author-voiced README sections only. Agent-facing rules content stays clean.
+
+---
+
 ## Knob: killed the mirror layer in skills/repo-cognition/references/ — Sunday, June 7, 2026, 02:30 AM CDT
 
 Replaced the four byte-near mirror files in `skills/repo-cognition/references/` (`ctx-rules.md`, `ctx-entropy.md`, `ctx-window.md`, `ctx-token-limits.md`) with seven-line SEE-ALSO pointer stubs. Each stub names what it used to be, points at the canonical home in `behavior/`, and explains why the mirror layer was Drift fuel in the first place. The pattern was the exact one `ctx-entropy.md` explicitly warns against — two files describing the same concept under different paths — and it had been quietly sitting inside `repo-cognition` since the Skill was first scaffolded.

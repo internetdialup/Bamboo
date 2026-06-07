@@ -66,12 +66,4 @@ Users will use a variety of tools to interact with an LLM. Whether through web b
 
 # CPP (Context Preservation Protocol)
 
-This is a big workflow that will need to be updated as the project evolves. This evovles as a mechanism internally and externally as a project moves beyond scope, branch changes, and production deployments. DevOps and forward deployment standards will influence this heavily. Ensure that the LLM treats everything as potentially needing archived and preserved at all times. Do not harm the memory.
-
-## Memory Archiving Standards
-
-When a user decides to move on from a specific phase of development, a specific branch, or a specific feature, you must decide if that work needs to be preserved in memory.  
-
-- The watchdog must be aware of all memory standards and should act as the gatekeeper of memory archiving. 
-- Workflows should create standards around the Watchdog, and context handoff and retrieval systems
-- Developing an internal awareness for the AI (Through Watchdog memory standards and context preservation) can create a concrete understanding of user behavior, project evolution, and workflow optimizations
+CPP moved to its own doc at `workflows/cpp.md`. It is the workflow that keeps a project's memory alive across the big transitions — branch closes, phase rollovers, production deploys, and anywhere context is most likely to drop on the floor. The Watchdog enforces it; CPP defines what enforcement looks like. Triggers, anti-patterns, and archiving standards live in the new doc.

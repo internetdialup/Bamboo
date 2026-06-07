@@ -56,6 +56,12 @@ This file is the home for the working glossary. It moved out of `ctx-rules.md` w
 
 - **CRUD** — Create, Read, Update, Destroy. The keep-it-alive loop for memory files so stale memory gets created, read, updated, or destroyed instead of rotting in place. Canonical: `architecture/memory/memory-crud.md`.
 
+- **CPP** — Context Preservation Protocol. The workflow that keeps project memory alive across big transitions — branch closes, phase rollovers, production deploys. Triggers, anti-patterns, and archiving standards live in the canonical doc. Canonical: `workflows/cpp.md`.
+
+- **MVS** — Memory Value Score. Per-artifact score from 0.0 to 1.0 that each agent assigns against the active Knob to decide what survives compaction. Feeds the per-agent hot/warm/cold tiering. Canonical: `agent-architecture/agent-mms.md`.
+
+- **MMS** — Memory Management System. How each agent scores, tiers, isolates, and summarizes its own working memory while running. Canonical: `agent-architecture/agent-mms.md`.
+
 ---
 
 # When to update this file
