@@ -6,9 +6,12 @@ This file exists so Codex has a vendor-shaped hook without copying the whole Ski
 
 Codex note: inspect first, retrieve only what the active Knob needs, and keep the repo memory clean when you touch the files.
 
-Load:
+Load (canonical paths at the repo root):
 - `SKILL.md`
-- `references/ctx-entropy.md`
-- `references/ctx-window.md`
-- `references/ctx-rules.md`
-- `references/ctx-token-limits.md`
+- `behavior/ctx-rules.md`
+- `behavior/ctx-lexicon.md`
+- `behavior/ctx-entropy.md`
+- `behavior/ctx-window.md`
+- `behavior/ctx-token-limits.md`
+
+The `references/` folder inside this Skill used to mirror the behavior docs. It is now a thin pointer layer — load canonical instead.

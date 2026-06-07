@@ -6,9 +6,12 @@ This file exists so Gemini has a vendor-shaped hook without copying the whole Sk
 
 Gemini note: stay strict on wayfinding. Use the Skill to keep context retrieval tight and avoid pulling stale project memory into the active window.
 
-Load:
+Load (canonical paths at the repo root):
 - `SKILL.md`
-- `references/ctx-entropy.md`
-- `references/ctx-window.md`
-- `references/ctx-rules.md`
-- `references/ctx-token-limits.md`
+- `behavior/ctx-rules.md`
+- `behavior/ctx-lexicon.md`
+- `behavior/ctx-entropy.md`
+- `behavior/ctx-window.md`
+- `behavior/ctx-token-limits.md`
+
+The `references/` folder inside this Skill used to mirror the behavior docs. It is now a thin pointer layer — load canonical instead.

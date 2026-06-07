@@ -110,7 +110,7 @@ Portable AI capabilities. Designed to be vendor-agnostic — the same Skill appl
 - `repo-cognition/` — the base repo cognition Skill. Establishes operational rules and retrieval systems for AI-assisted repositories.
   - `SKILL.md` — the canonical Skill definition (with the YAML frontmatter Skills require).
   - `CLAUDE.md`, `CODEX.md`, `GEMINI.md` — thin vendor overlays. They point at `SKILL.md` instead of copying the full rule body.
-  - `references/` — the underlying reference docs the Skill points at: `ctx-entropy.md`, `ctx-rules.md`, `ctx-token-limits.md`, `ctx-window.md`. Mirrors of (or pointers to) the canonical docs in `behavior/`.
+  - `references/` — thin pointer stubs (`ctx-entropy.md`, `ctx-rules.md`, `ctx-token-limits.md`, `ctx-window.md`) that each point at the canonical `behavior/ctx-*.md`. The Skill and its vendor overlays now load canonical paths directly; these stubs stay so any older link still resolves. Used to be byte-near mirrors — that was Drift fuel and got cleaned up.
 - `memory-context/` — the memory retrieval and handoff Skill. Use it for ADM/RAG alignment, Knob-aware loading, hot/warm/cold memory, and project state reconstruction.
 - `memory-watchdog/` — the memory hygiene Skill. Use it for stale maps, broken references, missing Knob logs, duplicated concepts, old paths, and drift audits.
 

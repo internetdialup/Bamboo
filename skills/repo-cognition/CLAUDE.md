@@ -6,9 +6,12 @@ This file exists so Claude has a vendor-shaped hook without copying the whole Sk
 
 Claude note: keep the Skill loaded as a working discipline, not a wall of duplicated memory. Pull the exact reference doc the current Knob names.
 
-Load:
+Load (canonical paths at the repo root):
 - `SKILL.md`
-- `references/ctx-entropy.md`
-- `references/ctx-window.md`
-- `references/ctx-rules.md`
-- `references/ctx-token-limits.md`
+- `behavior/ctx-rules.md`
+- `behavior/ctx-lexicon.md`
+- `behavior/ctx-entropy.md`
+- `behavior/ctx-window.md`
+- `behavior/ctx-token-limits.md`
+
+The `references/` folder inside this Skill used to mirror the behavior docs. It is now a thin pointer layer — load canonical instead.

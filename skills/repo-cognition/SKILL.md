@@ -18,11 +18,14 @@ The goal is to retrieve the right information at the right time while preserving
 - implementation awareness
 - contextual understanding
 
-Follow the principles established in:
-- references/ctx-entropy.md
-- references/ctx-window.md
-- references/ctx-rules.md
-- references/ctx-token-limits.md
+Follow the principles established in the canonical behavior docs at the repo root:
+- behavior/ctx-rules.md
+- behavior/ctx-lexicon.md
+- behavior/ctx-entropy.md
+- behavior/ctx-window.md
+- behavior/ctx-token-limits.md
+
+The `references/` folder inside this Skill used to mirror these docs. That mirror was Drift fuel — the same trap `behavior/ctx-entropy.md` warns against — so it became a thin pointer layer. Load the canonical files above directly. The `references/` stubs exist only as backwards compatibility for any older link that still resolves them.
 
 Maintain awareness of:
 - context drift

@@ -8,6 +8,14 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: killed the mirror layer in skills/repo-cognition/references/ — Sunday, June 7, 2026, 02:30 AM CDT
+
+Replaced the four byte-near mirror files in `skills/repo-cognition/references/` (`ctx-rules.md`, `ctx-entropy.md`, `ctx-window.md`, `ctx-token-limits.md`) with seven-line SEE-ALSO pointer stubs. Each stub names what it used to be, points at the canonical home in `behavior/`, and explains why the mirror layer was Drift fuel in the first place. The pattern was the exact one `ctx-entropy.md` explicitly warns against — two files describing the same concept under different paths — and it had been quietly sitting inside `repo-cognition` since the Skill was first scaffolded.
+
+Updated the Skill itself and all three vendor overlays in the same commit. `SKILL.md`, `CLAUDE.md`, `CODEX.md`, and `GEMINI.md` now name canonical paths under `behavior/` in their Load lists (including the new `ctx-lexicon.md` from the prior Knob) instead of the now-thin `references/` stubs. The `references/` directory stays in place so any older external link still resolves, but the Skill no longer asks agents to load from it. `docs/repo-organization.md` description of `references/` updated to reflect the new pointer-layer role.
+
+---
+
 ## Knob: agent-mms filled + memory-adm Backlog section — Sunday, June 7, 2026, 02:15 AM CDT
 
 First Knob in the post–Vision Synthesis refinement sequence. Filled `agent-architecture/agent-mms.md` with the Agent Memory Management System content: Memory Value Scores (0.0–1.0 scoring of artifacts against the active Knob), hot/warm/cold tiering at the per-agent level that feeds the same LTIP/CWM disciplines from `behavior/`, Watchdog interaction via the repo memory layer (agents stay sovereign over their own working memory until handoff), parallel-agent memory isolation rules that mirror the anti-conflict rules in `agent-topology.md`, and the three summarization triggers (Knob transition, compaction event, handoff). The file went from a 1-line placeholder to a full sibling of `agent-identity.md` and `agent-topology.md`.
