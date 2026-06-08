@@ -8,6 +8,18 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: academic grounding mirrored from bamboo-cli — Monday, June 8, 2026
+
+Mirrored two pieces of theoretical surface from `internetdialup/bamboo-cli` into public, where I had built them during this session's CLI work. The directive that prompted this: when bamboo-cli has academic content ahead of public, public mirrors. Public is the canonical discipline source — bamboo-cli is the scaffolding tool that ships from it — and the public copy of the discipline should not lag behind on grounding.
+
+`Documentation.md` lands at the repo root next to `Bamboo.md`. Two-hundred-and-twenty-two lines. The deep theoretical surface: foundational concepts (Knobs, entropy, decay, PLTRF, STIP/LTIP, hot/warm/cold, CWM, CTL), theoretical grounding with citations (Shannon 1948 information entropy, Miller 1956 working memory, Sweller 1988 cognitive load, Nonaka & Takeuchi 1995 SECI, Lewis et al. 2020 RAG, Liu et al. 2023 Lost-in-the-Middle, Lethbridge et al. 2003 documentation decay), a mapping table from prior work to Bamboo discipline, open research questions, methodological notes. Adapted for public's `ctx-*` prefix on the way in (bamboo-cli has been on `context-*` since its v0.2.0 commit), and the entropy section now cross-references `architecture/memory/memory-entropy-metrics.md` for the formal Retrieval Entropy + Corpus Entropy definitions — which is the home that doc has already had in this repo and which bamboo-cli inlined for lack of an `architecture/` tree. The split this repo keeps everywhere (definition in `behavior/`, computation in `architecture/`) stays clean.
+
+`README.md` gains an "Intellectual Grounding" section between "Who It Is For" and "About," with the same eight citations as footnotes and a pointer to `Documentation.md` for the deep treatment. The "Fork in 5 Minutes" pitch stays at the top — academic depth lives in the optional read, not the cold-start. Adopters who want to know the operator has done their homework can scroll. Adopters who want to fork in five minutes can still do that.
+
+Prefix divergence with bamboo-cli (`ctx-*` here, `context-*` there) was deliberately not resolved in this Knob. The operator's lived practice across multiple projects voted with its feet for `context-*`, but public Bamboo's existing template ecosystem still ships `ctx-*` and changing that is a downstream break for anyone who forked. Left as an open decision for a future Knob.
+
+---
+
 ## Knob: README straggler — `Documentation-md` → Bamboo — Monday, June 8, 2026, 12:00 AM CDT
 
 Caught a stale `Documentation-md` mention in `README.md` line 36 — the hyphen-form varaint my last regex pass missed. The earlier sed matched `Documentation\.md` with the period; never saw the hyphen form. One-line fix; the sentence now leads with `**Bamboo**` as the source repo description.
