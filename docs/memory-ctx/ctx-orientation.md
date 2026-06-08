@@ -8,6 +8,16 @@ Read in reverse chronological order — newest at the top. The active Knob is wh
 
 ---
 
+## Knob: README straggler — `Documentation-md` → Bamboo — Monday, June 8, 2026, 12:00 AM CDT
+
+Caught a stale `Documentation-md` mention in `README.md` line 36 — the hyphen-form varaint my last regex pass missed. The earlier sed matched `Documentation\.md` with the period; never saw the hyphen form. One-line fix; the sentence now leads with `**Bamboo**` as the source repo description.
+
+Also did a full sweep across the canonical for any other variants — case-insensitive `documentation.md`, lowercase hyphen, bare `Documentation` standalone. Everything else is either historical Knob entries (the brand rename Bump and the GitHub rename Bump describing past state — leaving those alone, can't lie about history) or the generic English noun ("documentation should make wayfinding cheaper"). All left alone.
+
+PLTRF cleanup. No story beyond that.
+
+---
+
 ## Knob: GitHub repo renamed to Bamboo + template repository enabled + README updated — Sunday, June 7, 2026, 11:45 PM CDT
 
 Two GitHub-side moves and a tiny README polish.
@@ -49,18 +59,5 @@ This is the kind of move `behavior/ctx-entropy.md` warns about — renames that 
 Next: the GitHub org `bamboo` (Matt setting up); the repo itself may move from `internetdialup/Documentation.md` to `bamboo/<something>` separately. That's outside this Knob.
 
 ---
-
-## Knob: cherry-picked user-model.md from dangling branch — Sunday, June 7, 2026, 04:50 AM CDT
-
-The dangling `knob/memory-split-ltip-canonical` branch carried one unique commit adding `behavior/user-model.md`. The rest of the branch's content (memory-drift, memory-watchdog, workflow-tools) had been independantly rebuilt on main since the branch was created back on May 28. So instead of merging the whole stale branch, I cherry-picked just the doc and adapted it to current naming.
-
-`behavior/user-model.md` lives on main now. The agent has a focused "user view" doc that sits next to the ctx-* family — context-side disciplines on one side, user-side disciplines on the other. Three sections: Analyze User Behavior, Talk to the User, User Psychology. Cross-references inside the doc updated from `context-*.md` to `ctx-*.md` to match current naming.
-
-Updated `behavior/ctx-utility.md` (added user-model.md as a sibling entry) and `docs/repo-organization.md` (added it under the behavior/ section description). No cold-start order change — this fits the gated tier where agents pull it on demand when modeling the user is part of the work.
-
-Tried to delete the dangling remote branch in the same Knob but the action got blocked by the auto-mode classifier — destroying remote branches needs explicit user authorization. The question is surfaced back to the user separately. For now the branch stays on origin with its one commit intact; user-model.md is preserved on main regardless.
-
----
-
 
 Older entries moved to `docs/memory-ctx/ctx-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.

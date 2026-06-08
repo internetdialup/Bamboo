@@ -6,6 +6,18 @@ Read this only when the current Knob references older scaffolding, prior release
 
 ---
 
+## Knob: cherry-picked user-model.md from dangling branch — Sunday, June 7, 2026, 04:50 AM CDT
+
+The dangling `knob/memory-split-ltip-canonical` branch carried one unique commit adding `behavior/user-model.md`. The rest of the branch's content (memory-drift, memory-watchdog, workflow-tools) had been independantly rebuilt on main since the branch was created back on May 28. So instead of merging the whole stale branch, I cherry-picked just the doc and adapted it to current naming.
+
+`behavior/user-model.md` lives on main now. The agent has a focused "user view" doc that sits next to the ctx-* family — context-side disciplines on one side, user-side disciplines on the other. Three sections: Analyze User Behavior, Talk to the User, User Psychology. Cross-references inside the doc updated from `context-*.md` to `ctx-*.md` to match current naming.
+
+Updated `behavior/ctx-utility.md` (added user-model.md as a sibling entry) and `docs/repo-organization.md` (added it under the behavior/ section description). No cold-start order change — this fits the gated tier where agents pull it on demand when modeling the user is part of the work.
+
+Tried to delete the dangling remote branch in the same Knob but the action got blocked by the auto-mode classifier — destroying remote branches needs explicit user authorization. The question is surfaced back to the user separately. For now the branch stays on origin with its one commit intact; user-model.md is preserved on main regardless.
+
+---
+
 ## Knob: fork-resync workflow doc — Sunday, June 7, 2026, 04:35 AM CDT
 
 Wrote `workflows/fork-resync.md` — the procedure for catching a fork up to a canonical structural change. Covers when to resync (rename, folder move, new doc family, discipline shift), the pre-flight checklist (read the canonical Knob entry, check PLTRF CI is green, clean working tree, note fork-specific deviations), the procedure itself (single atomic commit per fork, no orphan pointers, no rewriting historical Knob entries), and the anti-patterns to avoid.
