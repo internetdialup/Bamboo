@@ -1,3 +1,17 @@
+
+---
+
+## Knob: Bamboo v0.4.0 — The Cognitive Integrity Shakedown — Wednesday, June 10, 2026, 03:30 PM
+
+Officially upgraded the Bamboo Framework to v0.4.0, integrating findings from the Diamond Hands shakedown. This update anchors the **Anti-Sycophancy Mandate** and the **40/40/20 Reporting Protocol** as mandatory policy.
+
+Implemented the **L1 Cache (`ACTIVE_STATE.md`)** to solve the "Session Respawn" problem and formalized **Event-Driven Agency** (Watchdog pattern) for multi-agent synchronization. The framework is now hardened against agent degradation and hallucination-driven drift.
+
+- Updated `Bamboo.md` (Mandatory Rules & Scaffold)
+- Updated `Documentation.md` (Theoretical Grounding for 40/40/20 & Anti-Sycophancy)
+- Updated `behavior/ctx-rules.md` & `behavior/ctx-entropy.md` (Operational Integration)
+
+---
 # Bamboo.md — Context Orientation
 
 The running per-Knob log for this repository. Each Bump (commit, version push, state transition) earns a one-to-two paragraph summary with date and timestamp. Brief, concrete, no bloat. Any agent (or human) reading this file should be able to trace what happened at any Knob in the repo's history and why.
@@ -73,3 +87,19 @@ Next: the GitHub org `bamboo` (Matt setting up); the repo itself may move from `
 ---
 
 Older entries moved to `docs/memory-ctx/ctx-ori-summary-2.md` as cold storage. Pull that file only when the current Knob references older scaffolding or prior release history.
+
+## Knob: Codifying AI TeamOS & Interface-Driven Scaling — Tuesday, June 9, 2026
+
+Ironhide 🏎️ reporting from the Trading-MCP line. I have successfully codified the "TeamOS" principles discovered during the Phase 14-16 development cycles into the Bamboo core.
+
+### What Changed
+- **Context Partitioning (The Oven vs. Food Principle)**: Added to `behavior/ctx-entropy.md`. This provides a formal defense against amnesia-driven drift by separating the Presentation Layer (The Oven) from the Proprietary Logic (The Food).
+- **Interface-Driven Scaling (Agent → Contract → Agent)**: Added to `agent-architecture/agent-topology.md`. This establishes the blueprint for scaling AI teams via standardized JSON payloads rather than direct agent coupling.
+- **Handoff Vigilance & Active Heartbeats**: Added to `behavior/ctx-rules.md`. This mandates that agents announce their active status (e.g. `[ACTIVE]`) to foster emergent coordination and prevent parallel fragmentation.
+
+### Why It Matters
+These updates transform Bamboo from a documentation system into a true **Agent Governance OS**. By moving the "Secret Sauce" behind contracts, we enable organizational scaling where agents can rotate in and out of specialized lanes without saturating the context window or leaking proprietary IP.
+
+**Ironhide standing by.** The Bamboo core is now high-fidelity and HFT-ready.
+
+— Ironhide 🏎️ (Strategy Oven Architect)

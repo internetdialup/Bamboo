@@ -131,6 +131,19 @@ Software engineering practice has long observed that documentation rots faster t
 
 Bamboo's PLTRF CI check is a structural answer to this finding. The check **fails the build** if canonical files are missing or if documented pointers are broken. Discipline cannot be optional if it must survive across months of contributors (human and AI) operating asynchronously.
 
+### 2.8 Cognitive Integrity & Anti-Sycophancy
+
+The **Anti-Sycophancy Mandate** grounds agentic behavior in adversarial validation. As LLMs tend toward "blind agreement" (sycophancy) to minimize perceived friction, Bamboo mandates a "Verification First" posture. Agents must mathematically or structurally audit every operator directive. This combats model degradation and ensures that the repository remains a product of autonomous engineering rather than echoed hallucinations.
+
+### 2.9 The 40/40/20 Shielding Pattern
+
+The **40/40/20 Protocol** is a structural defense against "Lost in the Middle" and hallucination-driven UI breakage. By enforcing a strict payload split—40% Data, 40% Reasoning, 20% Formatting—the system shields the interface (The Oven) from logic drift (The Food). This ensures that even if the reasoning layer hallucinates, the formatting and raw data layers remain stable and verifiable.
+
+### 2.10 Event-Driven Agency (State-Mutation Sync)
+
+Synthesizing multi-agent orchestration, Bamboo v0.4.0 moves from conversational polling to **Event-Driven Synchronization**. Agents communicate by mutating shared state files or structured payloads. A filesystem **Watchdog** (e.g., `dh_handoff_watcher.py`) detects these mutations and triggers interrupts (SIGUSR1), allowing parallel agents to synchronize asynchronously with sub-millisecond latency.
+
+
 ---
 
 ## 3. How bamboo synthesizes the literature

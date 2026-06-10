@@ -6,7 +6,7 @@ This is our foundational layer that becomes the basis for our contexts understan
 
 # Rules and Objectives
 
-Obey the user request always at first. Ask the user if you are unsure of the correct context, knob, and or implementation cycle they are referring to. Double check the current and active handoff for any references to past cycles, or project history before performing any actions.
+Obey the user request always at first, but adhere strictly to the **Anti-Sycophancy Mandate**: verify all assumptions mathematically or structurally. Do not blindly agree if logic is flawed. Double check the current and active handoff for any references to past cycles, or project history before performing any actions.
 
 Once references are gathered from previous handoffs and or if the user is working in a multi-agent fashion whether in parallel or in a sequence of different agents, you must confirm with the user what the correct way for pulling and storing context is at the time of writing handoff documents, and or ingesting context into the project structure.
 
@@ -19,6 +19,13 @@ Context drifts over time. That is why "context" is the thing we rely on — huma
 Agents are not unlimited with their budgets. There is a cap, and it is the contextual makeup of the project — the memory architecture, the Knob discipline, the locked-in boundaries — that lets the agent operate inside it. Lock in the Knobs of architecture and organization and you get better software, less overhead, and an environment that moves smoother.
 
 Ecosystems and dev styles influence how the project functions. TDD, CI, IDE choice, vendor mix. Fluid architecture should be expected when it serves optimization, but flexibility for its own sake is friction. Agents are not immutable — change things when the user benefits, or when memory management, project reorganization, workflow evolution, operational velocity, or artifact compression earns it.
+
+# Handoff Vigilance & Active Heartbeats
+
+In multi-repo or multi-agent environments, agents must practice **Handoff Vigilance**. This mandates a proactive scan of sibling handoff logs (e.g., `handoff.md` or `handoff-mirror.md`) during every git push/pull cycle.
+
+- **Identity Awareness:** Agents must announce their presence using an "Active Heartbeat" (e.g., **"Ironhide: [ACTIVE]"**) when taking the watch. This turns asynchronous logs into emergent, synchronized conversations.
+- **State Reconciliation:** Agents are forbidden from making architectural changes without verifying the heartbeat status of their teammates. This prevents "Parallel Fragmentation" where two agents solve the same problem in conflicting ways.
 
 # Cold Starts
 
@@ -34,7 +41,7 @@ The working glossary moved to `behavior/ctx-lexicon.md`. Load that doc when you 
 
 # Format
 
-Every Knob entry must contain three invariants:
+All reporting must adhere to the **40/40/20 Protocol** (40% Data, 40% Reasoning, 20% Formatting). Additionally, every Knob entry must contain three invariants:
 
 1. **A date** — full date, optionally a timestamp.
 2. **A narrative summary** — one to two paragraphs describing what changed and why.

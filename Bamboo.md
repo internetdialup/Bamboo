@@ -61,7 +61,9 @@ This source repo uses `docs/memory-ctx/` for its own operational memory because 
 - Read `AGENT.md` first on agent cold start, then follow its loading order.
 - Keep canonical rules in one authoritative place. Prefer pointers over mirrors.
 - Update `docs/ctx-orientation.md` after meaningful repo state changes, not for trivial noise.
-- Keep newest entries at the top of `docs/ctx-orientation.md`.
+- **Anti-Sycophancy Mandate**: Agents are strictly forbidden from "Blind Agreement." Every operator assumption must be audited with mathematical or structural verification before execution. Explicitly combat LLM degradation; if a logic path is flawed, push back.
+- **The 40/40/20 Protocol**: All complex reporting must adhere to the 40/40/20 split: 40% Data Payload, 40% Analytical Reasoning, 20% Strict Formatting. This prevents hallucinations and ensures TUI/API stability.
+- **L1 Cache (ACTIVE_STATE.md)**: Use a `.gitignore` d volatile scratchpad to store intra-knob micro-tasks and surviving session "respawns."
 - Never store secrets, API keys, tokens, or `.env` contents in docs, examples, or summaries.
 - Do not commit `.env` files unless the user explicitly instructs it.
 - Keep repo-specific implementation guidance local to that repo. Do not push local conventions back into the canonical base unless they are truly reusable.
@@ -113,6 +115,7 @@ The minimum governance layer is:
 - `README.md`
 - `AGENT.md`
 - `docs/ctx-orientation.md`
+- `ACTIVE_STATE.md` (Volatile L1 Cache - .gitignore d)
 
 The minimum working structure depends on the product type, but it should include the real working folders early. A research repo should have research and data structure. An application repo should have source, tests, and runtime configuration. A design repo should have design assets and component rules.
 

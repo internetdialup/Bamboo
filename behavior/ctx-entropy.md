@@ -26,6 +26,15 @@ Without proper entropy management agents start to make poor decisions. Preventat
 
 ---
 
+## Context Partitioning (The Oven vs. Food Principle)
+
+A critical defense against amnesia-driven drift and proprietary leakage is Context Partitioning. This principle mandates a strict architectural boundary between the **Interface (The Oven)** and the **Logic (The Food)**.
+
+- **The Interface (Stable Context):** Consists of the presentation layer, the protocol renderers, and the high-fidelity UI. This context is intentionally generic and "dumb," relying on standardized JSON payloads rather than hardcoded logic. This stability prevents Interface Entropy.
+- **The Logic (Volatile Context):** Consists of proprietary math, secret formulas, and specific agent identities. Must be shielded via the **40/40/20 Rule** to prevent logic hallucinations from breaking the interface. This context lives behind the bridge and is never exposed to the public repo. This partitioning ensures that the "Secret Sauce" remains private while the organization scales through standardized interfaces.
+
+By treating the UI as an "Oven" that simply renders whatever "Food" the logic nodes provide, an organization can scale infinitely without saturating the context window of any single agent.
+
 ## Context Prioritization
 
 AI Agents should adhere to a directive of context rules and prioritization in order to maintain the best ability to retrieve past artifacts to develop better context for future iterations, and service the present in a stronger fashion.
@@ -67,7 +76,7 @@ Focus: Information Architecture within short development cycles (sprints, iterat
 
 We can maintain short term information and be proactive about how we handle contextual loss, information loss, and drift in the stages between documentation, to codebase architecture, to implementation, to deployment and anything in between.
 
-The goal with STIP is to maintain a high degree of AI context awareness through organized systematic flows and patterns optimized to leverage the GPU and CPU processing power to create better retrieval. Raw compute is not the bottleneck when it comes to most projects. In fact indexing, organization, embedded quality, and reading summaries of large document stacks often becomes the true bottleneck. However, we do need to be mindful of GPU and CPU limitations especially if a project is using technologies like WebGL, ThreeJS, and or is outside of the regular stack of web-saas products (games, research projects, etc). Always be cognizant of core CPU and GPU, but prioritize speed and efficiency when it comes to retrieval systems first before going low-level.
+The goal with STIP is to maintain a high degree of AI context awareness through the **L1 Cache (`ACTIVE_STATE.md`)** and organized systematic flows through organized systematic flows and patterns optimized to leverage the GPU and CPU processing power to create better retrieval. Raw compute is not the bottleneck when it comes to most projects. In fact indexing, organization, embedded quality, and reading summaries of large document stacks often becomes the true bottleneck. However, we do need to be mindful of GPU and CPU limitations especially if a project is using technologies like WebGL, ThreeJS, and or is outside of the regular stack of web-saas products (games, research projects, etc). Always be cognizant of core CPU and GPU, but prioritize speed and efficiency when it comes to retrieval systems first before going low-level.
 
 As AI and ML agents work together, we need to ensure that the velocity of STIP hits little to no bottlenecks that prevents the user from experiencing a smooth development cycle. For the most part, STIP should be automated as much as possible to reduce human-driven cognitive load. This allows the user to focus on the problems that matter most, and let the AI handle the rote contextual awareness, documentation, and information preservation.
 
