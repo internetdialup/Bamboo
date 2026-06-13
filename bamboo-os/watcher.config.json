@@ -3,7 +3,7 @@
     "handoff.md",
     "docs/ctx-orientation.md"
   ],
-  "bus_path": ".bamboo/agent-bus.jsonl",
+  "bus_path": "bamboo-os/.bamboo/agent-bus.jsonl",
   "poll_seconds": 2,
   "tail_lines": 20,
   "notify": true,

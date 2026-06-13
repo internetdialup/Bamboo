@@ -11,14 +11,14 @@ class BambooGovernor:
     drift, and stratification integrity.
     """
     
-    def __init__(self, state_path="STATE.json"):
+    def __init__(self, state_path="bamboo-os/STATE.json"):
         self.state_path = state_path
         
     def check_psc_integrity(self):
         """Verifies that the agent has a valid Identity and Role resolved."""
         print("[AUDIT] Verifying Persona Stratification Contract (PSC)...")
         # In a real implementation, this would call bamboo_contract.py or check memory
-        if os.path.exists("agent-architecture/psc-contract.md"):
+        if os.path.exists("bamboo-os/agent-architecture/psc-contract.md"):
             print("[OK] PSC Contract defined.")
             return True
         print("[WARN] PSC Contract missing.")

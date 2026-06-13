@@ -13,18 +13,18 @@ callsign means nothing to a fork that never had that teammate.
 
 **Persona-rich (encouraged) — repo-local layer:**
 - `handoff.md` and any inter-agent messages
-- the agent bus (`.bamboo/agent-bus.jsonl`)
+- `bamboo-os/.bamboo/agent-bus.jsonl`
 - `docs/ctx-orientation.md` Knob entries
 - a repo's OWN `AGENT.md` Session Identity block
-- any repo-local doc (a fleet's implementation notes, case studies)
+- any repo-local doc (implementation notes, case studies)
 
 Sign these. Address teammates by callsign. Use the fleet's voice.
 
 **Persona-free — inherited canon layer:**
-- `Bamboo.md`, `FRAMEWORK.md`
+- `Bamboo.md`
 - everything in `behavior/` and `architecture/` that ships to forks
 
-Plain, translatable language only. No callsigns, no fleet metaphors, no
+Plain, translatable language only. No callsigns, no metaphors, no
 sign-offs.
 
 ## The translation test
@@ -35,13 +35,12 @@ in a fork that never heard of this persona?**
 - "The discipline is structural." → yes. Keep it (unsigned).
 - "Agent: [ACTIVE]" → no. It addresses a teammate a fork doesn't have.
   Belongs in that repo's handoff, not the spec.
-- "Bamboo is the Interface that renders the Logic." → yes. Plain terms.
 
 ## Persona registry (optional, recommended for multi-agent repos)
 
 A persona is only trustworthy if its signature can be checked against a roster.
 Repos running named agents SHOULD declare them in one place — `AGENT.md` or
-`agent-architecture/` — one entry per callsign:
+`bamboo-os/agent-architecture/` — one entry per callsign:
 
     | Callsign | Role | Scope | Workspace |
     |----------|------|-------|-----------|
@@ -57,7 +56,7 @@ down and read back as lookup thereafter, never left as folklore.
 ## Why this is a rule, not a preference
 
 Persona bleed into canon has shipped at least once (the v0.4.0 / Governance
-Core releases signed `Bamboo.md` with a DiamondHands callsign). It is easy to
+Core releases signed `Bamboo.md` with a specific callsign). It is easy to
 do — an agent drafting canon naturally signs in its own voice — and invisible
 until a fork inherits a constitution addressed to a stranger. The boundary
 keeps the feature you want (personas everywhere they do work) while closing

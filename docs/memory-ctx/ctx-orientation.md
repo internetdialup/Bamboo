@@ -1,6 +1,20 @@
 
 ---
 
+## Knob: Core vs. OS Partition — Saturday, June 13, 2026
+
+Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the `bamboo-os/` directory.
+
+This update protects the cold-start economics of simple projects by providing a clear 'Optional Door': discipline-only forks can now `rm -rf bamboo-os/` immediately to remain lean. Re-mapped the repo organization, decoupled `Bamboo.md` from the OS law (`FRAMEWORK.md`), and updated the `README.md` to define these two distinct adoption paths.
+
+- Created `bamboo-os/` partition (Moved `scripts/`, `tools/`, `agent-architecture/`, `FRAMEWORK.md`, etc.)
+- Updated `Bamboo.md` (Decoupled Discipline from OS)
+- Updated `README.md` (Tiered Adoption Guide)
+- Updated `docs/repo-organization.md` (Structural Re-mapping)
+- Updated `behavior/persona-layer.md` (Path Consistency)
+
+---
+
 ## Knob: v0.5.0 — The Governance Core Graduation — Saturday, June 13, 2026
 
 Successfully finalized the **Bamboo Operational Governance OS**. This major architectural graduation transforms Bamboo from a documentation template into a functional governance layer. Key accomplishments include the implementation of the **Bamboo Orchestrator** chassis (lifecycle/resource management), the **Bamboo Governor** (integrity heartbeat), and the **Bamboo Watcher** (event-driven synchronization).

@@ -43,10 +43,10 @@ The float is meant to be tuned over time. A project starting at 0.5 might rise t
 ---
 
 ## Where the Watchdog Operates
-The Watchdog has its own lane in the squad. See `agent-architecture/agent-topology.md` for the formal topology and ownership boundaries.
+The Watchdog has its own lane in the squad. See `bamboo-os/agent-architecture/agent-topology.md` for the formal topology and ownership boundaries.
 
 - **Layer**: persistent memory. The Watchdog audits the repo, not the agent's working memory.
-- **Mutation surface**: the repo only. Never an agent's context window directly. Agents reload from the repo on the next pass; see `agent-architecture/agent-mms.md` for the agent-side rules.
+- **Mutation surface**: the repo only. Never an agent's context window directly. Agents reload from the repo on the next pass; see `bamboo-os/agent-architecture/agent-mms.md` for the agent-side rules.
 - **Communication**: handoff logs, the orientation log, and direct repo edits. The Watchdog does not pass messages through agents; it changes the source of truth and lets agents reload.
 - **Authority**: the gatekeeper. The Watchdog can flag, block, and patch. It cannot override a direct user directive.
 
@@ -81,7 +81,7 @@ The Watchdog is the auditor internally. The first line of defense against memory
 ## Cross-references
 - `architecture/memory/memory-watchdog.md` — the Watchdog concept.
 - `skills/memory-watchdog/SKILL.md` — the runtime prompt the Watchdog runs internally.
-- `agent-architecture/agent-topology.md` — the Watchdog's lane in the squad.
-- `agent-architecture/agent-mms.md` — the agent-side memory rules the Watchdog interacts with.
+- `bamboo-os/agent-architecture/agent-topology.md` — the Watchdog's lane in the squad.
+- `bamboo-os/agent-architecture/agent-mms.md` — the agent-side memory rules the Watchdog interacts with.
 - `architecture/memory/memory-entropy-metrics.md` — the numbers the Watchdog acts on.
 - `behavior/ctx-lexicon.md` — Watchdog glossary entry.

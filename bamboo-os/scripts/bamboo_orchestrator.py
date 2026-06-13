@@ -13,7 +13,7 @@ class BambooOrchestrator:
     resource guarding, and state serialization.
     """
     
-    def __init__(self, config_path="event_calendar.yaml", state_path="STATE.json"):
+    def __init__(self, config_path="bamboo-os/event_calendar.yaml", state_path="bamboo-os/STATE.json"):
         self.config_path = config_path
         self.state_path = state_path
         self.state = self.load_state()

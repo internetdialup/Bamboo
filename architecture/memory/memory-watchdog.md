@@ -40,4 +40,4 @@ The Watchdog is the auditor internally. The gatekeeper of preventing bad practic
 
 ## The Watcher (Runtime Ears)
 
-The Watchdog role is enforced at runtime by an optional sidecar process, `tools/bamboo_watcher.py` — see `Bamboo.md` §6. The persona decides what drift means; the Watcher makes state mutations impossible to miss. Repos adopting both get event-driven synchronization: handoff saved → operator notified → bus event appended → interested agents (and daemons, via SIGUSR1) re-read state.
+The Watchdog role is enforced at runtime by an optional sidecar process, `bamboo-os/tools/bamboo_watcher.py` — see `Bamboo.md` §6. The persona decides what drift means; the Watcher makes state mutations impossible to miss. Repos adopting both get event-driven synchronization: handoff saved → operator notified → bus event appended → interested agents (and daemons, via SIGUSR1) re-read state.

@@ -23,8 +23,28 @@ We prioritize **Physics over Liturgy**: if a rule cannot be reduced to a file pa
 
 ---
 
+## 🏎️ Fork in 5 Minutes
+The fastest path to a governed repo is the **Use this template** button.
+
+### 1. Establish the Core (Discipline Only)
+Drop these into your project root to establish the behavioral baseline:
+- `AGENT.md`: The cold-start router (MUST include **Session Identity**).
+- `Bamboo.md`: The operational policy layer.
+- `behavior/`: The 3-concept ruleset and decoder ring.
+- `docs/ctx-orientation.md`: Your project's narrative history.
+
+**If you only need the discipline, delete the `bamboo-os/` folder immediately.**
+
+### 2. Establish the OS (Full Governance)
+Keep the `bamboo-os/` folder to enable the runtime governance engine. This includes:
+- **`bamboo_orchestrator.py`**: Dual-loop lifecycle management (Pulse/Heartbeat).
+- **`bamboo_governor.py`**: Continuous integrity auditing for sycophancy and drift.
+- **`bamboo_watcher.py`**: The "Watchdog's Ears" for event-driven synchronization.
+
+---
+
 ## 🏗️ Core Architecture (The 3-Concept Canon)
-To protect cold-start economics, Bamboo mandates only three load-bearing concepts. Everything else is an advanced add-on.
+To protect cold-start economics, Bamboo mandates only three load-bearing concepts. Everything else is an extension.
 
 1.  **Knobs ⭐**: The unit of change. Every meaningful state transition earns a dated, narrative entry in the orientation log. We log the "Why," not just the code.
 2.  **PLTRF 🏗️**: Preventative Long-Term Repo Fragmentation. The binary discipline of structural integrity. One home per concept. Broken pointers are build failures.
@@ -32,29 +52,11 @@ To protect cold-start economics, Bamboo mandates only three load-bearing concept
 
 ---
 
-## 🏎️ Fork in 5 Minutes
-The fastest path to a governed repo is the **Use this template** button.
-
-### 1. Project Root (The Essentials)
-Establish the governance layer by dropping these into your project root:
-- `AGENT.md`: The cold-start router (MUST include **Session Identity**).
-- `Bamboo.md`: The operational policy layer.
-- `behavior/`: The 3-concept ruleset and decoder ring.
-- `docs/ctx-orientation.md`: Your project's narrative history.
-
-### 2. Strategic Modules (Skip unless needed)
-- `architecture/` & `agent-architecture/`: Advanced memory (ADM/RAG) and multi-agent coordination.
+## 🛡️ Strategic Modules (Optional)
+- `architecture/`: Advanced memory systems (ADM/RAG/Watchdog).
+- `bamboo-os/`: The runtime engine (Scripts, Schemas, Multi-agent Topology).
 - `skills/`: Portable AI capabilities and vendor-specific overlays.
-- `tools/` & `scripts/`: Runtime sidecars (Watcher, Governor, Orchestrator).
 - `design/`: UI/UX standards and component rules.
-
----
-
-## 🛡️ Operational Governance
-Bamboo ships with a suite of agnostic tools to enforce integrity at runtime:
-- **`bamboo_orchestrator.py`**: Dual-loop lifecycle management (Pulse/Heartbeat).
-- **`bamboo_governor.py`**: Continuous integrity auditing for sycophancy and drift.
-- **`bamboo_watcher.py`**: The "Watchdog's Ears" for event-driven synchronization.
 
 ---
 
@@ -67,7 +69,7 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 - **Retrieval-Augmented Generation (RAG)** — Lewis et al. (2020)⁴. Bamboo is a *structural* RAG complement.
 - **Long-context degradation** — Liu et al. (2023)⁵, "Lost in the Middle." Empirical validation for the "newest at the top" Knob log rule.
 
-*For the deep theoretical treatment, see [`Documentation.md`](Documentation.md) and [`FRAMEWORK.md`](FRAMEWORK.md).*
+*For the deep theoretical treatment, see [`Documentation.md`](Documentation.md) and [`bamboo-os/FRAMEWORK.md`](bamboo-os/FRAMEWORK.md).*
 
 ---
 

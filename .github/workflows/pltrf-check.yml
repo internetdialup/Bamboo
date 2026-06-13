@@ -39,7 +39,7 @@ jobs:
           # Only check paths that start with one of these top-level
           # folders. This is the boundary between "real repo-relative
           # path" and "bare filename in prose."
-          VALID_PREFIX='^(behavior|architecture|agent-architecture|docs|skills|workflows|design|\.github)/'
+          VALID_PREFIX='^(behavior|architecture|bamboo-os|docs|skills|workflows|design|\.github)/'
 
           is_skipped() {
             local needle="$1"

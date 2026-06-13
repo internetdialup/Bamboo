@@ -42,8 +42,8 @@ These terms represent the deep theoretical surface. They are not required for co
 - **ADM** (Active Domain Memory) — Episodic chapter management.
 - **RAG** (Retrieval-Augmented Generation) — Semantic search layer.
 - **Entropy Metrics** — Quantitative retrieval and corpus disorder scores.
-- **Chassis** — The agnostic base class for an orchestrator (`scripts/bamboo_orchestrator.py`).
-- **Catalyst** — An agnostic event trigger defined in `event_calendar.yaml`.
+- **Chassis** — The agnostic base class for an orchestrator (`bamboo-os/scripts/bamboo_orchestrator.py`).
+- **Catalyst** — An agnostic event trigger defined in `bamboo-os/event_calendar.yaml`.
 - **PSC** (Persona Stratification Contract) — The 3-layer identity protocol (Identity, Role, Tactical).
 - **State-Bus** — The `STATE.json` serialization mechanism for session continuity.
 - **Neural Reset** — An automated environment reset triggered by resource breach or cognitive failure.
