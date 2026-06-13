@@ -1,6 +1,8 @@
 # Bamboo: The AI Governance OS 🎋
 
-**High-Velocity Governance for Multi-Agent Squads.**
+**High-Velocity Governance for Multi-Agent Squads and Orchestration.**
+
+A governing AI memory scaffold to catch drift before it tech debt becomes a thing and AI memory collaspe occurs. 
 
 ---
 
