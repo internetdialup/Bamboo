@@ -2,7 +2,7 @@
 
 **High-Velocity Governance for Multi-Agent Squads and Orchestration.**
 
-A governing AI memory scaffold to catch drift before tech debt becomes a thing and AI memory collaspe occurs. 
+A governing AI memory scaffold to catch drift before tech debt becomes a thing and AI memory collapse occurs. 
 
 ---
 

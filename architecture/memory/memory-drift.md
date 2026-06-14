@@ -2,7 +2,7 @@
 
 Over a projects life cycle memory will begin to drift. This is caused by a myriad of internal, and external factors. From architecture changes, tool and workflow changes, different branching and commits being merged to main. Code being split and refactored, etc. After a while from a birds eye view we can start to see that software development becomes messy for AI and humans to navigate. It becomes sphaggeti, a tangled web of virtual electral cords. Harder and harder to navigate that the memory starts to drift.
 
-This is where context collaspes, hallucinations rear their heads, and memory degrades, causing AI agents to make critical errors, and misalignments with the original vision, and goals of the software project. 
+This is where context collapses, hallucinations rear their heads, and memory degrades, causing AI agents to make critical errors, and misalignments with the original vision, and goals of the software project. 
 
 To avoid drift in memory, the project needs good hygiene, and documentation from the start. This is not to say that the documentation needs to be perfect, but it needs to be good enough to give AI agents a starting point.  
 
