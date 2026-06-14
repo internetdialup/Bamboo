@@ -1,6 +1,18 @@
 
 ---
 
+## Knob: The Seventh Check (Theater Scan) — Saturday, June 13, 2026
+
+Implemented the **Seventh Check**—a deterministic 'auditor of the auditors'—within the **BAMBOO-OS** private repository. This update closes the final loop in the governance immune system by scanning the source code of the governance tools themselves. It detects and fails the build on "Theater"—claims of capability (stubs, placeholders, magic-constant shims) that the code does not physically implement.
+
+By moving from agent-driven audits to deterministic regex/AST analysis, we end the infinite regress of "who audits the auditors." The Theater Scan ensures that the 'Oven' remains anchored in absolute structural reality, as verified by its internal heartbeat.
+
+- Created `BAMBOO-OS/scripts/bamboo_theater_scan.py` (AST/Regex Auditor)
+- Created `BAMBOO-OS/tests/test_theater_scan.py` (Scanner Verification)
+- Integrated Theater Scan into the `BAMBOO-OS` Governor cycle.
+
+---
+
 ## Knob: Real Semantic Drift — Saturday, June 13, 2026
 
 Implemented the **Real Semantic Drift** construct, replacing the self-admitted placeholder math in the integrity heartbeat. This update operationalizes persona drift as **cosine distance from a fixed role anchor**, measured over time. By using local `sentence-transformers` (`all-MiniLM-L6-v2`), we achieve reproducible, vendor-neutral, and offline drift detection.
