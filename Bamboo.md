@@ -62,6 +62,7 @@ Access to the OS extension is managed via the **BAMBOO-OS** private repository.
 
 ## Version History
 
+- **v0.7.0 — The Physics Verification (2026-06-13)**: Initialized 'Chaos Testing' to verify CI gate enforcement. Hardened the public README with enforcement milestones.
 - **v0.6.0 — The AI Forensics & OS Partition (2026-06-13)**: Established the AI Forensics layer and formal Chain of Custody. Formally partitioned the framework into Bamboo Core (Discipline) and the private BAMBOO-OS (Runtime Extension). Implemented the Theater Scan CI gate and hardened structural verification.
 - **v0.5.0 — The Governance Core Graduation (2026-06-13)**: Finalized the operational governance OS. Implemented the Orchestrator chassis, the Governor heartbeat, the Watcher ears, and the Session Identity mandate. Standardized the 3-concept canon and structural verification rules.
 - **v0.4.0 — The Cognitive Integrity Shakedown (2026-06-10)**: Anchored the Anti-Sycophancy Mandate and the Layered Reporting Protocol. Implemented the L1 Cache (`ACTIVE_STATE.md`).
