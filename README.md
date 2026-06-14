@@ -73,7 +73,7 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 ---
 
 ## 🏆 Recent Milestones
-- **2026-06-13**: Partitioned core discipline and OS into separate repositories. Finalized **Governance Core** and **Session Identity Clause**.
+- **2026-06-13**: Bamboo has a CI gate that fails the build when an agent violates a mandatory rule. Partitioned core discipline and OS into separate repositories. Finalized **Governance Core** and **Session Identity Clause**.
 - **2026-06-03**: Introduced root `Bamboo.md` and separated policy from routing.
 - **2026-05-28**: Added **Memory Watchdog** and **Drift** to the architecture layer.
 
