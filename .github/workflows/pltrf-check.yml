@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Scan cold-start docs for broken file pointers
+      - name: PLTRF + duplicate-home + identity gate
         run: |
           set -uo pipefail
 
