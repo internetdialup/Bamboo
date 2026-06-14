@@ -81,3 +81,4 @@ Bamboo is a synthesis of established work across information theory, cognitive s
 
 *Created and maintained by Matt Stenquist.*
 *Special thanks to the DiamondHands fleet for production-testing the chassis.*
+- See [ghost](behavior/ctx-does-not-exist.md)
