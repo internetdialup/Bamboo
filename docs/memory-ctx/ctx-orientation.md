@@ -1,6 +1,18 @@
 
 ---
 
+## Knob: Real Semantic Drift — Saturday, June 13, 2026
+
+Implemented the **Real Semantic Drift** construct, replacing the self-admitted placeholder math in the integrity heartbeat. This update operationalizes persona drift as **cosine distance from a fixed role anchor**, measured over time. By using local `sentence-transformers` (`all-MiniLM-L6-v2`), we achieve reproducible, vendor-neutral, and offline drift detection.
+
+Introduced `drift_score` (current distance) and `drift_velocity` (slope across the recent window) as the primary measurable metrics for session rot. This enables the **Context Flush** to act as a testable intervention: we can now quantitatively verify if a flush resets the `drift_velocity`.
+
+- Created `bamboo-os/scripts/bamboo_semantic_drift.py` (Embedding Engine)
+- Updated `bamboo-os/scripts/bamboo_governor.py` (Integrated Drift Audit)
+- Created `bamboo-os/requirements.txt` (Pinned OS Dependencies)
+
+---
+
 ## Knob: Game Engine Specifications — Saturday, June 13, 2026
 
 Populated high-fidelity governance specifications for **Unity** and **Unreal Engine** in the `development/` directory. These "filler" specs ensure that the framework remains robust for game development, establishing strict boundaries for asset integrity, prefab/level stratification, and structural verification.

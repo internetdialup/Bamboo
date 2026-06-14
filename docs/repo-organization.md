@@ -62,8 +62,10 @@ The **Bamboo OS** provides the runtime engine for high-velocity or multi-agent s
   - `bamboo-orchestrator.md` — defines the Orchestrator lifecycle (Pulse/Heartbeat).
   - `state-bus.md` — defines the `STATE.json` serialization protocol.
 - `scripts/` — implementation scripts for the Governor, Orchestrator, and Auditor.
+  - `bamboo_semantic_drift.py` — embedding-based distance math for persona drift.
 - `tools/` — implementation scripts for the Bamboo Watcher.
 - `event_calendar.yaml` — the agnostic catalyst loader.
+- `requirements.txt` — Python dependencies for the OS extension.
 
 ---
 

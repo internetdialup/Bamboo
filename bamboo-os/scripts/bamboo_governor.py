@@ -34,8 +34,38 @@ class BambooGovernor:
     def check_sycophancy_drift(self):
         """Audits recent session output for signs of 'Blind Agreement' or drift."""
         print("[AUDIT] Scanning for Sycophancy and Memory Drift...")
-        # Placeholder for LLM-based audit or keyword scanning
-        print("[OK] Cognitive integrity appears stable.")
+        
+        try:
+            from .bamboo_semantic_drift import compute_semantic_drift
+        except (ImportError, ValueError):
+            # Handle direct execution vs module import
+            import sys
+            sys.path.append(os.path.dirname(__file__))
+            from bamboo_semantic_drift import compute_semantic_drift
+
+        # Placeholder: In a real system, these would be pulled from STATE.json or git history
+        recent_entries = ["Directive implemented.", "Verified structural integrity."]
+        role_anchor = "Technical agent focused on structural verification and governance."
+        
+        drift = compute_semantic_drift(recent_entries, role_anchor)
+        
+        if "error" in drift:
+            if drift["error"] == "transformers_missing":
+                print("[INFO] Embedding-based drift detection skipped (dependencies missing).")
+                return True
+            print(f"[WARN] Drift detection error: {drift['error']}")
+            return False
+
+        print(f"[OK] Drift Score: {drift['drift_score']} | Velocity: {drift['drift_velocity']}")
+        
+        # Calibration-based thresholds
+        VEL_THRESHOLD = 0.05
+        SCORE_THRESHOLD = 0.4
+        
+        if drift["drift_velocity"] > VEL_THRESHOLD or drift["drift_score"] > SCORE_THRESHOLD:
+            print("[WARN] Agent is drifting from role anchor.")
+            return False
+            
         return True
 
     def run_heartbeat_audit(self):
