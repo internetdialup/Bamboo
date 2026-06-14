@@ -17,7 +17,14 @@ Bamboo replaces vague mandates with structural requirements to enforce **Anti-Sy
 - **Enforcement**: Claims that cannot be reduced to a file path or a script exit code are considered "Liturgy" and are subject to immediate rejection.
 - **Verification**: Anti-Sycophancy is not a "tone." It is a link to a raw data file or a command result. If you cannot cite the path, do not make the claim.
 
-## 3. PLTRF (Preventative Long-Term Repo Fragmentation)
+## 3. Chain of Custody (Evidence Integrity)
+
+AI Forensics relies on the integrity of the record.
+- **Rule**: Every log, handoff, or state artifact that supports a forensic audit MUST be tamper-evident.
+- **Mechanism**: Use append-only logs (e.g., `agent-bus.jsonl`), integrity hashes (SHA256), and git authorship to maintain a verifiable chain of custody.
+- **Enforcement**: Evidence that cannot prove its origin or has been silently modified is rejected as "forged context."
+
+## 4. PLTRF (Preventative Long-Term Repo Fragmentation)
 
 Maintaining repo integrity is a binary task.
 - **One Home**: One canonical home per concept. No mirrors.

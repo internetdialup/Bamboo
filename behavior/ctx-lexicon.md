@@ -52,6 +52,8 @@ These terms represent the deep theoretical surface. They are not required for co
 - **MAP** (Multimodal Alerting Protocol) — Signal standards for priority-based communication.
 - **Layered Reporting** — The structural split between raw data, reasoning, and formatting.
 - **Integrity Pulse** — Periodic automated audits for sycophancy and drift.
+- **AI Forensics** — The post-hoc examination of immutable records to reconstruct events and establish accountability.
+- **Chain of Custody** — The structural requirement for tamper-evident records (hashes, append-only logs) to ensure evidence integrity.
 
 Access to high-fidelity implementations of these primitives is provided via the **BAMBOO-OS** extension.
 

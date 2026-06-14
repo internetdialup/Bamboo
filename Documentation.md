@@ -159,6 +159,7 @@ Bamboo's contribution is not in any single one of these areas — it is in the *
 | RAG / retrieval quality | Hot/warm/cold tiering, 5000-char threshold, summary spawn |
 | Long-context degradation | "Newest at the top" rule, cold-storage rotation |
 | Documentation decay | `pltrf-check.yml` CI enforcement |
+| AI Forensics | `behavior/ctx-rules.md` (Chain of Custody) |
 
 The system is not novel because any single component is novel. It is novel because the system applies all of these disciplines coherently to a single corpus (a code repository) with a single enforcement mechanism (CI) and a single point-in-time discipline (the Knob).
 
@@ -229,6 +230,13 @@ This is engineering, not science. Bamboo claims practical utility; it does not c
 6. Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* Advances in Neural Information Processing Systems 33 (NeurIPS 2020).
 7. Liu, N. F., et al. (2023). [Same as 2.]
 8. Lethbridge, T. C., Singer, J., & Forward, A. (2003). *How Software Engineers Use Documentation: The State of the Practice.* IEEE Software, 20(6), 35–39.
+
+Additional related work for further reading: Baddeley, A. (1992). *Working Memory.* Science, 255(5044), 556–559. Nygard, M. (2011). Documenting Architecture Decisions (ADR pattern). Brown, S. (2018). *The C4 Model for Software Architecture.*
+
+---
+
+End of documentation. Drop into `behavior/ctx-utility.md` to scan the operational discipline surface, or `docs/memory-ctx/ctx-orientation.md` to see what changed last.
+ of the Practice.* IEEE Software, 20(6), 35–39.
 
 Additional related work for further reading: Baddeley, A. (1992). *Working Memory.* Science, 255(5044), 556–559. Nygard, M. (2011). Documenting Architecture Decisions (ADR pattern). Brown, S. (2018). *The C4 Model for Software Architecture.*
 

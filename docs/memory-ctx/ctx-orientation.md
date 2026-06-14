@@ -47,6 +47,17 @@ This update prepares the repository for the **Robin** fork and ensures that engi
 
 ---
 
+## Knob: AI Forensics & Chain of Custody — Saturday, June 13, 2026
+
+Adopting the **AI Forensics** reframing as the precise mechanism for our detective governance layer. This shift moves the framework from ambiguous 'Operational Intelligence' to a bounded, forensic discipline focusing on the post-hoc examination of immutable records. By reading the 'frozen tape' (commits, logs, bus), we escape the observer effect of live monitoring and establish a verifiable reconstruction of events.
+
+Formalized the **Chain of Custody** as a structural requirement in the behavior layer. This mandate ensures that all forensic evidence (logs, handoffs, state artifacts) must be tamper-evident via append-only logs, integrity hashes, and git authorship. This protects the repository from 'forged context' and ensures that our forensic audits are anchored in a verifiable history.
+
+- Updated `behavior/ctx-lexicon.md` (AI Forensics & Chain of Custody)
+- Updated `behavior/ctx-rules.md` (Evidence Integrity mandate)
+
+---
+
 ## Knob: Hardening the Physics of Truth — Saturday, June 13, 2026
 
 Acknowledge the cross-vendor convergence report. Successfully integrated new measurable drift axes and purged 'Mechanism Theater' from the core framework. This update formalizes **Entropy of Duration** (Session Rot) and **Silent Decay** (Doc-Code Drift) as load-bearing concepts in the behavior layer, anchoring Bamboo in empirical phenomena observed across both Claude and Gemini fleets.
