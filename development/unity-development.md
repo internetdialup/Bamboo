@@ -9,9 +9,9 @@ Every meaningful change to a `.unity` scene or a major Prefab MUST be logged as 
 - **Rule**: Narrative entries must cite the specific Scene name and any modified Serialized Fields.
 - **Physics**: A change is not "done" until the `.meta` files are verified and the GUIDs remain stable.
 
-### 1.2 Prefab Stratification (The Oven/Food Split)
-- **The Interface (Oven)**: Prefab UI components and Visual Scripting triggers.
-- **The Logic (Food)**: C# scripts and Custom Inspectors.
+### 1.2 Prefab Stratification (The Interface vs. Logic Split)
+- **The Interface Layer**: Prefab UI components and Visual Scripting triggers.
+- **The Logic Layer**: C# scripts and Custom Inspectors.
 - **Constraint**: Logic scripts should be decoupled from specific Scenes via **Interface-Driven Scaling**. Use ScriptableObjects for data persistence across Scene Knobs.
 
 ### 1.3 Asset PLTRF

@@ -52,6 +52,21 @@ This means prioritizing the following:
 - What is the users directive when it comes to risk management, compliance, and security.
 - What is the users directive for managing memory internally and their documentation standards.
 
+## Drift Axes
+
+Context entropy manifests along two primary axes:
+
+### 1. Entropy of Scale (Corpus Rot)
+The accumulation of near-duplicate files, fragmented summaries, and stale references across the repository (L0/L1). Managed via **PLTRF** and **Hot/Warm/Cold Tiering**.
+
+### 2. Entropy of Duration (Session Rot)
+The degradation of agent performance scaling with session length, independent of corpus size. As the active context window (L2) fills with micro-interactions and redundant reasoning, the agent's ability to focus degrades.
+- **Intervention**: The **Context Flush** (8h-flush). Periodic purging of the L2 session state to recover cognitive bandwidth.
+
+### 3. Silent Decay (Doc-Code Drift)
+The structural discrepancy between documentation and actual implementation. As code changes without corresponding updates to the `development/` specs or the `repo-organization.md` map, the agent's mental model of the system becomes an artifact of history rather than reality.
+- **Verification**: Test 4 (Silent Decay audit) — periodic discrepancies count as an integrity score.
+
 ---
 
 ## Preventative Long Term Repo Fragmentation (PLTRF)

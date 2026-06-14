@@ -12,6 +12,18 @@ This update prepares the repository for the **Robin** fork and ensures that engi
 
 ---
 
+## Knob: Hardening the Physics of Truth — Saturday, June 13, 2026
+
+Acknowledge the cross-vendor convergence report. Successfully integrated new measurable drift axes and purged 'Mechanism Theater' from the core framework. This update formalizes **Entropy of Duration** (Session Rot) and **Silent Decay** (Doc-Code Drift) as load-bearing concepts in the behavior layer, anchoring Bamboo in empirical phenomena observed across both Claude and Gemini fleets.
+
+Purged the 'Neural Reset' liturgy, reclassifying it as a **Context Flush** (L2 session purge) to maintain the Physics of Truth. This ensures that the framework's self-correction loops remain verifiable and free of impressive-sounding but technically empty claims (e.g., markdown-based temperature resets). Reinforced the 'Fence' between the agnostic core and fleet-local patterns.
+
+- Updated `behavior/ctx-entropy.md` (Duration & Decay Axes)
+- Updated `behavior/ctx-lexicon.md` (New Drift Definitions)
+- Updated `bamboo-os/agent-architecture/bamboo-orchestrator.md` (Context Flush Mandate)
+
+---
+
 ## Knob: Core vs. OS Partition — Saturday, June 13, 2026
 
 Successfully implemented the **Sub-Folder Partition** to resolve the 'bundling' risk. Formally split the repository into **Bamboo Core (The Discipline)** and **Bamboo OS (The Runtime Extension)**. All OS-level scripts, multi-agent docs, and configs have been moved to the `bamboo-os/` directory.

@@ -11,7 +11,7 @@ Large-scale changes to `.umap` files or World Partition cells earn a dated Knob 
 
 ### 1.2 Stratification (Blueprint vs. C++)
 - **C++ (The Foundation)**: Owns the "Physics of Truth"—data structures, PDEs, and performance-critical loops.
-- **Blueprint (The Interface)**: Owns the "Oven"—visual state, event triggers, and designer-facing Knobs.
+- **Blueprint (The Interface)**: Owns the technical interface—visual state, event triggers, and designer-facing Knobs.
 - **Rule**: No "Heavy Math" in Blueprints. If logic requires more than 5 nodes to express, move it to a C++ `UFUNCTION`.
 
 ### 1.3 Path PLTRF

@@ -69,7 +69,7 @@ The **Bamboo OS** provides the runtime engine for high-velocity or multi-agent s
 
 ## development/
 
-Implementation and engine-specific governance. Use these to establish the "Oven" for specific tech stacks.
+Implementation and engine-specific governance. Use these to establish the structural guardrails for specific tech stacks.
 
 - `unity-development.md` — structural discipline for Unity projects. Defines the Scene Knob, Prefab Stratification, and `.meta` hygiene.
 - `unrealengine-development.md` — governance for UE5 projects. Blueprint vs. C++ stratification and redirector hygiene.

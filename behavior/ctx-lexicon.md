@@ -42,11 +42,13 @@ These terms represent the deep theoretical surface. They are not required for co
 - **ADM** (Active Domain Memory) — Episodic chapter management.
 - **RAG** (Retrieval-Augmented Generation) — Semantic search layer.
 - **Entropy Metrics** — Quantitative retrieval and corpus disorder scores.
+- **Entropy of Duration** — Drift scaling with session length (Session Rot).
+- **Silent Decay** — Discrepancies between documentation and implementation.
 - **Chassis** — The agnostic base class for an orchestrator (`bamboo-os/scripts/bamboo_orchestrator.py`).
 - **Catalyst** — An agnostic event trigger defined in `bamboo-os/event_calendar.yaml`.
 - **PSC** (Persona Stratification Contract) — The 3-layer identity protocol (Identity, Role, Tactical).
 - **State-Bus** — The `STATE.json` serialization mechanism for session continuity.
-- **Neural Reset** — An automated environment reset triggered by resource breach or cognitive failure.
+- **Context Flush** — A mandatory purge of the L2 session context to combat duration-based drift.
 - **MAP** (Multimodal Alerting Protocol) — Priority-based communication signal standards.
 - **Layered Reporting** — The structural split between raw data, reasoning, and formatting.
 - **Integrity Pulse** — Periodic automated audits for sycophancy and drift.

@@ -22,7 +22,7 @@ The Orchestrator operates on a dual-loop system to separate reasoning from healt
 
 To prevent context-window collapse or system-level resource exhaustion, the Orchestrator enforces strict limits using the **Resource Guard** protocol:
 
-- **RAM Cap**: Monitors memory usage. If the agent's working memory exceeds the project-defined budget, the Orchestrator may trigger an emergency **Neural Reset** or **Compression Sweep**.
+- **RAM Cap**: Monitors memory usage. If the agent's working memory exceeds the project-defined budget, the Orchestrator may trigger a **Context Flush** to prune the L2 session and restore performance.
 - **CPU Cap**: Limits reasoning-heavy processes to prevent system-wide lag.
 - **Disk Cap**: Ensures logs and temporary context files do not saturate storage.
 
@@ -42,7 +42,15 @@ The Orchestrator includes a **Self-Healing Loop** that monitors sub-agent proces
 
 ---
 
-## 5. Agnostic Event Logic (Catalysts)
+## 5. Context Flush (The 8h-Rule)
+
+To combat **Entropy of Duration**, the Orchestrator enforces periodic session purges.
+- **Mechanism**: On a scheduled interval (default 8 hours) or upon detection of session-rot, the active context window is flushed. 
+- **Resumption**: The agent reconstitutes its working state from the **State-Bus** (`STATE.json`), ensuring continuity without the accumulated noise of a long-lived session.
+
+---
+
+## 6. Agnostic Event Logic (Catalysts)
 
 The Orchestrator remains project-agnostic by loading its event calendar from `event_calendar.yaml`.
 
